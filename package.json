@@ -1,7 +1,7 @@
 {
-  "name": "@data-driven-forms/react-starter",
-  "version": "0.0.2",
-  "description": "Starter kit for data-driven-forms libraries.",
+  "name": "@data-driven-forms/react-form-renderer",
+  "version": "0.0.1-aplha",
+  "description": "React form renderer for data-driven-forms.",
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --env dev --config ./config/webpack.config.js --open --hot",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/data-driven-forms/react-starter.git"
+    "url": "git+https://github.com/data-driven-forms/react-form-renderer.git"
   },
   "keywords": [
     "react",
@@ -21,9 +21,9 @@
   "author": "Martin Marosi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/data-driven-forms/react-starter/issues"
+    "url": "https://github.com/data-driven-forms/react-form-renderer/issues"
   },
-  "homepage": "https://github.com/data-driven-forms/react-starter#readme",
+  "homepage": "https://github.com/data-driven-forms/react-form-renderer#readme",
   "jest": {
     "setupFiles": [
       "./config/jest.setup.js"
@@ -100,5 +100,11 @@
         "message": "Release of new version: ${nextRelease.version} <no> [skip ci]"
       }
     ]
+  },
+  "dependencies": {
+    "final-form": "^4.11.0",
+    "final-form-arrays": "^1.1.0",
+    "react-final-form": "^4.0.2",
+    "react-final-form-arrays": "^2.0.1"
   }
 }
