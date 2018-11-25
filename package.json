@@ -100,5 +100,11 @@
         "message": "Release of new version: ${nextRelease.version} <no> [skip ci]"
       }
     ]
+  },
+  "dependencies": {
+    "final-form": "^4.11.0",
+    "final-form-arrays": "^1.1.0",
+    "react-final-form": "^4.0.2",
+    "react-final-form-arrays": "^2.0.1"
   }
 }
