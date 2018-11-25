@@ -21,10 +21,8 @@ const SelectField = ({ input, meta, label, formOptions, helperText, isRequired, 
 
 const mapper = componentType => ({
   [components.TEXT_FIELD]: TextField,
-  [components.TEXTAREA_FIELD]: props => <TextField { ...props } />,
-  [components.FIELD_ARRAY]: props => <div>field array</div>,
-  [components.SELECT_COMPONENT]: props => <SelectField { ...props }/>,
-  [components.FIXED_LIST]: props => <div>fixed list</div>,
+  [components.TEXTAREA_FIELD]: TextField,
+  [components.SELECT_COMPONENT]: SelectField,
   [components.CHECKBOX]: props => <div>checkbox</div>,
   [components.SUB_FORM]: props => <div>sub form</div>,
   [components.RADIO]: props => <div>radio</div>,

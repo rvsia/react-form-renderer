@@ -23,6 +23,9 @@ const layoutMapper = {
   [layoutComponents.COL]: Col,
   [layoutComponents.FORM_GROUP]: FormGroup,
   [layoutComponents.BUTTON_GROUP]: ButtonGroup,
+  [layoutComponents.ICON]: props => <div>Icon</div>,
+  [layoutComponents.ARRAY_FIELD_WRAPPER]: React.Fragment,
+  [layoutComponents.HELP_BLOCK]: React.Fragment,
 };
 
 export default layoutMapper;

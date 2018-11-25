@@ -8,6 +8,7 @@ import { shouldWrapInField, composeValidators } from './helpers';
 import { components } from '../constants';
 
 const assignSpecialType = componentType => [ components.CHECKBOX, components.RADIO ].includes(componentType) ? componentType : undefined;
+const shouldAssignFormOptions = componentType => [ components.FIELD_ARRAY, components.FIXED_LIST ].includes(componentType);
 
 const Condition = ({ when, is, children }) => {
   const shouldRender = value => (Array.isArray(is) ? !!is.find(item => item === value) : value === is);
@@ -24,16 +25,39 @@ const FormConditionWrapper = ({ condition, children }) => (condition ? (
   </Condition>
 ) : children);
 
-const FieldWrapper = ({ componentType, validate, component, formOptions, ...rest }) =>
-  shouldWrapInField(componentType)
-    ? <Field
-      type={ assignSpecialType(componentType) }
-      FieldProvider={ Field }
-      { ...rest }
-      component={ component }
-      validate={ composeValidators(validate) }
-    />
+const FieldWrapper = ({ componentType, validate, component, formOptions, ...rest }) => {
+  const componentProps = {
+    type: assignSpecialType(componentType),
+    FieldProvider: Field,
+    ...rest,
+    component,
+  };
+  if (shouldAssignFormOptions(componentType)) {
+    componentProps.formOptions = {
+      hasFixedItems: componentType === components.FIXED_LIST,
+      ...formOptions,
+    };
+    componentProps.arrayValidator = value => {
+      if (!Array.isArray(value)) {
+        return;
+      }
+
+      const arrayValidator = composeValidators(validate);
+      let result = arrayValidator(value ? value.length > 0 ? value : undefined : undefined);
+      if (typeof result === 'function') {
+        result = result(value);
+      }
+
+      return result;
+    };
+  } else {
+    componentProps.validate = composeValidators(validate);
+  }
+
+  return shouldWrapInField(componentType)
+    ? <Field { ...componentProps } />
     : component({ formOptions, ...rest });
+};
 
 const renderSingleField = ({ component, condition, ...rest }, formOptions) => (
   <Fragment key={ rest.key || rest.name }>
@@ -42,8 +66,9 @@ const renderSingleField = ({ component, condition, ...rest }, formOptions) => (
         <FormConditionWrapper condition={ condition }>
           <FieldWrapper
             componentType={ component }
-            component={ formFieldsMapper(component) }
+            component={ formFieldsMapper[component] }
             formOptions={ formOptions }
+            name={ rest.name || rest.key }
             { ...rest }
           />
         </FormConditionWrapper>

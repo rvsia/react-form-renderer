@@ -44,4 +44,7 @@ export const layoutComponents = {
   COL: 'Col',
   FORM_GROUP: 'FormGroup',
   BUTTON_GROUP: 'ButtonGroup',
+  ICON: 'Icon',
+  ARRAY_FIELD_WRAPPER: 'ArrayFieldWrapper',
+  HELP_BLOCK: 'HelpBlock'
 };

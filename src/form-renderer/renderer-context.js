@@ -1,4 +1,6 @@
-import { createContext } from 'react';
+import React, { createContext } from 'react';
+import { components } from '../constants';
+import FieldArray from './array-form-component';
 
 const ComponentType = createContext('');
 
@@ -9,5 +11,9 @@ export const configureContext = ({
   formFieldsMapper,
 }) => ({
   layoutMapper,
-  formFieldsMapper,
+  formFieldsMapper: {
+    [components.FIELD_ARRAY]: props => <FieldArray { ...props } fieldKey={ props.key } />,
+    [components.FIXED_LIST]: props => <FieldArray { ...props } fieldKey={ props.key } />,
+    ...formFieldsMapper,
+  },
 });
