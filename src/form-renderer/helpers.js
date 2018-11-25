@@ -15,7 +15,7 @@ const fieldComponents = [
 
 export const shouldWrapInField = componentType => fieldComponents.includes(componentType);
 
-export const composeValidators = (...validators) => value =>
+export const composeValidators = validators => value =>
   validators.reduce(
     (error, validator) => error
       || (typeof validator === 'function'

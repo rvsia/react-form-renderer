@@ -20,7 +20,7 @@ const SelectField = ({ input, meta, label, formOptions, helperText, isRequired, 
 );
 
 const mapper = componentType => ({
-  [components.TEXT_FIELD]: props => <TextField { ...props } />,
+  [components.TEXT_FIELD]: TextField,
   [components.TEXTAREA_FIELD]: props => <TextField { ...props } />,
   [components.FIELD_ARRAY]: props => <div>field array</div>,
   [components.SELECT_COMPONENT]: props => <SelectField { ...props }/>,

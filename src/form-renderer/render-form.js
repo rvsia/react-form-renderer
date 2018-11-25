@@ -21,10 +21,10 @@ const FormConditionWrapper = ({ condition, children }) => (condition ? (
   </Condition>
 ) : children);
 
-const FieldWrapper = ({ componentType, validate, component, ...rest }) =>
+const FieldWrapper = ({ componentType, validate, component, formOptions, ...rest }) =>
   shouldWrapInField(componentType) ?
-    <Field { ...rest } component={ component } validate={ composeValidators(validate) || [] } />
-    : component(...rest);
+    <Field { ...rest } component={ component } validate={ composeValidators(validate) } />
+    : component({ formOptions, ...rest });
 
 const renderSingleField = ({ component, condition, ...rest }, formOptions) => (
   <Fragment key={ rest.key || rest.name }>
