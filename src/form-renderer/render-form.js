@@ -5,6 +5,9 @@ import { dataTypeValidator } from '../validators';
 import validatorMapper from '../validators/validator-mapper';
 import RendererContext from './renderer-context';
 import { shouldWrapInField, composeValidators } from './helpers';
+import { components } from '../constants';
+
+const assignSpecialType = componentType => [ components.CHECKBOX, components.RADIO ].includes(componentType) ? componentType : undefined;
 
 const Condition = ({ when, is, children }) => {
   const shouldRender = value => (Array.isArray(is) ? !!is.find(item => item === value) : value === is);
@@ -22,8 +25,14 @@ const FormConditionWrapper = ({ condition, children }) => (condition ? (
 ) : children);
 
 const FieldWrapper = ({ componentType, validate, component, formOptions, ...rest }) =>
-  shouldWrapInField(componentType) ?
-    <Field { ...rest } component={ component } validate={ composeValidators(validate) } />
+  shouldWrapInField(componentType)
+    ? <Field
+      type={ assignSpecialType(componentType) }
+      FieldProvider={ Field }
+      { ...rest }
+      component={ component }
+      validate={ composeValidators(validate) }
+    />
     : component({ formOptions, ...rest });
 
 const renderSingleField = ({ component, condition, ...rest }, formOptions) => (

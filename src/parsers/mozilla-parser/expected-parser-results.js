@@ -126,7 +126,7 @@ export const nestedSchemaResult = {
       label: 'Done?',
       title: 'Done?',
       default: false,
-      component: 'checkbox-field',
+      component: 'checkbox',
       type: 'checkbox',
       autoFocus: false,
       validate: [],
@@ -156,7 +156,7 @@ export const arraySchemaResult = {
     title: 'A multiple choices list',
     name: 'multipleChoicesList',
     label: 'A multiple choices list',
-    component: 'checkbox-field',
+    component: 'checkbox',
     dataType: 'string',
     validate: [],
     options: [{
@@ -344,7 +344,7 @@ export const arraySchemaResult = {
       name: 'fixedNoToolbar.items.1',
       dataType: 'boolean',
       label: 'A boolean',
-      component: 'checkbox-field',
+      component: 'checkbox',
       type: 'checkbox',
       validate: [],
       default: false,
@@ -427,7 +427,7 @@ export const numbersSchemaResult = {
       value: 3,
     }],
     inline: true,
-    component: 'radio-field',
+    component: 'radio',
     validate: [],
     type: 'radio',
   }, {
@@ -507,7 +507,7 @@ export const widgetsExpectedResult = {
       validate: [],
       autoFocus: false,
       description: 'This is the checkbox-description',
-      component: 'checkbox-field',
+      component: 'checkbox',
       type: 'checkbox',
       dataType: 'boolean',
     }, {
@@ -518,7 +518,7 @@ export const widgetsExpectedResult = {
       validate: [],
       autoFocus: false,
       description: 'This is the radio-description',
-      component: 'radio-field',
+      component: 'radio',
       type: 'radio',
       dataType: 'boolean',
       options: [{
