@@ -46,28 +46,25 @@ const FormRenderer = ({
           <RendererContext.Consumer>
             { ({ layoutMapper: { FormWrapper }}) => (
               <FormWrapper>
-                <div className="data-driven-form">
-                  { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine }) }
-                  <FormControls
-                    onSubmit={ handleSubmit }
-                    onCancel={ onCancel }
-                    canReset={ canReset }
-                    onReset={ () => {
-                      if (canReset) {
-                        onReset();
-                        reset();
-                      }
-                    } }
-                    pristine={ pristine }
-                    canSubmit={ disableSubmit ? !pristine && !valid : !pristine }
-                    { ...buttonsLabels }
-                  />
-                </div>
+                { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine }) }
+                <FormControls
+                  onSubmit={ handleSubmit }
+                  onCancel={ onCancel }
+                  canReset={ canReset }
+                  onReset={ () => {
+                    if (canReset) {
+                      onReset();
+                      reset();
+                    }
+                  } }
+                  pristine={ pristine }
+                  canSubmit={ disableSubmit ? !pristine && !valid : !pristine }
+                  { ...buttonsLabels }
+                />
               </FormWrapper>
             ) }
           </RendererContext.Consumer>
-        )
-        }
+        ) }
       />
     </RendererContext.Provider>
   );};
