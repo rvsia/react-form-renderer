@@ -100,7 +100,7 @@ describe('renderForm function', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it('should render single field from with custom componentType and assign FieldProvider', () => {
+  it('should render single field form with custom componentType and assign FieldProvider', () => {
     const formFields = [{
       component: 'custom-component',
       name: 'foo',

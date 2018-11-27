@@ -517,6 +517,99 @@ exports[`renderForm function should render condition field only if the condition
 </ContextWrapper>
 `;
 
+exports[`renderForm function should render single field form with custom componentType and assign FieldProvider 1`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper>
+      <FieldWrapper
+        assignFieldProvider={true}
+        component={[Function]}
+        componentType="custom-component"
+        formOptions={
+          Object {
+            "renderForm": [Function],
+          }
+        }
+        name="foo"
+        validate={
+          Array [
+            undefined,
+          ]
+        }
+      >
+        <_class
+          name="foo"
+          render={[Function]}
+        >
+          <Field
+            format={[Function]}
+            name="foo"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            render={[Function]}
+          >
+            <div>
+              Custom component
+            </div>
+          </Field>
+        </_class>
+      </FieldWrapper>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
 exports[`renderForm function should render single field from defined componentTypes 1`] = `
 <ContextWrapper
   formFieldsMapper={
@@ -719,99 +812,6 @@ exports[`renderForm function should render single field from with custom compone
         >
           Custom component
         </div>
-      </FieldWrapper>
-    </FormConditionWrapper>
-  </ReactFinalForm>
-</ContextWrapper>
-`;
-
-exports[`renderForm function should render single field from with custom componentType and assign FieldProvider 1`] = `
-<ContextWrapper
-  formFieldsMapper={
-    Object {
-      "custom-component": [Function],
-    }
-  }
->
-  <ReactFinalForm
-    mutators={
-      Object {
-        "insert": [Function],
-        "move": [Function],
-        "pop": [Function],
-        "push": [Function],
-        "remove": [Function],
-        "shift": [Function],
-        "swap": [Function],
-        "unshift": [Function],
-        "update": [Function],
-      }
-    }
-    onSubmit={[MockFunction]}
-  >
-    <FormConditionWrapper>
-      <FieldWrapper
-        assignFieldProvider={true}
-        component={[Function]}
-        componentType="custom-component"
-        formOptions={
-          Object {
-            "renderForm": [Function],
-          }
-        }
-        name="foo"
-        validate={
-          Array [
-            undefined,
-          ]
-        }
-      >
-        <_class
-          name="foo"
-          render={[Function]}
-        >
-          <Field
-            format={[Function]}
-            name="foo"
-            parse={[Function]}
-            reactFinalForm={
-              Object {
-                "batch": [Function],
-                "blur": [Function],
-                "change": [Function],
-                "focus": [Function],
-                "getFieldState": [Function],
-                "getRegisteredFields": [Function],
-                "getState": [Function],
-                "initialize": [Function],
-                "isValidationPaused": [Function],
-                "mutators": Object {
-                  "insert": [Function],
-                  "move": [Function],
-                  "pop": [Function],
-                  "push": [Function],
-                  "remove": [Function],
-                  "shift": [Function],
-                  "swap": [Function],
-                  "unshift": [Function],
-                  "update": [Function],
-                },
-                "pauseValidation": [Function],
-                "registerField": [Function],
-                "reset": [Function],
-                "resumeValidation": [Function],
-                "setConfig": [Function],
-                "submit": [Function],
-                "subscribe": [Function],
-              }
-            }
-            render={[Function]}
-          >
-            <div>
-              Custom component
-            </div>
-          </Field>
-        </_class>
       </FieldWrapper>
     </FormConditionWrapper>
   </ReactFinalForm>
