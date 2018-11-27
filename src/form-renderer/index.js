@@ -53,7 +53,7 @@ const FormRenderer = ({
                   canReset={ canReset }
                   onReset={ () => {
                     if (canReset) {
-                      onReset();
+                      onReset && onReset();
                       reset();
                     }
                   } }
