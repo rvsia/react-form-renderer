@@ -25,7 +25,7 @@ const FormConditionWrapper = ({ condition, children }) => (condition ? (
   </Condition>
 ) : children);
 
-const FieldWrapper = ({ componentType, validate, component, formOptions, ...rest }) => {
+const FieldWrapper = ({ componentType, validate, component, formOptions, assignFieldProvider, ...rest }) => {
   const componentProps = {
     type: assignSpecialType(componentType),
     FieldProvider: Field,
@@ -56,7 +56,7 @@ const FieldWrapper = ({ componentType, validate, component, formOptions, ...rest
 
   return shouldWrapInField(componentType)
     ? <Field { ...componentProps } />
-    : component({ formOptions, ...rest });
+    : component({ formOptions, ...rest, FieldProvider: assignFieldProvider && Field });
 };
 
 const renderSingleField = ({ component, condition, ...rest }, formOptions) => (
