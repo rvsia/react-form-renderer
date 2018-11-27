@@ -46,5 +46,5 @@ export const layoutComponents = {
   BUTTON_GROUP: 'ButtonGroup',
   ICON: 'Icon',
   ARRAY_FIELD_WRAPPER: 'ArrayFieldWrapper',
-  HELP_BLOCK: 'HelpBlock'
+  HELP_BLOCK: 'HelpBlock',
 };
