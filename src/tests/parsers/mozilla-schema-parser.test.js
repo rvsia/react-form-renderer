@@ -21,7 +21,7 @@ import {
   numbersSchemaResult,
   widgetsExpectedResult,
 } from './expected-parser-results';
-import mozillaSchemaParser from './mozilla-schema-parser';
+import mozillaSchemaParser from '../../parsers/mozilla-parser/mozilla-schema-parser';
 
 describe('Mozilla json schema parser', () => {
   it('should parse simple form example', () => {

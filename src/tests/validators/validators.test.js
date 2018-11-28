@@ -1,4 +1,4 @@
-import { required, minLength, minValue, maxValue, dataTypeValidator, patternValidator } from './';
+import { required, minLength, minValue, maxValue, dataTypeValidator, patternValidator } from '../../validators';
 
 describe('Form validators', () => {
   describe('required validator', () => {

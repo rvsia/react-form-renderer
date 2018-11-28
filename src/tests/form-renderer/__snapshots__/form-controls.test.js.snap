@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormControls /> should render all controls and with default labels 1`] = `
+<ContextWrapper>
+  <FormControls
+    canReset={true}
+    canSubmit={false}
+    cancelLabel="Cancel"
+    onCancel={[MockFunction]}
+    onReset={[MockFunction]}
+    onSubmit={[MockFunction]}
+    pristine={true}
+    resetLabel="Reset"
+    submitLabel="Submit"
+  >
+    <Component
+      xs={12}
+    >
+      <div
+        xs={12}
+      >
+        <Component>
+          <div>
+            <Component>
+              <div>
+                <Component
+                  disabled={true}
+                  label="Submit"
+                  onClick={[MockFunction]}
+                  type="button"
+                  variant="primary"
+                >
+                  <button
+                    disabled={true}
+                    onClick={[MockFunction]}
+                    type="button"
+                    variant="primary"
+                  >
+                    Submit
+                  </button>
+                </Component>
+                <Component
+                  disabled={true}
+                  label="Reset"
+                  onClick={[MockFunction]}
+                  type="button"
+                >
+                  <button
+                    disabled={true}
+                    onClick={[MockFunction]}
+                    type="button"
+                  >
+                    Reset
+                  </button>
+                </Component>
+                <Component
+                  label="Cancel"
+                  onClick={[MockFunction]}
+                  type="button"
+                >
+                  <button
+                    onClick={[MockFunction]}
+                    type="button"
+                  >
+                    Cancel
+                  </button>
+                </Component>
+              </div>
+            </Component>
+          </div>
+        </Component>
+      </div>
+    </Component>
+  </FormControls>
+</ContextWrapper>
+`;
+
+exports[`<FormControls /> should render only submit button 1`] = `
+<ContextWrapper>
+  <FormControls
+    canReset={false}
+    canSubmit={false}
+    cancelLabel="Cancel"
+    onReset={[MockFunction]}
+    onSubmit={[MockFunction]}
+    pristine={true}
+    resetLabel="Reset"
+    submitLabel="Submit"
+  >
+    <Component
+      xs={12}
+    >
+      <div
+        xs={12}
+      >
+        <Component>
+          <div>
+            <Component>
+              <div>
+                <Component
+                  disabled={true}
+                  label="Submit"
+                  onClick={[MockFunction]}
+                  type="button"
+                  variant="primary"
+                >
+                  <button
+                    disabled={true}
+                    onClick={[MockFunction]}
+                    type="button"
+                    variant="primary"
+                  >
+                    Submit
+                  </button>
+                </Component>
+              </div>
+            </Component>
+          </div>
+        </Component>
+      </div>
+    </Component>
+  </FormControls>
+</ContextWrapper>
+`;

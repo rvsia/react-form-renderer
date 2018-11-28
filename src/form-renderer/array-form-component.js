@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FieldArray } from 'react-final-form-arrays';
-import { composeValidators } from './helpers';
 import RendererContext from './renderer-context';
 
 const ArrayItem = ({
@@ -134,7 +133,6 @@ const renderArrayField = props => {
 };
 
 renderArrayField.propTypes = {
-  key: PropTypes.string.isRequired,
   title: PropTypes.string,
   description: PropTypes.string,
   fields: PropTypes.array.isRequired,

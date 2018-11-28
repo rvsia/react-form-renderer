@@ -1,4 +1,4 @@
-import miqParse from './miq-parser';
+import miqParse from '../../parsers/miq-parser/miq-parser';
 import inputJSON from '../../demo-schemas/miq-schemas/input';
 import outputJSON, { defaultValues } from '../../demo-schemas/miq-schemas/output';
 
