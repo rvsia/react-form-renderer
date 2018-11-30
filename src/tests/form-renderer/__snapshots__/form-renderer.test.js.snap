@@ -203,6 +203,7 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
       Object {
         "pristine": true,
         "submitting": true,
+        "valid": true,
       }
     }
   >
@@ -252,9 +253,14 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             formOptions={
               Object {
                 "change": [Function],
+                "getState": [Function],
+                "onCancel": undefined,
+                "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "submit": [Function],
+                "valid": true,
               }
             }
             key="stringFormats"
@@ -336,9 +342,14 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             formOptions={
               Object {
                 "change": [Function],
+                "getState": [Function],
+                "onCancel": undefined,
+                "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "submit": [Function],
+                "valid": true,
               }
             }
             key="boolean"
@@ -421,9 +432,14 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             formOptions={
               Object {
                 "change": [Function],
+                "getState": [Function],
+                "onCancel": undefined,
+                "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "submit": [Function],
+                "valid": true,
               }
             }
             key="string"
@@ -451,9 +467,14 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             formOptions={
               Object {
                 "change": [Function],
+                "getState": [Function],
+                "onCancel": undefined,
+                "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "submit": [Function],
+                "valid": true,
               }
             }
             label="secret"
@@ -572,9 +593,14 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             formOptions={
               Object {
                 "change": [Function],
+                "getState": [Function],
+                "onCancel": undefined,
+                "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "submit": [Function],
+                "valid": true,
               }
             }
             label="A disabled field"
@@ -697,9 +723,14 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             formOptions={
               Object {
                 "change": [Function],
+                "getState": [Function],
+                "onCancel": undefined,
+                "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "submit": [Function],
+                "valid": true,
               }
             }
             label="A readonly field"
@@ -822,9 +853,14 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             formOptions={
               Object {
                 "change": [Function],
+                "getState": [Function],
+                "onCancel": undefined,
+                "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "submit": [Function],
+                "valid": true,
               }
             }
             label="Custom widget with options"
@@ -946,9 +982,14 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             formOptions={
               Object {
                 "change": [Function],
+                "getState": [Function],
+                "onCancel": undefined,
+                "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "submit": [Function],
+                "valid": true,
               }
             }
             label="Custom select widget with options"

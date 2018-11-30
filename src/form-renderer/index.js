@@ -14,6 +14,8 @@ const schemaMapper = type => ({
   default: schema => ({ schema }),
 })[type];
 
+const renderControls = ({ formStyle, ...props }) => formStyle !== 'wizard' ? <FormControls { ...props }/> : null;
+
 const FormRenderer = ({
   layoutMapper,
   formFieldsMapper,
@@ -41,26 +43,26 @@ const FormRenderer = ({
           ...inputSchema.defaultValues,
           ...initialValues,
         }}
-        subscription={{ pristine: true, submitting: true }}
-        render={ ({ handleSubmit, pristine, valid, form: { reset, mutators, change }}) => (
+        subscription={{ pristine: true, submitting: true, valid: true }}
+        render={ ({ handleSubmit, pristine, valid, form: { reset, mutators, change, getState, submit }}) => (
           <RendererContext.Consumer>
             { ({ layoutMapper: { FormWrapper }}) => (
               <FormWrapper>
-                { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine }) }
-                <FormControls
-                  onSubmit={ handleSubmit }
-                  onCancel={ onCancel }
-                  canReset={ canReset }
-                  onReset={ () => {
+                { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine, onSubmit, onCancel, getState, valid, submit }) }
+                { renderControls({
+                  formStyle: schema.formStyle,
+                  onSubmit: handleSubmit,
+                  onCancel,
+                  canReset,
+                  onReset: () => {
                     if (canReset) {
                       onReset && onReset();
                       reset();
-                    }
-                  } }
-                  pristine={ pristine }
-                  canSubmit={ disableSubmit ? !pristine && !valid : !pristine }
-                  { ...buttonsLabels }
-                />
+                    }},
+                  pristine,
+                  canSubmit: disableSubmit ? !pristine && !valid : !pristine,
+                  ...buttonsLabels,
+                }) }
               </FormWrapper>
             ) }
           </RendererContext.Consumer>

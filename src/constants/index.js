@@ -12,6 +12,7 @@ export const components = {
   DATE_PICKER: 'date-picker',
   TIME_PICKER: 'time-picker',
   TAG_CONTROL: 'tag-control',
+  WIZARD: 'wizard',
 };
   /** Validator functions placeholder */
 export const validators = {
