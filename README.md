@@ -490,7 +490,7 @@ Unlike the layout components, form fields are completely customizable, and the i
 
 As said before, some of the component types are wrapped in this component [by default](#assign-field-provider) and if you need to use different component type, you can pass it as a prop by adding the `assignFieldProvider: true` attribute to field.
 
-In example bellow you can see implementation if simple input component using both predefined component type and custom one
+In an example below you can see an implementation of a simple input component using both predefined component type and a custom one.
 
 ```JSX
 import { componentTypes, validatorTypes } from '@data-driven-forms/react-form-renderer';
