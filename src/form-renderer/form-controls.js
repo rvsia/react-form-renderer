@@ -12,14 +12,14 @@ const FormControls = ({
   resetLabel,
   pristine,
   canReset,
-  canSubmit,
+  disableSubmit,
 }) => (
   <RendererContext.Consumer>
     { ({ layoutMapper: { Col, FormGroup, Button, ButtonGroup }}) => (
       <Col xs={ 12 }>
         <FormGroup>
           <ButtonGroup>
-            <Button type="button" variant="primary" disabled={ !canSubmit } onClick={ onSubmit } label={ submitLabel } />
+            <Button type="button" variant="primary" disabled={ disableSubmit } onClick={ onSubmit } label={ submitLabel } />
             { canReset && <Button type="button" disabled={ pristine } onClick={ onReset } label={ resetLabel } /> }
             { onCancel && <Button type="button" onClick={ onCancel } label={ cancelLabel } /> }
           </ButtonGroup>
@@ -38,7 +38,7 @@ FormControls.propTypes = {
   resetLabel: PropTypes.string,
   pristine: PropTypes.bool,
   canReset: PropTypes.bool,
-  canSubmit: PropTypes.bool,
+  disableSubmit: PropTypes.bool,
 };
 
 FormControls.defaultProps = {

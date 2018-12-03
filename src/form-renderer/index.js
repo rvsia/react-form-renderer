@@ -16,6 +16,8 @@ const schemaMapper = type => ({
 
 const renderControls = ({ formStyle, ...props }) => formStyle !== 'wizard' ? <FormControls { ...props }/> : null;
 
+const isDisabled = (disableStates, getState) => disableStates.map(item => getState()[item]).find(item => !!item);
+
 const FormRenderer = ({
   layoutMapper,
   formFieldsMapper,
@@ -60,7 +62,7 @@ const FormRenderer = ({
                       reset();
                     }},
                   pristine,
-                  canSubmit: disableSubmit ? !pristine && !valid : !pristine,
+                  disableSubmit: isDisabled(disableSubmit, getState),
                   ...buttonsLabels,
                 }) }
               </FormWrapper>
@@ -81,7 +83,7 @@ FormRenderer.propTypes = {
   schema: PropTypes.object.isRequired,
   schemaType: PropTypes.oneOf([ 'mozilla', 'miq', 'default' ]),
   buttonsLabels: PropTypes.object,
-  disableSubmit: PropTypes.bool,
+  disableSubmit: PropTypes.arrayOf(PropTypes.string),
   initialValues: PropTypes.object,
   uiSchema: PropTypes.object,
 };
@@ -91,7 +93,7 @@ FormRenderer.defaultProps = {
   resetAble: false,
   schemaType: 'default',
   buttonsLabels: {},
-  disableSubmit: false,
+  disableSubmit: [],
   initialValues: {},
   uiSchema: {},
 };
