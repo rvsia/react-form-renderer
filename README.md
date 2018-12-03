@@ -543,7 +543,7 @@ const schema = {
 ```
 
 #### What about nesting?
-You might sometimes need something like a SubForm in your Forms. Fortunatelly this is allso possible. There are two ways to do it.
+There might be a need to create something like a SubForm in your Forms. We made it possible, and there are two ways to do it.
 
 1. Use pre defined `componentTypes.SUB_FORM` component type:
 ```JSX
