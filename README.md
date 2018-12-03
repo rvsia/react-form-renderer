@@ -85,7 +85,7 @@ const schema = {
 }
 ```
 
-Example above shows definition of very simple form with two form fields and validation. We will now take a closer look at its attributes.
+Example above shows definition of a very simple form with two form fields and a validation. We will now take a closer look at its attributes.
 
 #### <a name="default-schema-attributes"></a> `default-schema-attributes`
 |name|data type|
