@@ -47,7 +47,7 @@ const DataDrivenForm = () => (
 There are several required props that must be passed to the component. Check the examples below to learn how it works.
 
 ## <a href="form-schemas"></a> Form schemas
-There are currently 3 schema definitions you can use to define your forms. With the intention to provide additional customization in future. Currently supported schemas are:
+There are currently 3 schema definitions you can use to define your forms. With the intention to provide additional customization in the future. Currently supported schemas are:
 
 - [default schema](#default-schema)
 - ManageIQ schema
