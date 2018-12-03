@@ -587,7 +587,7 @@ Again, the `SUB_FORM` component type might not be the correct solution for your 
 component: componentTypes.SUB_FORM, -> component: 'custom-sub-form'
 ```
 
-If you use custom type, in addition to all the attributes in the field specification, you will also receive `formOptions` props. Form options contains some global form properties, and most importantly, there is a `renderForm` function. It does exactly what it says. It is the main loop that renders the form. It acceps two arguments, `fields` and `formOptions`:
+If you use custom type, in addition to all the attributes in the field specification, you will also receive `formOptions` props. Form options contains some global form properties, and most importantly, there is a `renderForm` function. It does exactly what it says. It is the main loop that renders the form. It accepts two arguments, `fields` and `formOptions`:
 
 ```JSX
 const CustomSubForm = ({ formOptions, fields, ...rest }) => (
