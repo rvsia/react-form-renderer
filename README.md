@@ -582,7 +582,7 @@ This will render and bundle fields and their values inside the `SUB_FORM` compon
 ```
 
 2. Custom component
-Again, the `SUB_FORM` component type might not be the correct solution for your use case. So you can always create your own. Lets use the same schema as in example above, with one change:
+Again, the `SUB_FORM` component type might not be the correct solution for your use case. You can always create your own. Let's use the same schema as in example above, but only with one change:
 ```javascript
 component: componentTypes.SUB_FORM, -> component: 'custom-sub-form'
 ```
