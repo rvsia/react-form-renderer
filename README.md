@@ -24,7 +24,7 @@ yarn add @data-driven-forms/react-form-renderer
 ```
 
 ## <a name="getting-started"></a>Getting started
-React form renderer is a component designed for ManageIQ and Insighs projects that takes json form definitions and render them into react components. It uses [React final form](https://github.com/final-form/react-final-form) for the form state management. It is highly recommended to check their documentations first to fully understand how the [data-driven-forms](https://github.com/data-driven-forms) libraries work.
+React form renderer is a component designed for ManageIQ and Insighs projects that takes json form definitions and renders them into react components. It uses [React final form](https://github.com/final-form/react-final-form) for the form state management. It is highly recommended to check their documentations first to fully understand how the [data-driven-forms](https://github.com/data-driven-forms) libraries work.
 
 Code examples:
 
@@ -46,17 +46,17 @@ const DataDrivenForm = () => (
 
 There are several required props that must be passed to the component. Check the examples below to learn how it works.
 
-## <a href="form-schemas"></a> Form schemas
+## <a name="form-schemas"></a> Form schemas
 There are currently 3 schema definitions you can use to define your forms. With the intention to provide additional customization in the future. Currently supported schemas are:
 
 - [default schema](#default-schema)
 - ManageIQ schema
-- mozilla json schema
+- Mozilla json schema
 
 ### <a name="default-schema"></a> Default schema
 This is the default schema that is used directly for rendering the form. All other schema types are parsed to this one. This gives the option to write your custom parser that transforms any of your existing definitions into the default one, and use this renderer.
 
-The default schema is also very extensible. There is only a few requirements for the format. Most of the attributes is meta information and their shape is based upon **your** form components.
+The default schema is also very extensible. There is only a few requirements for the format. Most of the attributes are meta information and their shape is based upon **your** form components.
 
 ```javascript
 import { componentTypes, validatorTypes } from '@data-driven-forms/react-form-renderer';
@@ -94,13 +94,13 @@ Example above shows definition of a very simple form with two form fields and a 
 |`description?`| string|
 |`fields`|Array of Objects|
 
-Detailed descriptions of each attribute is bellow.
+Detailed descriptions of each attribute is below.
 
 #### `title?: string`
-Attribute, that defines form title. 
+Attribute defining form title.
 
 #### `description?: string`
-Attribute, that defines form description. 
+Attribute defining form description. 
 
 #### `fields: Array.<Object>`
 Array that contains field definitions.
@@ -112,15 +112,15 @@ This is the main data structure that holds definitions of all of the form fields
 const fields = [{...}, [{...}, {...}], {...}, {...}, [[[{...}]]]]
 ```
 
-In human language, items of field array must be either objects, where each object represents one formField (React component), or array of objects, which are form fields too. This rule allows the component to render all fields, in one cycle with minimal code branching.
+In human language, items of field array must be either objects, where each object represents one formField (React component), or array of objects, which are form fields as well. This rule allows the component to render all the fields in one cycle with minimal code branching.
 
-The structure of single object is following:
+The structure of a single object is following:
 
 #### <a name="field-attributes"></a> `field attributes`
 
-There are listed all field (items of the `fields` array) attributes, that are defined by the default schema. Any other attributes given to field object are automatically passed to the specified component.
+There are listed all field (items of the `fields` array) attributes that are defined by the default schema. Any other attributes given to field object are automatically passed to the specified component.
 
-Detailed descriptions of each attribute is bellow.
+Detailed descriptions of each attribute is below.
 
 
 |name|type|
@@ -147,10 +147,10 @@ const field = {
 }
 ```
 
-Note that the field structure may vary based on your component implementation. There are a few required attributes and most of the does not have to match given types. Most of them are based on used form components.
+Note that the field structure may vary based on your component implementation. There are few required attributes and most of them do not have to match the given types. Most of them are based on used form components.
 
 #### `component: string`
-Unique identifier of the component. Final component will be picked based in this key. There are several pre-defined constants identifying the most common components for ManageIQ and Insigths apps.
+Unique identifier of the component. Final component will be picked based on this key. There are several pre-defined constants identifying the most common components for ManageIQ and Insights apps.
 
 ```javascript
 import { componentTypes } from '@data-driven-forms/react-form-renderer';
@@ -172,18 +172,18 @@ componentTypes = {
 }
 ```
 
-You are not limited by these. You can add your own or use only a few of them or combination of both. More detailed explanation of how this will impact the rendered form [can be found here](#form-fields-mapper).
+We are not limited by these component types. You can add your own type or use only few of them or combination of both. More detailed explanation of how this impacts the rendered form [can be found here](#form-fields-mapper).
 
-#### `name`
+#### `name: string`
 This is traditional html5 name attribute for input elements.
 
 #### `label`
-Label for form field. Its type is based on your component definition.
+Label for form field. The type is based on your component definition.
 
 #### `validate: Array?<Object>`
 Array of validation definitions. These are limited by the form renderer (Might be configurable in future).
 
-If you want to use out of the box validation, you must use this defined format:
+If you want to use out of the box validation, you must use this format:
 ```javascript
 const validate = [{
   type: string,
@@ -244,7 +244,7 @@ const validate = [{
 Validation functions are triggered only when field has a value with exception of required validator.
 
 #### `dataType: string?`
-In addition to explicitly defined validation, you can also add validation based on data type of the field. This can be helpfull in cases, where you can enforce data type with input type.
+Adds field validation based on the value data type.
 
 ```javascript
 import { componentTypes } from '@data-driven-forms/react-form-renderer';
@@ -264,7 +264,8 @@ There are currently four defined data types:
 ```
 
 #### <a name="assign-field-provider"></a> `assignFieldProvider: bool?`
-FieldProvider is just a fancy name for [Field component](https://github.com/final-form/react-final-form#field--reactcomponenttypefieldprops). Following component types are wrapper by it by default:
+FieldProvider is just a fancy name for [Field component](https://github.com/final-form/react-final-form#field--reactcomponenttypefieldprops). Following component types are wrapped in the FieldProvider by default:
+
 ```javascript
 import { componentTypes } from '@data-driven-forms/react-form-renderer';
 
@@ -326,7 +327,7 @@ In example above, field `Bar` will appear when fields `Foo` value is `Show bar f
 
 #### Other attributes
 
-Any other attributes will be passed to the component, that matches the `component` identifier.
+Any other attributes will be passed to the component matching the `component` identifier.
 
 For examples definition of select component might look something like this:
 
@@ -350,21 +351,21 @@ const field = {
 }
 ```
 
-Remember that the components define the interface. If your label should be image, just pass it image source with isImage flag maybe and handle rendering in the component.
+Remember that the components define the interface. If your label is an image, pass the image source with isImage flag maybe and handle rendering in the component.
 
 ### Field array and Fixed list
 TO DO add documentaion here
 
-## <a name="component-mappers"></a> Component mapping
+## <a name="component-mappers"></a> Component Mapping
 
-In the text above it was mentioned several times, that you can define your own components for rendering. In fact, you have to define them because the Form Renderer does not know anything about them. This way, the renderer is universal and can be used with any component library or your custom components. It is also very easy to swap look of form without any changes to the format!
+As it was already mentioned, you can define your own components for rendering. In fact, you have to define them because the Form Renderer does not know anything about them. This way, the renderer is universal and can be used with any component library or your custom components. It is also very easy to swap the look of the form without any changes to the format!
 
-We also understand that writing form components from the scratch might not be very user friendly. ManageIQ and Insights are using [patternfly style patterns](http://patternfly-react.surge.sh/), so you can inspire yourself with [Patternfly 3](https://github.com/data-driven-forms/pf3-component-mapper) and [Patternfly 4](https://github.com/data-driven-forms/pf4-component-mapper) mappers.
+We also understand that writing form components from the scratch might not be very user friendly. ManageIQ and Insights are using [patternfly style patterns](http://patternfly-react.surge.sh/), so you can get inspired with [Patternfly 3](https://github.com/data-driven-forms/pf3-component-mapper) and [Patternfly 4](https://github.com/data-driven-forms/pf4-component-mapper) mappers.
 
 Form renderer requires two different mappers. Layout mapper and Form  FieldsMapper.
 
 ### <a name="layout-mapper"></a> Layout mapper
-Component inside this mapper, influence the layout of the form. Now compared to the Form Fields mapper, it is stric, because you cant define your own elements. Layout mapper must contain these types components: 
+Component inside this mapper influence the layout of the form. Now compared to the Form Fields mapper, we have to be very strict because we cannot define our own elements. Layout mapper must contain these types components:
 
 ```javascript
 import { layoutComponents } from '@data-driven-forms/react-form-renderer';
@@ -381,7 +382,7 @@ const layoutComponents = {
 }
 ```
 
-LayoutMapper is just good old javascript object, with keys from layoutComponents, and values are just React components:
+LayoutMapper is just good old javascript object with keys from layoutComponents, and the values are just React components:
 
 #### FormWrapper
 
@@ -423,7 +424,7 @@ const layoutMapper = {
 ```
 
 #### Col
-Col represents wrapper arround one Form Field (hence the name Col). It does not have to mirror bootstrap Col, that is just the name we have decided to go with. If you for instance don't need any Col (or other wrapping) component, and you are handling this inside the actual Field component you can use `<React.Fragment>` component. This way you will not create any element in your DOM. On the other hand, it might be usefull as a container for your components. Because we can't posibbly create layout that will suit 100% of use cases, you can use this wrapper to pass additional styles to field components.
+Col represents wrapper arround one Form Field (hence the name Col). It does not have to mirror bootstrap Col, which is just the name we have decided to go with. If you for instance don't need any Col (or other wrapping) component, and you are handling this inside the actual Field component, you can use `<React.Fragment>` component. This way you will not create any element in your DOM. On the other hand, it might be usefull to implement it as a container for your components. Because we can't possibly create layout that suit 100% of our use cases, we can use this wrapper to pass additional styles to field components.
 
 ```JSX
 import './form/styles.scss';
@@ -486,9 +487,9 @@ const MyForm = () => (
 
 ### <a name="form-fields-mapper"></a> Form Fields mapper
 
-Unlike the layout components, form fields are completely customizable, and the implementation is restricted to only one rule. In order to correctly change the form state you have to use provided `input` and `meta` props on your input fields. These objects provide functions like `onChange`, `onBlur`, error messages, valid state and more. Again you should probably read more about then in the [React Final Form docs](https://github.com/final-form/react-final-form#field--reactcomponenttypefieldprops).
+Unlike the layout components, the form fields are completely customizable, and the implementation is restricted to only one rule. In order to correctly change the form state, you have to use provided `input` and `meta` props to your input fields. These objects provide functions like `onChange`, `onBlur`, error messages, valid state and more. Again you should probably read more about that in the [React Final Form docs](https://github.com/final-form/react-final-form#field--reactcomponenttypefieldprops).
 
-As said before, some of the component types are wrapped in this component [by default](#assign-field-provider) and if you need to use different component type, you can pass it as a prop by adding the `assignFieldProvider: true` attribute to field.
+Some of the component types are wrapped in the Field component [by default](#assign-field-provider) and if you need to use different component type, you can pass it as a prop by adding the `assignFieldProvider: true` attribute to the field.
 
 In an example below you can see an implementation of a simple input component using both predefined component type and a custom one.
 
