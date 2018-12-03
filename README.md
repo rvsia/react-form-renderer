@@ -54,7 +54,7 @@ There are currently 3 schema definitions you can use to define your forms. With 
 - mozilla json schema
 
 ### <a name="default-schema"></a> Default schema
-This is the default schema that is used directly for rendering the form. All other schema types are parsed to this one. This gives the option to write your custom parser, that will transform any of your existing definitions into the default one, and use this renderer.
+This is the default schema that is used directly for rendering the form. All other schema types are parsed to this one. This gives the option to write your custom parser that transforms any of your existing definitions into the default one, and use this renderer.
 
 The default schema is also very extensible. There is only a few requirements for the format. Most of the attributes is meta information and their shape is based upon **your** form components.
 
