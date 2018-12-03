@@ -35,7 +35,7 @@ describe('<FormControls />', () => {
   it('should render all controls and with default labels', () => {
     const wrapper = mount(
       <ContextWrapper>
-        <FormControls { ...initialProps }/>
+        <FormControls { ...initialProps }  disableSubmit/>
       </ContextWrapper>
     );
     expect(toJson(wrapper)).toMatchSnapshot();

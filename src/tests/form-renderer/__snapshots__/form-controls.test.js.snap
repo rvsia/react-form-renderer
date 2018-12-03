@@ -6,6 +6,7 @@ exports[`<FormControls /> should render all controls and with default labels 1`]
     canReset={true}
     canSubmit={false}
     cancelLabel="Cancel"
+    disableSubmit={true}
     onCancel={[MockFunction]}
     onReset={[MockFunction]}
     onSubmit={[MockFunction]}
@@ -98,14 +99,12 @@ exports[`<FormControls /> should render only submit button 1`] = `
             <Component>
               <div>
                 <Component
-                  disabled={true}
                   label="Submit"
                   onClick={[MockFunction]}
                   type="button"
                   variant="primary"
                 >
                   <button
-                    disabled={true}
                     onClick={[MockFunction]}
                     type="button"
                     variant="primary"

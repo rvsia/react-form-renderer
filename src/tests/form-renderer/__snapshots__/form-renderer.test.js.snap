@@ -3,7 +3,7 @@
 exports[`<FormRenderer /> should render form from schema 1`] = `
 <FormRenderer
   buttonsLabels={Object {}}
-  disableSubmit={false}
+  disableSubmit={Array []}
   formFieldsMapper={
     Object {
       "checkbox": [Function],
@@ -1183,14 +1183,12 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                   <Component>
                     <div>
                       <Component
-                        disabled={true}
                         label="Submit"
                         onClick={[Function]}
                         type="button"
                         variant="primary"
                       >
                         <button
-                          disabled={true}
                           onClick={[Function]}
                           type="button"
                           variant="primary"
