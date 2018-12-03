@@ -570,7 +570,7 @@ const schema = {
 }
 ```
 
-This will render and bundle fields and their values inside the `SUB_FORM` component. When you submit the form, the values object will look somethink like this:
+This renders and bundles fields and their values inside the `SUB_FORM` component. When the form is submitted, the values object will look something like this:
 ```json
 {
   "first-name": "Bob",
