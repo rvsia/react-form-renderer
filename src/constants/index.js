@@ -13,6 +13,7 @@ export const components = {
   TIME_PICKER: 'time-picker',
   TAG_CONTROL: 'tag-control',
   WIZARD: 'wizard',
+  SWITCH: 'switch-field',
 };
   /** Validator functions placeholder */
 export const validators = {
