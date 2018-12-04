@@ -1,93 +1,125 @@
-import { required, minLength, minValue, maxValue, dataTypeValidator, patternValidator } from '../../validators';
+import { validators } from '../../constants';
+import { dataTypeValidator } from '../../validators/';
+import validatorMapper from '../../validators/validator-mapper';
+import Validator from '../../validators/validators';
+import messages from '../../validators/messages';
 
-describe('Form validators', () => {
-  describe('required validator', () => {
-    it('should pass the validation', () => {
-      expect(required('foo')).toBeUndefined();
+describe('New validators', () => {
+  describe('Required validator', () => {
+    it('should pass required validator', () => {
+      expect(validatorMapper(validators.REQUIRED)()('Foo')).toBeUndefined();
     });
 
-    it('should return default error message', () => {
-      expect(required(undefined)).toEqual('Required');
+    it('should fail required validator', () => {
+      expect(validatorMapper(validators.REQUIRED)()()).toBe('Required');
     });
 
-    it('should return custom error message', () => {
-      expect(required({ message: 'Foo' })(undefined)).toEqual('Foo');
+    it('should fail required validator if string of white spaces', () => {
+      expect(validatorMapper(validators.REQUIRED)()('  ')).toBe('Required');
+    });
+
+    it('should fail required validator if empty string', () => {
+      expect(validatorMapper(validators.REQUIRED)()('')).toBe('Required');
+    });
+
+    it('should fail required validator if empty array', () => {
+      expect(validatorMapper(validators.REQUIRED)()([])).toBe('Required');
     });
   });
 
-  describe('min length validator', () => {
-    it('should pass the validation', () => {
-      expect(minLength({ treshold: 5 })('Some longer text')).toBeUndefined();
+  describe('Length validator', () => {
+    it('should pass is 5 chars long validation', () => {
+      expect(validatorMapper(validators.EXACT_LENGTH)({ treshold: 5 })('12345')).toBeUndefined();
     });
 
-    it('should return default error message', () => {
-      expect(minLength({ treshold: 99 })('Foo')).toEqual('Should be at least 99 long');
+    it('should fail is 5 chars long validation', () => {
+      expect(validatorMapper(validators.EXACT_LENGTH)({ treshold: 5 })('1234')).toBe('Should be 5 characters long.');
+    });
+
+    it('should fail is 5 chars long validation with custom message', () => {
+      expect(validatorMapper(validators.EXACT_LENGTH)({ treshold: 5, message: 'Not 5 long' })('123456')).toBe('Not 5 long');
+    });
+
+    it('should pass min 3 chars long validation', () => {
+      expect(validatorMapper(validators.MIN_LENGTH)({ treshold: 3 })('12345')).toBeUndefined();
+    });
+
+    it('should not pass is min 3 chars long validation', () => {
+      expect(validatorMapper(validators.MIN_LENGTH)({ treshold: 3 })('12')).toBe('Must have at least 3 characters.');
+    });
+
+    it('should not pass is min 3 chars long validation with custom message', () => {
+      expect(validatorMapper(validators.MIN_LENGTH)({ treshold: 3, message: 'Too short!' })('12')).toBe('Too short!');
+    });
+
+    it('should pass max 3 chars long validation', () => {
+      expect(validatorMapper(validators.MAX_LENGTH)({ treshold: 3 })('12')).toBeUndefined();
+    });
+
+    it('should not pass max 3 chars long validation', () => {
+      expect(validatorMapper(validators.MAX_LENGTH)({ treshold: 3 })('1234')).toBe('Can have maximum of 3 characters.');
+    });
+
+    it('should not pass max 3 chars long validation with custom message', () => {
+      expect(validatorMapper(validators.MAX_LENGTH)({ treshold: 3, message: 'Too long!' })('1234')).toBe('Too long!');
+    });
+  });
+
+  describe('pattern validator', () => {
+    it('should pass pattern validation with configured regexp pattern', () => {
+      expect(validatorMapper(validators.PATTERN_VALIDATOR)({ pattern: /^Foo$/ })('Foo')).toBeUndefined();
+    });
+
+    it('should fail pattern validation and return default message', () => {
+      expect(validatorMapper(validators.PATTERN_VALIDATOR)({ pattern: /^Foo$/ })('Bar')).toEqual('Value does not match pattern: /^Foo$/.');
+    });
+
+    it('should fail pattern validation and return custom message', () => {
+      expect(validatorMapper(validators.PATTERN_VALIDATOR)({ pattern: /^Foo$/, message: 'Custom message' })('Bar')).toEqual('Custom message');
+    });
+
+    it('should pass pattern validation with configured regexp pattern as string', () => {
+      expect(validatorMapper(validators.PATTERN_VALIDATOR)({ pattern: '^Foo$' })('Foo')).toBeUndefined();
+    });
+
+    it('should fail pattern validation with configured regexp pattern as string', () => {
+      expect(validatorMapper(validators.PATTERN_VALIDATOR)({ pattern: '^Foo$' })('Bar')).toBe('Value does not match pattern: ^Foo$.');
     });
   });
 
   describe('min value validator', () => {
     it('should pass the validation', () => {
-      expect(minValue({ value: 99 })(123)).toBeUndefined();
+      expect(validatorMapper(validators.MIN_NUMBER_VALUE)({ value: 99 })(123)).toBeUndefined();
     });
 
     it('should pass the validation if no input given', () => {
-      expect(minValue({ value: 99 })()).toBeUndefined();
+      expect(validatorMapper(validators.MIN_NUMBER_VALUE)({ value: 99 })()).toBeUndefined();
     });
 
     it('should not pass the validation', () => {
-      expect(minValue({ value: 99 })(1)).toEqual('Should be greater or equal to: 99');
+      expect(validatorMapper(validators.MIN_NUMBER_VALUE)({ value: 99 })(1)).toEqual('Value must be greater than 99.');
     });
 
     it('should not pass the validation and return custom message', () => {
-      expect(minValue({ value: 99, message: 'Foo' })(1)).toEqual('Foo 99');
-    });
-
-    describe('max value validator', () => {
-      it('should pass the validation', () => {
-        expect(maxValue({ value: 99 })(1)).toBeUndefined();
-      });
-
-      it('should pass the validation if no input given', () => {
-        expect(maxValue({ value: 99 })()).toBeUndefined();
-      });
-
-      it('should not pass the validation', () => {
-        expect(maxValue({ value: 99 })(123)).toEqual('Should be less or equal to: 99');
-      });
-
-      it('should not pass the validation and return custom validation', () => {
-        expect(maxValue({ value: 99, message: 'Foo' })(123)).toEqual('Foo 99');
-      });
+      expect(validatorMapper(validators.MIN_NUMBER_VALUE)({ value: 99, message: 'Foo' })(1)).toEqual('Foo');
     });
   });
 
-  describe('pattern validator', () => {
-    it('should pass pattern validation with no configuration', () => {
-      expect(patternValidator('Foo')).toBeUndefined();
+  describe('max value validator', () => {
+    it('should pass the validation', () => {
+      expect(validatorMapper(validators.MAX_NUMBER_VALUE)({ value: 99 })(1)).toBeUndefined();
     });
 
-    it('should pass pattern validation with configured regexp pattern', () => {
-      expect(patternValidator({ pattern: /^Foo$/ })('Foo')).toBeUndefined();
+    it('should pass the validation if no input given', () => {
+      expect(validatorMapper(validators.MAX_NUMBER_VALUE)({ value: 99 })()).toBeUndefined();
     });
 
-    it('should pass pattern validation with configured error message', () => {
-      expect(patternValidator({ message: 'Regexp pattern' })()).toBeUndefined();
+    it('should not pass the validation', () => {
+      expect(validatorMapper(validators.MAX_NUMBER_VALUE)({ value: 99 })(123)).toEqual('Value must be less than 99');
     });
 
-    it('should fail pattern validation and return default message', () => {
-      expect(patternValidator({ pattern: /^Foo$/ })('Bar')).toEqual('Value must match pattern: /^Foo$/');
-    });
-
-    it('should fail pattern validation and return custom message', () => {
-      expect(patternValidator({ pattern: /^Foo$/, message: 'Custom message' })('Bar')).toEqual('Custom message: /^Foo$/');
-    });
-
-    it('should fail pattern validation and return custom message but not show pattern', () => {
-      expect(patternValidator({ pattern: /^Foo$/, message: 'Custom message', showPattern: false })('Bar')).toEqual('Custom message');
-    });
-
-    it('should pass pattern validation with configured regexp pattern as string', () => {
-      expect(patternValidator({ pattern: '^Foo$' })('Foo')).toBeUndefined();
+    it('should not pass the validation and return custom validation', () => {
+      expect(validatorMapper(validators.MAX_NUMBER_VALUE)({ value: 99, message: 'Foo' })(123)).toEqual('Foo');
     });
   });
 
@@ -142,6 +174,27 @@ describe('Form validators', () => {
 
     it('should return numberValidator and fail', () => {
       expect(dataTypeValidator('integer')({ message: 'Should be super interger' })('Foo')).toEqual('Should be super interger');
+    });
+  });
+  describe('Validators default messages overrides', () => {
+    beforeAll(() => {
+      // set custom messages ovverides for validators
+      Validator.messages = {
+        ...Validator.messages,
+        required: 'Foo required',
+        tooShort: 'Bar',
+      };
+    });
+    afterAll(() => {
+      // reset custom messages ovverides for validators
+      Validator.messages = {
+        ...messages,
+      };
+    });
+
+    it('should fail validations and return globally overriden messages', () => {
+      expect(validatorMapper(validators.REQUIRED)()()).toEqual('Foo required');
+      expect(validatorMapper(validators.MIN_LENGTH)({ treshold: 5 })('12')).toEqual('Bar');
     });
   });
 });

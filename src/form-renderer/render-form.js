@@ -85,10 +85,8 @@ const prepareFieldProps = field => ({
   ...field,
   dataType: undefined,
   validate: field.validate
-    ? [ ...field.validate.map(({ type, ...options }) => Object.keys(options).length === 0
-      ? validatorMapper(type)
-      : validatorMapper(type)(options)),
-    field.dataType && dataTypeValidator(field.dataType)(),
+    ? [ ...field.validate.map(({ type, ...options }) => validatorMapper(type)(options)),
+      field.dataType && dataTypeValidator(field.dataType)(),
     ]
     : [ field.dataType && dataTypeValidator(field.dataType)() ],
 });

@@ -18,7 +18,8 @@
       "beforeAll": true,
       "describe": true,
       "expect": true,
-      "it": true
+      "it": true,
+      "arguments": true
     },
     "extends": ["react-app", "prettier", "eslint:recommended", "plugin:react/recommended"],
     "env": {

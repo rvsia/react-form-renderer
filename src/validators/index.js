@@ -1,68 +1,166 @@
-/* eslint no-nested-ternary: "off" */
-const memoize = (fn) => {
-  const cache = {};
-  return (...args) => {
-    const strigyfiedArgs = JSON.stringify(args);
-    const result = cache[strigyfiedArgs] || fn(...args);
-    // if no configuration is passed to validator it will call it imidiatelly
-    if (Array.isArray(args[0])) { return result(); }
+import { memoize, prepare, prepareMsg, selectNum, isNumber, trunc } from './helpers';
 
-    if (typeof args[0] !== 'object') { return result(); }
+export const required = memoize(({ message } = {}) => {
+  return prepare(value => {
+    const cond =  typeof value === 'string' ? !value.trim() : value && !isNaN(value.length) ? !value.length : !value;
+    if (cond) {
+      return prepareMsg(message, 'required').defaultMessage;
+    }
+  });
+});
 
-    return result;
-  };
-};
-
-const stringValidator = memoize(({ message } = { message: 'Field value has to be string' }) =>
-  value => {
-    if (Array.isArray(value)) {
-      const nonString = value.filter(item => typeof item !== 'string');
-      return nonString.length > 0 ? `Some field values are not string: ${nonString.toString()}` : undefined;
+export const length = memoize(({
+  '=': equal,
+  is,
+  max,
+  maximum,
+  min,
+  minimum,
+  message,
+} = {}) => {
+  equal = selectNum(equal, is);
+  min = selectNum(min, minimum);
+  max = selectNum(max, maximum);
+  return prepare (value => {
+    if (!value) {
+      return;
     }
 
-    return (!value ? undefined : typeof value === 'string' ? undefined : message);
-  }
-);
-const booleanValidator = memoize(({ message } = { message: 'Field value has to be boolean' }) =>
-  value => (!value ? undefined : typeof value === 'boolean'
-    ? undefined : value === 'true' || value === 'false' ? undefined : message));
+    if (equal !== null && value.length !== equal) {
+      const msg = prepareMsg(message, 'wrongLength', { count: equal }).defaultMessage;
+      return typeof msg === 'string' ? msg : msg(equal);
+    }
 
-export const patternValidator = memoize(({
-  pattern = /^.*&/,
-  message = 'Value must match pattern',
-  showPattern = true,
-} = {
-  pattern: /^.*&/,
-  message: 'Value must match pattern',
-  showPattern: true,
-}) => {
-  const verifiedPattern = typeof pattern === 'string' ? new RegExp(pattern) : pattern;
-  return value =>
-    (!value ? undefined : value.toString().match(verifiedPattern)
-      ? undefined
-      : `${message}${showPattern ? `: ${pattern.toString()}` : ''}`);
+    if (max !== null && value.length > max) {
+      const msg = prepareMsg(message, 'tooLong', { count: max }).defaultMessage;
+      return typeof msg === 'string' ? msg : msg(max);
+    }
+
+    if (min !== null && value.length < min) {
+      const msg = prepareMsg(message, 'tooShort', { count: min }).defaultMessage;
+      return typeof msg === 'string' ? msg : msg(min);
+    }
+  });
 });
+
+export const pattern = memoize(({ pattern, message } = {}) => {
+  const verifiedPattern = typeof pattern === 'string' ? new RegExp(pattern) : pattern;
+  return prepare(value => {
+    if (!value) {
+      return;
+    }
+
+    const parsedValue = typeof value === 'string' ? value : value.toString();
+    if (pattern && !parsedValue.match(verifiedPattern)) {
+      const msg = prepareMsg(message, 'pattern').defaultMessage;
+      return typeof msg === 'string' ? msg : msg(pattern);
+    }
+  });
+});
+
+export const numericality = memoize(({
+  even,
+  odd,
+  '=': equal,
+  equalTo,
+  '!=': diff,
+  otherThan,
+  '>': greater,
+  greaterThan,
+  '<': less,
+  lessThan,
+  '>=': greaterOrEqual,
+  greaterThanOrEqualTo,
+  '<=': lessOrEqual,
+  lessThanOrEqualTo,
+  message,
+} = {}) => {
+  equal = selectNum(equal, equalTo);
+  diff = selectNum(diff, otherThan);
+  greater = selectNum(greater, greaterThan);
+  greaterOrEqual = selectNum(greaterOrEqual, greaterThanOrEqualTo);
+  less = selectNum(less, lessThan);
+  lessOrEqual = selectNum(lessOrEqual, lessThanOrEqualTo);
+
+  return prepare(value => {
+    if (!value) {
+      return;
+    }
+
+    if (!isNumber(value)) {
+      return prepareMsg(message, 'notANumber').defaultMessage;
+    }
+
+    if (equal !== null && +value !== equal) {
+      const msg = prepareMsg(message, 'equalTo').defaultMessage;
+      return typeof msg === 'string' ? msg : msg(equal);
+    }
+
+    if (diff !== null && +value === diff) {
+      const msg = prepareMsg(message, 'otherThan').defaultMessage;
+      return typeof msg === 'string' ? msg : msg(diff);
+    }
+
+    if (greater !== null && +value <= greater) {
+      const msg = prepareMsg(message, 'greaterThan').defaultMessage;
+      return typeof msg === 'string' ? msg : msg(greater);
+    }
+
+    if (greaterOrEqual !== null && +value < greaterOrEqual) {
+      const msg = prepareMsg(message, 'greaterThanOrEqualTo').defaultMessage;
+      return typeof msg === 'string' ? msg : msg(greaterOrEqual);
+    }
+
+    if (less !== null && +value >= less) {
+      const msg = prepareMsg(message, 'lessThan').defaultMessage;
+      return typeof msg === 'string' ? msg : msg(less);
+    }
+
+    if (lessOrEqual !== null && +value > lessOrEqual) {
+      const msg = prepareMsg(message, 'lessThanOrEqualTo').defaultMessage;
+      return typeof msg === 'string' ? msg : msg(lessOrEqual);
+    }
+
+    if (even && trunc(+value) % 2) {
+      return prepareMsg(message, 'even').defaultMessage;
+    }
+
+    if (odd && !(trunc(+value) % 2)) {
+      return prepareMsg(message, 'odd').defaultMessage;
+    }
+  });
+});
+
+const stringValidator = memoize(({ message } = {}) => {
+  return prepare(value => {
+    if (!value) {
+      return;
+    }
+
+    if (typeof value !== 'string') {
+      return prepareMsg(message, 'mustBeString').defaultMessage;
+    }
+  });
+});
+
+const booleanValidator = memoize(({ message } = {}) =>
+  prepare(value => {
+    if (!value) {
+      return;
+    }
+
+    if (typeof value !== 'boolean') {
+      return prepareMsg(message, 'mustBeBool').defaultMessage;
+    }
+  }));
 
 export const dataTypeValidator = type => ({
   string: options => stringValidator({ message: 'Field value has to be string', ...options }),
-  integer: options => patternValidator({
-    pattern: /^\d*$/, message: 'Value must be integer', ...options, showPattern: false,
+  integer: options => pattern({
+    pattern: /^\d*$/, message: 'Value must be integer', ...options,
   }),
   boolean: options => booleanValidator({ message: 'Field value has to be boolean', ...options }),
-  number: options => patternValidator({
-    pattern: /^\d*[.]{0,1}\d*$/, message: 'Values mut be number', ...options, showPattern: false,
+  number: options => pattern({
+    pattern: /^\d*[.]{0,1}\d*$/, message: 'Values mut be number', ...options,
   }),
 })[type];
-
-export const required = memoize(({ message } = { message: 'Required' }) => value => (value && value.length > 0 ? undefined : message));
-
-export const minLength = memoize(({ treshold } = { treshold: 1 }) =>
-  value => (!value ? undefined : value.length >= treshold
-    ? undefined
-    : `Should be at least ${treshold} long`));
-
-export const minValue = memoize(({ message = 'Should be greater or equal to:', value } = { message: 'Should be greater or equal to:' }) =>
-  number => (!number ? undefined : number >= value ? undefined : `${message} ${value}`));
-
-export const maxValue = memoize(({ message = 'Should be less or equal to:', value } = { message: 'Should be less or equal to:' }) =>
-  number => (!number ? undefined : number <= value ? undefined : `${message} ${value}`));
