@@ -28,7 +28,7 @@ export const validators = {
   /**
    * exact length of input value
    */
-  EXACT_LENGTH: 'exact-length',
+  EXACT_LENGTH: 'exact-length-validator',
   /**
      * minimum count of fileds in some dynamic list of fields
      */

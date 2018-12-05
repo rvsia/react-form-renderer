@@ -30,7 +30,7 @@ let messages = defineMessages({
   },
   mustBeBool: {
     id: 'forms.errors.mustBeBool',
-    defaultMessage: 'Value msut be boolean.',
+    defaultMessage: 'Value must be boolean.',
   },
   mustBeString: {
     id: 'form.errors.mustBeString',

@@ -28,39 +28,39 @@ describe('New validators', () => {
   });
 
   describe('Length validator', () => {
-    it('should pass is 5 chars long validation', () => {
+    it('should pass exact lenght of 5 characters validation', () => {
       expect(validatorMapper(validators.EXACT_LENGTH)({ treshold: 5 })('12345')).toBeUndefined();
     });
 
-    it('should fail is 5 chars long validation', () => {
+    it('should fail exact lenght of 5 characters validation', () => {
       expect(validatorMapper(validators.EXACT_LENGTH)({ treshold: 5 })('1234')).toBe('Should be 5 characters long.');
     });
 
-    it('should fail is 5 chars long validation with custom message', () => {
+    it('should fail exact lenght of 5 characters validation with custom message', () => {
       expect(validatorMapper(validators.EXACT_LENGTH)({ treshold: 5, message: 'Not 5 long' })('123456')).toBe('Not 5 long');
     });
 
-    it('should pass min 3 chars long validation', () => {
+    it('should pass min length of 3 characters validation', () => {
       expect(validatorMapper(validators.MIN_LENGTH)({ treshold: 3 })('12345')).toBeUndefined();
     });
 
-    it('should not pass is min 3 chars long validation', () => {
+    it('should not pass min length of 3 characters validation', () => {
       expect(validatorMapper(validators.MIN_LENGTH)({ treshold: 3 })('12')).toBe('Must have at least 3 characters.');
     });
 
-    it('should not pass is min 3 chars long validation with custom message', () => {
+    it('should not pass min length of 3 characters validation with custom message', () => {
       expect(validatorMapper(validators.MIN_LENGTH)({ treshold: 3, message: 'Too short!' })('12')).toBe('Too short!');
     });
 
-    it('should pass max 3 chars long validation', () => {
+    it('should pass max lenght of 3 characters long validation', () => {
       expect(validatorMapper(validators.MAX_LENGTH)({ treshold: 3 })('12')).toBeUndefined();
     });
 
-    it('should not pass max 3 chars long validation', () => {
+    it('should not pass max lenght of 3 characters validation', () => {
       expect(validatorMapper(validators.MAX_LENGTH)({ treshold: 3 })('1234')).toBe('Can have maximum of 3 characters.');
     });
 
-    it('should not pass max 3 chars long validation with custom message', () => {
+    it('should not pass max lenght of 3 characters validation with custom message', () => {
       expect(validatorMapper(validators.MAX_LENGTH)({ treshold: 3, message: 'Too long!' })('1234')).toBe('Too long!');
     });
   });
