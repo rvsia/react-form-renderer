@@ -1,9 +1,8 @@
+import { isValidElement } from 'react';
 import Validators from './validators';
 
 const HAS_PROP = {}.hasOwnProperty;
 export const TO_STRING = {}.toString;
-
-const isReactElement = object => typeof object === 'object' && object !== null && '$$typeof' in object;
 
 const isObject = obj => typeof obj === 'object' && TO_STRING.call(obj) === '[object Object]' && obj !== null;
 
@@ -13,7 +12,7 @@ const stringify = options => {
   for (let k in options) {
     if (HAS_PROP.call(options, k)) {
       value = options[k];
-      arr.push(k,  isReactElement(value) ? stringify(value.props) : isObject(value) ? stringify(value) : value.toString());
+      arr.push(k,  isValidElement(value) ? stringify(value.props) : isObject(value) ? stringify(value) : value.toString());
     }
   }
 
@@ -41,7 +40,7 @@ export const prepareMsg = (msg, type, values) => {
     return defaultMessage(type, values);
   }
 
-  if (HAS_PROP.call(msg, 'props') && isReactElement(msg)) {
+  if (HAS_PROP.call(msg, 'props') && isValidElement(msg)) {
     msg = msg.props;
   }
 
