@@ -10,6 +10,11 @@ install:
 script:
   - yarn test-ci
   - yarn build
+after_success:
+  - if [[ $TRAVIS_PULL_REQUEST == 'false' ]] && [[ $TRAVIS_BRANCH == 'master' ]]; then
+      chmod ugo+x ./scripts/update_demo.sh;
+      bash ./scripts/update_demo.sh;
+    fi
 cache:
   yarn: true
   directories:
