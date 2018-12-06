@@ -128,6 +128,7 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
     }
   }
   schemaType="mozilla"
+  showFormControls={true}
   uiSchema={Object {}}
   uischema={
     Object {
@@ -254,11 +255,13 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               Object {
                 "change": [Function],
                 "getState": [Function],
+                "handleSubmit": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "reset": [Function],
                 "submit": [Function],
                 "valid": true,
               }
@@ -343,11 +346,13 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               Object {
                 "change": [Function],
                 "getState": [Function],
+                "handleSubmit": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "reset": [Function],
                 "submit": [Function],
                 "valid": true,
               }
@@ -433,11 +438,13 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               Object {
                 "change": [Function],
                 "getState": [Function],
+                "handleSubmit": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "reset": [Function],
                 "submit": [Function],
                 "valid": true,
               }
@@ -468,11 +475,13 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               Object {
                 "change": [Function],
                 "getState": [Function],
+                "handleSubmit": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "reset": [Function],
                 "submit": [Function],
                 "valid": true,
               }
@@ -594,11 +603,13 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               Object {
                 "change": [Function],
                 "getState": [Function],
+                "handleSubmit": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "reset": [Function],
                 "submit": [Function],
                 "valid": true,
               }
@@ -724,11 +735,13 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               Object {
                 "change": [Function],
                 "getState": [Function],
+                "handleSubmit": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "reset": [Function],
                 "submit": [Function],
                 "valid": true,
               }
@@ -854,11 +867,13 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               Object {
                 "change": [Function],
                 "getState": [Function],
+                "handleSubmit": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "reset": [Function],
                 "submit": [Function],
                 "valid": true,
               }
@@ -983,11 +998,13 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               Object {
                 "change": [Function],
                 "getState": [Function],
+                "handleSubmit": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
                 "pristine": true,
                 "push": [Function],
                 "renderForm": [Function],
+                "reset": [Function],
                 "submit": [Function],
                 "valid": true,
               }
