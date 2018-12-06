@@ -1,4 +1,4 @@
-prnumber="$(git log -1 HEAD~2 --oneline | sed -e 's/^.*pull request #\([0-9]*\).*$/\1/')"
+prnumber="$(git log -1 --oneline | sed -e 's/^.*pull request #\([0-9]*\).*$/\1/')"
 # check if commit is From PR merge
 if ! [[ $prnumber =~ ^[0-9]+$ ]] ; then
   echo "Not a PR merge commit exiting" >&2; exit 1
