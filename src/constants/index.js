@@ -19,9 +19,17 @@ export const components = {
 export const validators = {
   REQUIRED: 'required-validator',
   /**
-     * min length if the input value
+     * min length of the input value
      */
   MIN_LENGTH: 'min-length-validator',
+  /**
+     * max length of the input value
+     */
+  MAX_LENGTH: 'max-length-validator',
+  /**
+   * exact length of input value
+   */
+  EXACT_LENGTH: 'exact-length-validator',
   /**
      * minimum count of fileds in some dynamic list of fields
      */
