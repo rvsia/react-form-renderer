@@ -31,6 +31,7 @@ const FormRenderer = ({
   disableSubmit,
   initialValues,
   uiSchema,
+  showFormControls,
 }) => {
   const inputSchema = schemaMapper(schemaType)(schema, uiSchema);
   return (
@@ -50,9 +51,8 @@ const FormRenderer = ({
           <RendererContext.Consumer>
             { ({ layoutMapper: { FormWrapper }}) => (
               <FormWrapper>
-                { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine, onSubmit, onCancel, getState, valid, submit }) }
-                { renderControls({
-                  formStyle: schema.formStyle,
+                { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine, onSubmit, onCancel, getState, valid, submit, handleSubmit, reset }) }
+                { showFormControls && renderControls({
                   onSubmit: handleSubmit,
                   onCancel,
                   canReset,
@@ -86,6 +86,7 @@ FormRenderer.propTypes = {
   disableSubmit: PropTypes.arrayOf(PropTypes.string),
   initialValues: PropTypes.object,
   uiSchema: PropTypes.object,
+  showFormControls: PropTypes.bool,
 };
 
 FormRenderer.defaultProps = {
@@ -96,4 +97,5 @@ FormRenderer.defaultProps = {
   disableSubmit: [],
   initialValues: {},
   uiSchema: {},
+  showFormControls: true,
 };

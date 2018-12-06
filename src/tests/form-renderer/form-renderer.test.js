@@ -5,6 +5,7 @@ import { Form } from 'react-final-form';
 import FormRenderer from '../../form-renderer';
 import { widgets, uiWidgets } from '../../demo-schemas/mozilla-schemas';
 import { components, layoutComponents } from '../../constants';
+import FormControls from '../../form-renderer/form-controls';
 
 describe('<FormRenderer />', () => {
   let layoutMapper;
@@ -71,6 +72,11 @@ describe('<FormRenderer />', () => {
     wrapper.find('button').at(1).simulate('click');
     expect(form.instance().form.getState().pristine).toBe(true);
     expect(onReset).toHaveBeenCalledTimes(1);
+  });
+
+  it('should not render form controls', () => {
+    const wrapper = mount(<FormRenderer { ...initialProps } showFormControls={ false }/>);
+    expect(wrapper.find(FormControls).first()).toHaveLength(0);
   });
 });
 
