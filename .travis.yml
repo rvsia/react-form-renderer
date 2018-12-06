@@ -13,7 +13,9 @@ script:
 after_success:
   - if [[ $TRAVIS_PULL_REQUEST == 'false' ]] && [[ $TRAVIS_BRANCH == 'master' ]]; then
       chmod ugo+x ./scripts/update_demo.sh;
+      chmod ugo+x ./scripts/demo-deploy-comment.sh;
       bash ./scripts/update_demo.sh;
+      bash ./scripts/demo-deploy-comment.sh;
     fi
 cache:
   yarn: true
