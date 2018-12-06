@@ -2,6 +2,10 @@
 
 Rendering forms from data structures
 
+## Online demo: http://data-driven-forms.surge.sh/
+
+## Table of contents
+
 - [ Instalation ](#instalation)
 - [ Getting started ](#getting-started)
 - [ Form schemas ](#form-schemas)
