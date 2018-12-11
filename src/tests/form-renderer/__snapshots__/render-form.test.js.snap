@@ -503,11 +503,20 @@ exports[`renderForm function should render condition field only if the condition
                 ]
               }
             >
-              <div
+              <customComponent
+                formOptions={
+                  Object {
+                    "renderForm": [Function],
+                  }
+                }
                 name="foo"
               >
-                Custom component
-              </div>
+                <div
+                  name="foo"
+                >
+                  Custom component
+                </div>
+              </customComponent>
             </FieldWrapper>
           </Field>
         </_class>
@@ -558,52 +567,62 @@ exports[`renderForm function should render single field form with custom compone
           ]
         }
       >
-        <_class
-          name="foo"
-          render={[Function]}
-        >
-          <Field
-            format={[Function]}
-            name="foo"
-            parse={[Function]}
-            reactFinalForm={
-              Object {
-                "batch": [Function],
-                "blur": [Function],
-                "change": [Function],
-                "focus": [Function],
-                "getFieldState": [Function],
-                "getRegisteredFields": [Function],
-                "getState": [Function],
-                "initialize": [Function],
-                "isValidationPaused": [Function],
-                "mutators": Object {
-                  "insert": [Function],
-                  "move": [Function],
-                  "pop": [Function],
-                  "push": [Function],
-                  "remove": [Function],
-                  "shift": [Function],
-                  "swap": [Function],
-                  "unshift": [Function],
-                  "update": [Function],
-                },
-                "pauseValidation": [Function],
-                "registerField": [Function],
-                "reset": [Function],
-                "resumeValidation": [Function],
-                "setConfig": [Function],
-                "submit": [Function],
-                "subscribe": [Function],
-              }
+        <customComponent
+          FieldProvider={[Function]}
+          formOptions={
+            Object {
+              "renderForm": [Function],
             }
+          }
+          name="foo"
+        >
+          <_class
+            name="foo"
             render={[Function]}
           >
-            <div>
-              Custom component
-            </div>
-          </Field>
-        </_class>
+            <Field
+              format={[Function]}
+              name="foo"
+              parse={[Function]}
+              reactFinalForm={
+                Object {
+                  "batch": [Function],
+                  "blur": [Function],
+                  "change": [Function],
+                  "focus": [Function],
+                  "getFieldState": [Function],
+                  "getRegisteredFields": [Function],
+                  "getState": [Function],
+                  "initialize": [Function],
+                  "isValidationPaused": [Function],
+                  "mutators": Object {
+                    "insert": [Function],
+                    "move": [Function],
+                    "pop": [Function],
+                    "push": [Function],
+                    "remove": [Function],
+                    "shift": [Function],
+                    "swap": [Function],
+                    "unshift": [Function],
+                    "update": [Function],
+                  },
+                  "pauseValidation": [Function],
+                  "registerField": [Function],
+                  "reset": [Function],
+                  "resumeValidation": [Function],
+                  "setConfig": [Function],
+                  "submit": [Function],
+                  "subscribe": [Function],
+                }
+              }
+              render={[Function]}
+            >
+              <div>
+                Custom component
+              </div>
+            </Field>
+          </_class>
+        </customComponent>
       </FieldWrapper>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -807,11 +826,20 @@ exports[`renderForm function should render single field from with custom compone
           ]
         }
       >
-        <div
+        <customComponent
+          formOptions={
+            Object {
+              "renderForm": [Function],
+            }
+          }
           name="foo"
         >
-          Custom component
-        </div>
+          <div
+            name="foo"
+          >
+            Custom component
+          </div>
+        </customComponent>
       </FieldWrapper>
     </FormConditionWrapper>
   </ReactFinalForm>
