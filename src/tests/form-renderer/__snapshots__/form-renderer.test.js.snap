@@ -275,11 +275,68 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               ]
             }
           >
-            <div
-              className="nested-item"
+            <Component
+              autoFocus={false}
+              fields={
+                Array [
+                  Object {
+                    "autoFocus": false,
+                    "component": "text-field",
+                    "dataType": "string",
+                    "description": undefined,
+                    "helperText": undefined,
+                    "initialKey": "email",
+                    "inline": undefined,
+                    "isDisabled": undefined,
+                    "isReadOnly": undefined,
+                    "label": "email",
+                    "name": "stringFormats.email",
+                    "rows": undefined,
+                    "type": "email",
+                    "validate": Array [],
+                  },
+                  Object {
+                    "autoFocus": false,
+                    "component": "text-field",
+                    "dataType": "string",
+                    "description": undefined,
+                    "helperText": undefined,
+                    "initialKey": "uri",
+                    "inline": undefined,
+                    "isDisabled": undefined,
+                    "isReadOnly": undefined,
+                    "label": "uri",
+                    "name": "stringFormats.uri",
+                    "rows": undefined,
+                    "type": "uri",
+                    "validate": Array [],
+                  },
+                ]
+              }
+              formOptions={
+                Object {
+                  "change": [Function],
+                  "getState": [Function],
+                  "handleSubmit": [Function],
+                  "onCancel": undefined,
+                  "onSubmit": [MockFunction],
+                  "pristine": true,
+                  "push": [Function],
+                  "renderForm": [Function],
+                  "reset": [Function],
+                  "submit": [Function],
+                  "valid": true,
+                }
+              }
+              name="stringFormats"
+              title="String formats"
             >
-              sub form
-            </div>
+              <div
+                className="nested-item"
+              >
+                sub form
+              </div>
+            </Component>
           </FieldWrapper>
         </FormConditionWrapper>
         <FormConditionWrapper>
@@ -366,11 +423,87 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               ]
             }
           >
-            <div
-              className="nested-item"
+            <Component
+              autoFocus={false}
+              fields={
+                Array [
+                  Object {
+                    "autoFocus": false,
+                    "component": "checkbox",
+                    "dataType": "boolean",
+                    "description": "This is the checkbox-description",
+                    "helperText": undefined,
+                    "initialKey": "defaultCheckbox",
+                    "inline": undefined,
+                    "isDisabled": undefined,
+                    "isReadOnly": undefined,
+                    "label": "checkbox (default)",
+                    "name": "boolean.defaultCheckbox",
+                    "rows": undefined,
+                    "title": "checkbox (default)",
+                    "type": "checkbox",
+                    "validate": Array [],
+                  },
+                  Object {
+                    "autoFocus": false,
+                    "component": "checkbox",
+                    "dataType": "boolean",
+                    "description": "This is the radio-description",
+                    "helperText": undefined,
+                    "initialKey": "radio",
+                    "inline": undefined,
+                    "isDisabled": undefined,
+                    "isReadOnly": undefined,
+                    "label": "radio buttons",
+                    "name": "boolean.radio",
+                    "rows": undefined,
+                    "title": "radio buttons",
+                    "type": "checkbox",
+                    "validate": Array [],
+                  },
+                  Object {
+                    "autoFocus": false,
+                    "component": "checkbox",
+                    "dataType": "boolean",
+                    "description": "This is the select-description",
+                    "helperText": undefined,
+                    "initialKey": "select",
+                    "inline": undefined,
+                    "isDisabled": undefined,
+                    "isReadOnly": undefined,
+                    "label": "select box",
+                    "name": "boolean.select",
+                    "rows": undefined,
+                    "title": "select box",
+                    "type": "checkbox",
+                    "validate": Array [],
+                  },
+                ]
+              }
+              formOptions={
+                Object {
+                  "change": [Function],
+                  "getState": [Function],
+                  "handleSubmit": [Function],
+                  "onCancel": undefined,
+                  "onSubmit": [MockFunction],
+                  "pristine": true,
+                  "push": [Function],
+                  "renderForm": [Function],
+                  "reset": [Function],
+                  "submit": [Function],
+                  "valid": true,
+                }
+              }
+              name="boolean"
+              title="Boolean field"
             >
-              sub form
-            </div>
+              <div
+                className="nested-item"
+              >
+                sub form
+              </div>
+            </Component>
           </FieldWrapper>
         </FormConditionWrapper>
         <FormConditionWrapper>
@@ -458,11 +591,88 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               ]
             }
           >
-            <div
-              className="nested-item"
+            <Component
+              autoFocus={false}
+              fields={
+                Array [
+                  Object {
+                    "autoFocus": false,
+                    "component": "text-field",
+                    "dataType": "string",
+                    "description": undefined,
+                    "helperText": undefined,
+                    "initialKey": "defaultInput",
+                    "inline": undefined,
+                    "isDisabled": undefined,
+                    "isReadOnly": undefined,
+                    "label": "text input (default)",
+                    "name": "string.defaultInput",
+                    "rows": undefined,
+                    "title": "text input (default)",
+                    "type": "text",
+                    "validate": Array [],
+                  },
+                  Object {
+                    "autoFocus": false,
+                    "component": "text-field",
+                    "dataType": "string",
+                    "description": undefined,
+                    "helperText": undefined,
+                    "initialKey": "textarea",
+                    "inline": undefined,
+                    "isDisabled": undefined,
+                    "isReadOnly": undefined,
+                    "label": "textarea",
+                    "name": "string.textarea",
+                    "rows": undefined,
+                    "title": "textarea",
+                    "type": "text",
+                    "validate": Array [],
+                  },
+                  Object {
+                    "autoFocus": false,
+                    "component": "text-field",
+                    "dataType": "string",
+                    "default": "#151ce6",
+                    "description": undefined,
+                    "helperText": undefined,
+                    "initialKey": "color",
+                    "inline": undefined,
+                    "isDisabled": undefined,
+                    "isReadOnly": undefined,
+                    "label": "color picker",
+                    "name": "string.color",
+                    "rows": undefined,
+                    "title": "color picker",
+                    "type": "text",
+                    "validate": Array [],
+                  },
+                ]
+              }
+              formOptions={
+                Object {
+                  "change": [Function],
+                  "getState": [Function],
+                  "handleSubmit": [Function],
+                  "onCancel": undefined,
+                  "onSubmit": [MockFunction],
+                  "pristine": true,
+                  "push": [Function],
+                  "renderForm": [Function],
+                  "reset": [Function],
+                  "submit": [Function],
+                  "valid": true,
+                }
+              }
+              name="string"
+              title="String field"
             >
-              sub form
-            </div>
+              <div
+                className="nested-item"
+              >
+                sub form
+              </div>
+            </Component>
           </FieldWrapper>
         </FormConditionWrapper>
         <FormConditionWrapper>
