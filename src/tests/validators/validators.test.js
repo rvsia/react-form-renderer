@@ -92,12 +92,16 @@ describe('New validators', () => {
       expect(validatorMapper(validators.MIN_NUMBER_VALUE)({ value: 99 })(123)).toBeUndefined();
     });
 
+    it('should pass the validation if minimum value', () => {
+      expect(validatorMapper(validators.MIN_NUMBER_VALUE)({ value: 99 })(99)).toBeUndefined();
+    });
+
     it('should pass the validation if no input given', () => {
       expect(validatorMapper(validators.MIN_NUMBER_VALUE)({ value: 99 })()).toBeUndefined();
     });
 
-    it('should not pass the validation', () => {
-      expect(validatorMapper(validators.MIN_NUMBER_VALUE)({ value: 99 })(1)).toEqual('Value must be greater than 99.');
+    it('should not pass the validation (includeTreshold is false)', () => {
+      expect(validatorMapper(validators.MIN_NUMBER_VALUE)({ value: 99, includeThreshold: false })(99)).toEqual('Value must be greater than 99.');
     });
 
     it('should not pass the validation and return custom message', () => {
@@ -110,12 +114,16 @@ describe('New validators', () => {
       expect(validatorMapper(validators.MAX_NUMBER_VALUE)({ value: 99 })(1)).toBeUndefined();
     });
 
+    it('should pass the validation if maximum value', () => {
+      expect(validatorMapper(validators.MAX_NUMBER_VALUE)({ value: 99 })(99)).toBeUndefined();
+    });
+
     it('should pass the validation if no input given', () => {
       expect(validatorMapper(validators.MAX_NUMBER_VALUE)({ value: 99 })()).toBeUndefined();
     });
 
-    it('should not pass the validation', () => {
-      expect(validatorMapper(validators.MAX_NUMBER_VALUE)({ value: 99 })(123)).toEqual('Value must be less than 99');
+    it('should not pass the validation (includeTreshold is false)', () => {
+      expect(validatorMapper(validators.MAX_NUMBER_VALUE)({ value: 99, includeThreshold: false })(99)).toEqual('Value must be less than 99');
     });
 
     it('should not pass the validation and return custom validation', () => {
