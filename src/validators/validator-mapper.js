@@ -10,6 +10,8 @@ export default validatorType => ({
   [validators.MIN_ITEMS_VALIDATOR]: ({ treshold, ...rest }) =>
     length({ minimum: treshold, message: `Must have at least ${treshold} items.`, ...rest }),
   [validators.PATTERN_VALIDATOR]: pattern,
-  [validators.MAX_NUMBER_VALUE]: ({ value, ...rest }) => numericality({ '<': value, ...rest }),
-  [validators.MIN_NUMBER_VALUE]: ({ value, ...rest }) => numericality({ '>': value, ...rest }),
+  [validators.MAX_NUMBER_VALUE]: ({ value, includeThreshold = true, ...rest }) =>
+    numericality({ [includeThreshold ? '<=' : '<']: value, ...rest }),
+  [validators.MIN_NUMBER_VALUE]: ({ value, includeThreshold = true, ...rest }) =>
+    numericality({ [includeThreshold ? '>=' : '>']: value, ...rest }),
 })[validatorType];
