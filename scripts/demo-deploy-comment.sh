@@ -23,6 +23,6 @@ else
   done
 
   curl -H "Authorization: token ${BOT_TOKEN}" -X POST \
-  -d "{\"body\": \"Updated demo will be shortly available at: data-driven-forms.surge.sh\"}" \
+  -d "{\"body\": \"Updated demo will be shortly available at: https://data-driven-forms.surge.sh\"}" \
 "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/$prnumber/comments"
 fi
