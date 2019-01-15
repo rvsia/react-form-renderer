@@ -57,7 +57,7 @@ const FieldWrapper = ({ componentType, validate, component, formOptions, assignF
   const Component = component;
   return shouldWrapInField(componentType)
     ? <Field { ...componentProps } />
-    : <Component formOptions={ formOptions } { ...rest } FieldProvider={ assignFieldProvider && Field } />;
+    : <Component formOptions={ formOptions } { ...rest } FieldProvider={ Field } />;
 };
 
 const renderSingleField = ({ component, condition, ...rest }, formOptions) => (
