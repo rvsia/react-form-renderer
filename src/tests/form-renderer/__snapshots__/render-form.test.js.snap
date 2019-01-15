@@ -504,6 +504,7 @@ exports[`renderForm function should render condition field only if the condition
               }
             >
               <customComponent
+                FieldProvider={[Function]}
                 formOptions={
                   Object {
                     "renderForm": [Function],
@@ -827,6 +828,7 @@ exports[`renderForm function should render single field from with custom compone
         }
       >
         <customComponent
+          FieldProvider={[Function]}
           formOptions={
             Object {
               "renderForm": [Function],

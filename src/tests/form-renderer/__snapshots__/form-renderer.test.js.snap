@@ -276,6 +276,7 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             }
           >
             <Component
+              FieldProvider={[Function]}
               autoFocus={false}
               fields={
                 Array [
@@ -424,6 +425,7 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             }
           >
             <Component
+              FieldProvider={[Function]}
               autoFocus={false}
               fields={
                 Array [
@@ -592,6 +594,7 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             }
           >
             <Component
+              FieldProvider={[Function]}
               autoFocus={false}
               fields={
                 Array [
