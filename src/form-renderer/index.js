@@ -7,6 +7,8 @@ import mozillaParser from '../parsers/mozilla-parser/mozilla-schema-parser';
 import RendererContext, { configureContext } from './renderer-context';
 import FormControls from './form-controls';
 import renderForm from './render-form';
+import defaultSchemaValidator from '../parsers/default-schema-validator';
+import SchemaErrorComponent from './schema-error-component';
 
 const schemaMapper = type => ({
   mozilla: (schema, uiSchema) => mozillaParser(schema, uiSchema),
@@ -34,6 +36,19 @@ const FormRenderer = ({
   showFormControls,
 }) => {
   const inputSchema = schemaMapper(schemaType)(schema, uiSchema);
+  let schemaError;
+  try {
+    defaultSchemaValidator(inputSchema.schema, formFieldsMapper, layoutMapper);
+  } catch (error) {
+    schemaError = error;
+    console.error(error);
+    console.log('error: ', error.message);
+  }
+
+  if (schemaError) {
+    return <SchemaErrorComponent name={ schemaError.name } message={ schemaError.message } />;
+  }
+
   return (
     <RendererContext.Provider value={ configureContext({
       layoutMapper,

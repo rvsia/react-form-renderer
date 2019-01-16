@@ -19,7 +19,7 @@ const SelectField = ({ input, meta, label, formOptions, helperText, isRequired, 
   </div>
 );
 
-const mapper = componentType => ({
+const mapper = {
   [components.TEXT_FIELD]: TextField,
   [components.TEXTAREA_FIELD]: TextField,
   [components.SELECT_COMPONENT]: SelectField,
@@ -31,6 +31,6 @@ const mapper = componentType => ({
   [components.DATE_PICKER]: props => <div>date picker</div>,
   [components.TIME_PICKER]: props => <div>time picker</div>,
   [components.TAG_CONTROL]: props => <div>tag control</div>,
-})[componentType];
+};
 
 export default mapper;
