@@ -17,28 +17,28 @@ const checkFieldsArray = (obj, objectKey) => {
 const checkCondition = (condition, fieldName) => {
   if (Array.isArray(condition) || typeof condition !== 'object') {
     throw new DefaultSchemaError(`
-      Error occured in field defintion with name: "${fieldName}".
+      Error occured in field definition with name: "${fieldName}".
       Field condition must be an object, received ${Array.isArray(condition) ? 'array' : typeof condition}!
     `);
   }
 
   if (!condition.hasOwnProperty('when')) {
     throw new DefaultSchemaError(`
-      Error occured in field defintion with name: "${fieldName}".
+      Error occured in field definition with "name" property: "${fieldName}".
       Field condition must have "when" property! Properties received: [${Object.keys(condition)}].
     `);
   }
 
   if (typeof condition.when !== 'string') {
     throw new DefaultSchemaError(`
-      Error occured in field defintion with name: "${fieldName}".
+      Error occured in field definition with name: "${fieldName}".
       Field condition property "when" must be oof type "string", ${typeof condition.when} received!].
     `);
   }
 
   if (!condition.hasOwnProperty('is')) {
     throw new DefaultSchemaError(`
-      Error occured in field defintion with name: "${fieldName}".
+      Error occured in field definition with name: "${fieldName}".
       Field condition must have "is" property! Properties received: [${Object.keys(condition)}].
     `);
   }
@@ -47,7 +47,7 @@ const checkCondition = (condition, fieldName) => {
 const checkValidators = (validate, fieldName) => {
   if (!Array.isArray(validate)) {
     throw new DefaultSchemaError(`
-      Error occured in field defintion with name: "${fieldName}".
+      Error occured in field definition with name: "${fieldName}".
       Field validate property must be an Array, ${typeof validate} received!
     `);
   }
@@ -55,21 +55,21 @@ const checkValidators = (validate, fieldName) => {
   validate.forEach((validator, index) => {
     if (Array.isArray(validator) || typeof validator !== 'object') {
       throw new DefaultSchemaError(`
-        Error occured in field defintion with name: "${fieldName}".
-        Field validator at index: ${index} must be and object, ${Array.isArray(validator) ? 'array' : typeof validator} received!
+        Error occured in field definition with name: "${fieldName}".
+        Field validator at index: ${index} must be an object, ${Array.isArray(validator) ? 'array' : typeof validator} received!
       `);
     }
 
     if (!validator.hasOwnProperty('type')) {
       throw new DefaultSchemaError(`
-        Error occured in field defintion with name: "${fieldName}".
+        Error occured in field definition with name: "${fieldName}".
         Field validator at index: ${index} does not have "type" property! Properties received: [${Object.keys(validator)}].
       `);
     }
 
     if (!Object.values(validators).includes(validator.type)) {
       throw new DefaultSchemaError(`
-        Error occured in field defintion with name: "${fieldName}".
+        Error occured in field definition with name: "${fieldName}".
         Field validator at index: ${index} does not have correct "type" property!
         Received "${validator.type}", expected one of: [${Object.values(validators)}].
       `);
