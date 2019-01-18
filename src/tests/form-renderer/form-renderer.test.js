@@ -23,6 +23,8 @@ describe('<FormRenderer />', () => {
       [components.DATE_PICKER]: () => <div className="nested-item">Date picker</div>,
       [components.TIME_PICKER]: () => <div className="nested-item">Time picker</div>,
       [components.TAG_CONTROL]: () => <div className="nested-item">Tag control</div>,
+      [components.TEXTAREA]: () => <div className="nested-item">Textarea field</div>,
+      [components.SELECT]: () => <div className="nested-item">Select field</div>,
     };
 
     layoutMapper = {

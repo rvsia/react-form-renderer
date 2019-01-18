@@ -14,6 +14,8 @@ export const components = {
   TAG_CONTROL: 'tag-control',
   WIZARD: 'wizard',
   SWITCH: 'switch-field',
+  TEXTAREA: 'textarea-field',
+  SELECT: 'select-field',
 };
   /** Validator functions placeholder */
 export const validators = {

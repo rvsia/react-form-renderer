@@ -161,9 +161,9 @@ import { componentTypes } from '@data-driven-forms/react-form-renderer';
 
 componentTypes = {
   TEXT_FIELD: 'text-field',
-  TEXTAREA_FIELD: 'textarea-field',
-  FIELD_ARRAY: 'field-array',
-  SELECT_COMPONENT: 'select-field',
+  TEXTAREA_FIELD: 'textarea-field', // deprecated, please use TEXTAREA
+  FIELD_ARRAY: 'field-array', 
+  SELECT_COMPONENT: 'select-field', // deprecated, please use SELECT
   FIXED_LIST: 'fixed-list',
   CHECKBOX: 'checkbox',
   SUB_FORM: 'sub-form',
@@ -173,6 +173,9 @@ componentTypes = {
   DATE_PICKER: 'date-picker',
   TIME_PICKER: 'time-picker',
   TAG_CONTROL: 'tag-control',
+  SWITCH: 'switch',
+  TEXTAREA: 'textarea-field',
+  SELECT: 'select-field',
 }
 ```
 
@@ -267,7 +270,7 @@ There are currently four defined data types:
 ['integer', 'number', 'bool', 'string']
 ```
 
-#### <a name="assign-field-provider"></a> `assignFieldProvider: bool?`
+#### <a name="assign-field-provider"></a> `assignFieldProvider: bool?` [DEPRECATED]
 FieldProvider is just a fancy name for [Field component](https://github.com/final-form/react-final-form#field--reactcomponenttypefieldprops). Following component types are wrapped in the FieldProvider by default:
 
 ```javascript
