@@ -1,8 +1,9 @@
 import React from 'react';
 
 const isClassComponent = (component) => (
-  typeof component === 'function' &&
-    !!component.prototype.isReactComponent
+  typeof component === 'function'
+  && component.prototype
+  && !!component.prototype.isReactComponent
 ) ? true : false;
 
 const isFunctionComponent = component => (
