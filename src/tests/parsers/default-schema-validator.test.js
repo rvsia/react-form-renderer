@@ -115,6 +115,16 @@ describe('Default schema validator', () => {
   });
 
   it('should pass validation', () => {
-    expect(() => defaultSchemaValidator(output, formFieldsMapper)).not.toThrow();
+    expect(() => defaultSchemaValidator(output, {
+      ...formFieldsMapper, 'sub-form': () => <div />,
+      'text-field': () => <div />,
+      'textarea-field': () => <div />,
+      checkbox: () => <div />,
+      radio: () => <div />,
+      'select-field': () => <div />,
+      'date-picker': () => <div />,
+      'time-picker': () => <div />,
+      'tag-control': () => <div />,
+    })).not.toThrow();
   });
 });

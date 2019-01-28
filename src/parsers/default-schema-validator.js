@@ -2,7 +2,7 @@ import DefaultSchemaError from './schema-errors';
 import isValidComponent from './isValidComponent';
 import { validators, components } from '../constants';
 
-const componentBlackList = [ components.FIELD_ARRAY, components.FIXED_LIST ];
+const componentBlackList = [ components.FIELD_ARRAY, components.FIXED_LIST, 'tab-item' ];
 
 const checkFieldsArray = (obj, objectKey) => {
   if (!obj.hasOwnProperty('fields')) {
@@ -77,26 +77,29 @@ const checkValidators = (validate, fieldName) => {
   });
 };
 
-const iterateOverFields = (fields, formFieldsMapper, layoutMapper) => {
+const iterateOverFields = (fields, formFieldsMapper, layoutMapper, parent = {}) => {
   fields.forEach(field => {
     if (Array.isArray(field)) {
       return iterateOverFields(field, formFieldsMapper, layoutMapper);
     }
 
-    if (!field.hasOwnProperty('component')) {
-      throw new DefaultSchemaError(`Each fields item must have "component" property!`);
-    }
+    if (parent.component !== components.WIZARD){
+      if (parent.component !== components.WIZARD && !field.hasOwnProperty('component')) {
+        throw new DefaultSchemaError(`Each fields item must have "component" property!`);
+      }
 
-    if (!componentBlackList.includes(field.component) && !formFieldsMapper.hasOwnProperty(field.component)) {
-      throw new DefaultSchemaError(`
-        Component of type "${field.component}" is not present in formFieldsMapper.
-        Please make sure "${field.component} is included in your formFieldsMapper."
-        FormFieldsMapper has these values: [${Object.keys(formFieldsMapper)}]
-      `);
-    }
+      if (!componentBlackList.includes(field.component) && !formFieldsMapper.hasOwnProperty(field.component)) {
+        throw new DefaultSchemaError(`
+          Component of type "${field.component}" is not present in formFieldsMapper.
+          Please make sure "${field.component} is included in your formFieldsMapper."
+          FormFieldsMapper has these values: [${Object.keys(formFieldsMapper)}]
+        `);
+      }
 
-    if (!componentBlackList.includes(field.component) && !isValidComponent(formFieldsMapper[field.component])) {
-      throw new DefaultSchemaError(`FormComponent "${field.component}" from formFieldsMapper is not a valid React component!`);
+      if (!componentBlackList.includes(field.component) && !isValidComponent(formFieldsMapper[field.component])) {
+        throw new DefaultSchemaError(`FormComponent "${field.component}" from formFieldsMapper is not a valid React component!`);
+      }
+
     }
 
     if (!field.hasOwnProperty('name') && !field.hasOwnProperty('title') && !field.hasOwnProperty('key')) {
@@ -109,6 +112,10 @@ const iterateOverFields = (fields, formFieldsMapper, layoutMapper) => {
 
     if (field.hasOwnProperty('validate')) {
       checkValidators(field.validate, field.name);
+    }
+
+    if (field.hasOwnProperty('fields')) {
+      iterateOverFields(field.fields, formFieldsMapper, layoutMapper, field);
     }
   });
 };
