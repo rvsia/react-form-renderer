@@ -52,6 +52,7 @@ const prepareSubForm = ({ schema, fields, uiSchema, key }) => ({ name: key,
   ...convertSchema({ // eslint-disable-line no-use-before-define
     properties: fields[key].properties,
     type: 'object',
+    required: fields[key].required,
   },  uiSchema[key], key),
 });
 
@@ -64,7 +65,6 @@ const prepareSubForm = ({ schema, fields, uiSchema, key }) => ({ name: key,
  */
 const createFieldsFromObject = (schema, uiSchema = {}, keyPrefix) => Object.keys(schema.properties).map(key => {
   const fields = schema.properties;
-
   /**
      * build conditional fields
      * Follows pattern when field 'x' has value 'y' show field 'z'
