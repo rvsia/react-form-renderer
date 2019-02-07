@@ -34,6 +34,8 @@ const FormRenderer = ({
   initialValues,
   uiSchema,
   showFormControls,
+  buttonOrder,
+  buttonClassName
 }) => {
   const inputSchema = schemaMapper(schemaType)(schema, uiSchema);
   let schemaError;
@@ -68,6 +70,8 @@ const FormRenderer = ({
               <FormWrapper>
                 { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine, onSubmit, onCancel, getState, valid, submit, handleSubmit, reset }) }
                 { showFormControls && renderControls({
+                  buttonOrder,
+                  buttonClassName,
                   onSubmit: handleSubmit,
                   onCancel,
                   canReset,
@@ -102,6 +106,8 @@ FormRenderer.propTypes = {
   initialValues: PropTypes.object,
   uiSchema: PropTypes.object,
   showFormControls: PropTypes.bool,
+  buttonOrder: PropTypes.arrayOf(PropTypes.string),
+  buttonClassName: PropTypes.string,
 };
 
 FormRenderer.defaultProps = {

@@ -1395,6 +1395,13 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
           </FieldWrapper>
         </FormConditionWrapper>
         <FormControls
+          buttonOrder={
+            Array [
+              "submit",
+              "reset",
+              "cancel",
+            ]
+          }
           canReset={false}
           canSubmit={false}
           cancelLabel="Cancel"
@@ -1413,6 +1420,7 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                   <Component>
                     <div>
                       <Component
+                        key="form-submit"
                         label="Submit"
                         onClick={[Function]}
                         type="button"

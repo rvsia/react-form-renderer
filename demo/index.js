@@ -14,9 +14,12 @@ const App = () => (
             formFieldsMapper={formFieldsMapper}
             onSubmit={console.log}
             onCancel={console.log}
+            canReset
             schemaType="mozilla"
             schema={arraySchema}
             uiSchema={uiArraySchema}
+            buttonOrder={['cancel', 'reset', 'submit']}
+            buttonClassName="Foo"
         />
     </div>
 )
