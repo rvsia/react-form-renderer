@@ -78,4 +78,22 @@ describe('<FormControls />', () => {
     wrapper.find('button').first().simulate('click');
     expect(initialProps.onSubmit).toHaveBeenCalled();
   });
+
+  it('should render buttons in correct order', () => {
+    const wrapper = mount(
+      <ContextWrapper>
+        <FormControls { ...initialProps } canSubmit canReset buttonOrder={ [ 'cancel', 'submit', 'reset' ] } />
+      </ContextWrapper>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it('should add missing buttons if not defined in button order', () => {
+    const wrapper = mount(
+      <ContextWrapper>
+        <FormControls { ...initialProps } canSubmit canReset buttonOrder={ [] } />
+      </ContextWrapper>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 });
