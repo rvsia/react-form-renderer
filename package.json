@@ -1,6 +1,6 @@
 {
   "name": "@data-driven-forms/react-form-renderer",
-  "version": "1.5.5",
+  "version": "1.6.0",
   "description": "React form renderer for data-driven-forms.",
   "main": "dist/index.js",
   "scripts": {
