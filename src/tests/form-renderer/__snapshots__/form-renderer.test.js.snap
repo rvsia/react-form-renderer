@@ -26,10 +26,12 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
       "Button": [Function],
       "ButtonGroup": [Function],
       "Col": [Function],
+      "Description": [Function],
       "FormGroup": [Function],
       "FormWrapper": [Function],
       "HelpBlock": [Function],
       "Icon": [Function],
+      "Title": [Function],
     }
   }
   onSubmit={[MockFunction]}
@@ -210,6 +212,11 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
   >
     <Component>
       <form>
+        <Component>
+          <div>
+            Widgets
+          </div>
+        </Component>
         <FormConditionWrapper>
           <FieldWrapper
             autoFocus={false}

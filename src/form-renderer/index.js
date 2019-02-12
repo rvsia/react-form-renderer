@@ -9,6 +9,7 @@ import FormControls from './form-controls';
 import renderForm from './render-form';
 import defaultSchemaValidator from '../parsers/default-schema-validator';
 import SchemaErrorComponent from './schema-error-component';
+import { renderTitle, renderDescription } from './form-information';
 
 const schemaMapper = type => ({
   mozilla: (schema, uiSchema) => mozillaParser(schema, uiSchema),
@@ -35,7 +36,7 @@ const FormRenderer = ({
   uiSchema,
   showFormControls,
   buttonOrder,
-  buttonClassName
+  buttonClassName,
 }) => {
   const inputSchema = schemaMapper(schemaType)(schema, uiSchema);
   let schemaError;
@@ -68,6 +69,8 @@ const FormRenderer = ({
           <RendererContext.Consumer>
             { ({ layoutMapper: { FormWrapper }}) => (
               <FormWrapper>
+                { inputSchema.schema.title && renderTitle(inputSchema.schema.title) }
+                { inputSchema.schema.description && renderDescription(inputSchema.schema.description) }
                 { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine, onSubmit, onCancel, getState, valid, submit, handleSubmit, reset }) }
                 { showFormControls && renderControls({
                   buttonOrder,
@@ -98,6 +101,7 @@ FormRenderer.propTypes = {
   formType: PropTypes.oneOf([ 'pf3', 'pf4' ]),
   onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
+  onReset: PropTypes.func,
   canReset: PropTypes.bool,
   schema: PropTypes.object.isRequired,
   schemaType: PropTypes.oneOf([ 'mozilla', 'miq', 'default' ]),

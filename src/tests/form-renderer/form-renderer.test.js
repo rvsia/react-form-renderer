@@ -36,6 +36,8 @@ describe('<FormRenderer />', () => {
       [layoutComponents.ICON]: ({ type, name }) => <div>Icon: { name }</div>,
       [layoutComponents.ARRAY_FIELD_WRAPPER]: ({ children }) => <div>{ children }</div>,
       [layoutComponents.FORM_WRAPPER]: ({ children }) => <form>{ children }</form>,
+      [layoutComponents.TITLE]: ({ children }) => <div>{ children }</div>,
+      [layoutComponents.DESCRIPTION]: ({ children }) => <div>{ children }</div>,
     };
 
     initialProps = {
