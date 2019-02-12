@@ -59,4 +59,6 @@ export const layoutComponents = {
   ICON: 'Icon',
   ARRAY_FIELD_WRAPPER: 'ArrayFieldWrapper',
   HELP_BLOCK: 'HelpBlock',
+  TITLE: 'Title',
+  DESCRIPTION: 'Description',
 };
