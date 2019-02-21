@@ -30,6 +30,7 @@ const FieldWrapper = ({ componentType, validate, component, formOptions, assignF
     type: assignSpecialType(componentType),
     FieldProvider: Field,
     ...rest,
+    formOptions,
     component,
   };
   if (shouldAssignFormOptions(componentType)) {

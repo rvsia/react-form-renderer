@@ -720,6 +720,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               autoFocus={false}
               component={[Function]}
               default="I'm a hidden string."
+              formOptions={
+                Object {
+                  "change": [Function],
+                  "getState": [Function],
+                  "handleSubmit": [Function],
+                  "onCancel": undefined,
+                  "onSubmit": [MockFunction],
+                  "pristine": true,
+                  "push": [Function],
+                  "renderForm": [Function],
+                  "reset": [Function],
+                  "submit": [Function],
+                  "valid": true,
+                }
+              }
               label="secret"
               name="secret"
               type="text"
@@ -730,6 +745,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                 autoFocus={false}
                 component={[Function]}
                 default="I'm a hidden string."
+                formOptions={
+                  Object {
+                    "change": [Function],
+                    "getState": [Function],
+                    "handleSubmit": [Function],
+                    "onCancel": undefined,
+                    "onSubmit": [MockFunction],
+                    "pristine": true,
+                    "push": [Function],
+                    "renderForm": [Function],
+                    "reset": [Function],
+                    "submit": [Function],
+                    "valid": true,
+                  }
+                }
                 format={[Function]}
                 label="secret"
                 name="secret"
@@ -772,6 +802,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                   FieldProvider={[Function]}
                   autoFocus={false}
                   default="I'm a hidden string."
+                  formOptions={
+                    Object {
+                      "change": [Function],
+                      "getState": [Function],
+                      "handleSubmit": [Function],
+                      "onCancel": undefined,
+                      "onSubmit": [MockFunction],
+                      "pristine": true,
+                      "push": [Function],
+                      "renderForm": [Function],
+                      "reset": [Function],
+                      "submit": [Function],
+                      "valid": true,
+                    }
+                  }
                   input={
                     Object {
                       "name": "secret",
@@ -849,6 +894,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               autoFocus={false}
               component={[Function]}
               default="I am disabled."
+              formOptions={
+                Object {
+                  "change": [Function],
+                  "getState": [Function],
+                  "handleSubmit": [Function],
+                  "onCancel": undefined,
+                  "onSubmit": [MockFunction],
+                  "pristine": true,
+                  "push": [Function],
+                  "renderForm": [Function],
+                  "reset": [Function],
+                  "submit": [Function],
+                  "valid": true,
+                }
+              }
               label="A disabled field"
               name="disabled"
               title="A disabled field"
@@ -860,6 +920,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                 autoFocus={false}
                 component={[Function]}
                 default="I am disabled."
+                formOptions={
+                  Object {
+                    "change": [Function],
+                    "getState": [Function],
+                    "handleSubmit": [Function],
+                    "onCancel": undefined,
+                    "onSubmit": [MockFunction],
+                    "pristine": true,
+                    "push": [Function],
+                    "renderForm": [Function],
+                    "reset": [Function],
+                    "submit": [Function],
+                    "valid": true,
+                  }
+                }
                 format={[Function]}
                 label="A disabled field"
                 name="disabled"
@@ -903,6 +978,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                   FieldProvider={[Function]}
                   autoFocus={false}
                   default="I am disabled."
+                  formOptions={
+                    Object {
+                      "change": [Function],
+                      "getState": [Function],
+                      "handleSubmit": [Function],
+                      "onCancel": undefined,
+                      "onSubmit": [MockFunction],
+                      "pristine": true,
+                      "push": [Function],
+                      "renderForm": [Function],
+                      "reset": [Function],
+                      "submit": [Function],
+                      "valid": true,
+                    }
+                  }
                   input={
                     Object {
                       "name": "disabled",
@@ -981,6 +1071,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               autoFocus={false}
               component={[Function]}
               default="I am read-only."
+              formOptions={
+                Object {
+                  "change": [Function],
+                  "getState": [Function],
+                  "handleSubmit": [Function],
+                  "onCancel": undefined,
+                  "onSubmit": [MockFunction],
+                  "pristine": true,
+                  "push": [Function],
+                  "renderForm": [Function],
+                  "reset": [Function],
+                  "submit": [Function],
+                  "valid": true,
+                }
+              }
               label="A readonly field"
               name="readonly"
               title="A readonly field"
@@ -992,6 +1097,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                 autoFocus={false}
                 component={[Function]}
                 default="I am read-only."
+                formOptions={
+                  Object {
+                    "change": [Function],
+                    "getState": [Function],
+                    "handleSubmit": [Function],
+                    "onCancel": undefined,
+                    "onSubmit": [MockFunction],
+                    "pristine": true,
+                    "push": [Function],
+                    "renderForm": [Function],
+                    "reset": [Function],
+                    "submit": [Function],
+                    "valid": true,
+                  }
+                }
                 format={[Function]}
                 label="A readonly field"
                 name="readonly"
@@ -1035,6 +1155,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                   FieldProvider={[Function]}
                   autoFocus={false}
                   default="I am read-only."
+                  formOptions={
+                    Object {
+                      "change": [Function],
+                      "getState": [Function],
+                      "handleSubmit": [Function],
+                      "onCancel": undefined,
+                      "onSubmit": [MockFunction],
+                      "pristine": true,
+                      "push": [Function],
+                      "renderForm": [Function],
+                      "reset": [Function],
+                      "submit": [Function],
+                      "valid": true,
+                    }
+                  }
                   input={
                     Object {
                       "name": "readonly",
@@ -1113,6 +1248,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               autoFocus={false}
               component={[Function]}
               default="I am yellow"
+              formOptions={
+                Object {
+                  "change": [Function],
+                  "getState": [Function],
+                  "handleSubmit": [Function],
+                  "onCancel": undefined,
+                  "onSubmit": [MockFunction],
+                  "pristine": true,
+                  "push": [Function],
+                  "renderForm": [Function],
+                  "reset": [Function],
+                  "submit": [Function],
+                  "valid": true,
+                }
+              }
               label="Custom widget with options"
               name="widgetOptions"
               title="Custom widget with options"
@@ -1124,6 +1274,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                 autoFocus={false}
                 component={[Function]}
                 default="I am yellow"
+                formOptions={
+                  Object {
+                    "change": [Function],
+                    "getState": [Function],
+                    "handleSubmit": [Function],
+                    "onCancel": undefined,
+                    "onSubmit": [MockFunction],
+                    "pristine": true,
+                    "push": [Function],
+                    "renderForm": [Function],
+                    "reset": [Function],
+                    "submit": [Function],
+                    "valid": true,
+                  }
+                }
                 format={[Function]}
                 label="Custom widget with options"
                 name="widgetOptions"
@@ -1167,6 +1332,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                   FieldProvider={[Function]}
                   autoFocus={false}
                   default="I am yellow"
+                  formOptions={
+                    Object {
+                      "change": [Function],
+                      "getState": [Function],
+                      "handleSubmit": [Function],
+                      "onCancel": undefined,
+                      "onSubmit": [MockFunction],
+                      "pristine": true,
+                      "push": [Function],
+                      "renderForm": [Function],
+                      "reset": [Function],
+                      "submit": [Function],
+                      "valid": true,
+                    }
+                  }
                   input={
                     Object {
                       "name": "widgetOptions",
@@ -1259,6 +1439,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               FieldProvider={[Function]}
               autoFocus={false}
               component={[Function]}
+              formOptions={
+                Object {
+                  "change": [Function],
+                  "getState": [Function],
+                  "handleSubmit": [Function],
+                  "onCancel": undefined,
+                  "onSubmit": [MockFunction],
+                  "pristine": true,
+                  "push": [Function],
+                  "renderForm": [Function],
+                  "reset": [Function],
+                  "submit": [Function],
+                  "valid": true,
+                }
+              }
               label="Custom select widget with options"
               name="selectWidgetOptions"
               options={
@@ -1285,6 +1480,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                 FieldProvider={[Function]}
                 autoFocus={false}
                 component={[Function]}
+                formOptions={
+                  Object {
+                    "change": [Function],
+                    "getState": [Function],
+                    "handleSubmit": [Function],
+                    "onCancel": undefined,
+                    "onSubmit": [MockFunction],
+                    "pristine": true,
+                    "push": [Function],
+                    "renderForm": [Function],
+                    "reset": [Function],
+                    "submit": [Function],
+                    "valid": true,
+                  }
+                }
                 format={[Function]}
                 label="Custom select widget with options"
                 name="selectWidgetOptions"
@@ -1343,6 +1553,21 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                 <Component
                   FieldProvider={[Function]}
                   autoFocus={false}
+                  formOptions={
+                    Object {
+                      "change": [Function],
+                      "getState": [Function],
+                      "handleSubmit": [Function],
+                      "onCancel": undefined,
+                      "onSubmit": [MockFunction],
+                      "pristine": true,
+                      "push": [Function],
+                      "renderForm": [Function],
+                      "reset": [Function],
+                      "submit": [Function],
+                      "valid": true,
+                    }
+                  }
                   input={
                     Object {
                       "name": "selectWidgetOptions",
