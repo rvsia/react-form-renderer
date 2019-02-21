@@ -511,9 +511,11 @@ exports[`renderForm function should render condition field only if the condition
                   }
                 }
                 name="foo"
+                validate={[Function]}
               >
                 <div
                   name="foo"
+                  validate={[Function]}
                 >
                   Custom component
                 </div>
@@ -576,10 +578,12 @@ exports[`renderForm function should render single field form with custom compone
             }
           }
           name="foo"
+          validate={[Function]}
         >
           <_class
             name="foo"
             render={[Function]}
+            validate={[Function]}
           >
             <Field
               format={[Function]}
@@ -617,6 +621,7 @@ exports[`renderForm function should render single field form with custom compone
                 }
               }
               render={[Function]}
+              validate={[Function]}
             >
               <div>
                 Custom component
@@ -855,9 +860,11 @@ exports[`renderForm function should render single field from with custom compone
             }
           }
           name="foo"
+          validate={[Function]}
         >
           <div
             name="foo"
+            validate={[Function]}
           >
             Custom component
           </div>

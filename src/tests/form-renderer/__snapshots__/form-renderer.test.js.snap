@@ -338,6 +338,7 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               }
               name="stringFormats"
               title="String formats"
+              validate={[Function]}
             >
               <div
                 className="nested-item"
@@ -506,6 +507,7 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               }
               name="boolean"
               title="Boolean field"
+              validate={[Function]}
             >
               <div
                 className="nested-item"
@@ -676,6 +678,7 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               }
               name="string"
               title="String field"
+              validate={[Function]}
             >
               <div
                 className="nested-item"
