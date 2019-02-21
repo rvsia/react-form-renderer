@@ -711,6 +711,11 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                       <_class
                         FieldProvider={[Function]}
                         component={[Function]}
+                        formOptions={
+                          Object {
+                            "renderForm": [Function],
+                          }
+                        }
                         label="foo"
                         name="nested component"
                         validate={[Function]}
@@ -718,6 +723,11 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                         <Field
                           FieldProvider={[Function]}
                           component={[Function]}
+                          formOptions={
+                            Object {
+                              "renderForm": [Function],
+                            }
+                          }
                           format={[Function]}
                           label="foo"
                           name="nested component"
@@ -757,6 +767,11 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                         >
                           <Component
                             FieldProvider={[Function]}
+                            formOptions={
+                              Object {
+                                "renderForm": [Function],
+                              }
+                            }
                             input={
                               Object {
                                 "name": "nested component",
@@ -819,6 +834,11 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                         FieldProvider={[Function]}
                         component={[Function]}
                         fields={Array []}
+                        formOptions={
+                          Object {
+                            "renderForm": [Function],
+                          }
+                        }
                         name="foo"
                         validate={[Function]}
                       >
@@ -826,6 +846,11 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                           FieldProvider={[Function]}
                           component={[Function]}
                           fields={Array []}
+                          formOptions={
+                            Object {
+                              "renderForm": [Function],
+                            }
+                          }
                           format={[Function]}
                           name="foo"
                           parse={[Function]}
@@ -865,6 +890,11 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                           <Component
                             FieldProvider={[Function]}
                             fields={Array []}
+                            formOptions={
+                              Object {
+                                "renderForm": [Function],
+                              }
+                            }
                             input={
                               Object {
                                 "name": "foo",

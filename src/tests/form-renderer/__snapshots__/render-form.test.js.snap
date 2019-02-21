@@ -673,12 +673,22 @@ exports[`renderForm function should render single field from defined componentTy
         <_class
           FieldProvider={[Function]}
           component={[Function]}
+          formOptions={
+            Object {
+              "renderForm": [Function],
+            }
+          }
           name="foo"
           validate={[Function]}
         >
           <Field
             FieldProvider={[Function]}
             component={[Function]}
+            formOptions={
+              Object {
+                "renderForm": [Function],
+              }
+            }
             format={[Function]}
             name="foo"
             parse={[Function]}
@@ -717,6 +727,11 @@ exports[`renderForm function should render single field from defined componentTy
           >
             <Component
               FieldProvider={[Function]}
+              formOptions={
+                Object {
+                  "renderForm": [Function],
+                }
+              }
               input={
                 Object {
                   "name": "foo",
@@ -747,6 +762,11 @@ exports[`renderForm function should render single field from defined componentTy
               }
             >
               <div
+                formOptions={
+                  Object {
+                    "renderForm": [Function],
+                  }
+                }
                 input={
                   Object {
                     "name": "foo",
