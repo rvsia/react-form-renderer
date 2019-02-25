@@ -65,13 +65,13 @@ const FormRenderer = ({
           ...initialValues,
         }}
         subscription={{ pristine: true, submitting: true, valid: true }}
-        render={ ({ handleSubmit, pristine, valid, form: { reset, mutators, change, getState, submit }}) => (
+        render={ ({ handleSubmit, pristine, valid, form: { reset, mutators, change, getState, submit, ...form }}) => (
           <RendererContext.Consumer>
             { ({ layoutMapper: { FormWrapper }}) => (
               <FormWrapper>
                 { inputSchema.schema.title && renderTitle(inputSchema.schema.title) }
                 { inputSchema.schema.description && renderDescription(inputSchema.schema.description) }
-                { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine, onSubmit, onCancel, getState, valid, submit, handleSubmit, reset }) }
+                { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine, onSubmit, onCancel, getState, valid, submit, handleSubmit, reset, ...form }) }
                 { showFormControls && renderControls({
                   buttonOrder,
                   buttonClassName,
