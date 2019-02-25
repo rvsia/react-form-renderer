@@ -85,6 +85,48 @@ describe('renderForm function', () => {
     expect(form.instance().state.state.errors.foo).toBe(('Bar'));
   });
 
+  it('should correctly assign function validator with custom message and fail', () => {
+    const cannotBeOdd = value => value % 2 === 0 ? undefined : 'Odd';
+    const formFields = [{
+      component: components.TEXT_FIELD,
+      name: 'foo',
+      dataType: 'string',
+      validate: [
+        cannotBeOdd,
+      ],
+    }];
+    const wrapper = mount(
+      <ContextWrapper formFieldsMapper={{
+        [components.TEXT_FIELD]: ({ FieldProvider, dataType, ...props }) => <div { ...props }>TextField</div>,
+      }}>
+        { renderForm(formFields, { renderForm }) }
+      </ContextWrapper>
+    );
+    const form = wrapper.find(Form);
+    expect(form.instance().state.state.errors.foo).toBe(('Odd'));
+  });
+
+  it('should correctly assign function validator with custom message and pass', () => {
+    const cannotBeEven = value => value % 2 === 0 ? 'Even' : undefined;
+    const formFields = [{
+      component: components.TEXT_FIELD,
+      name: 'foo',
+      dataType: 'string',
+      validate: [
+        cannotBeEven,
+      ],
+    }];
+    const wrapper = mount(
+      <ContextWrapper formFieldsMapper={{
+        [components.TEXT_FIELD]: ({ FieldProvider, dataType, ...props }) => <div { ...props }>TextField</div>,
+      }}>
+        { renderForm(formFields, { renderForm }) }
+      </ContextWrapper>
+    );
+    const form = wrapper.find(Form);
+    expect(form.instance().state.state.errors.foo).toBe((undefined));
+  });
+
   it('should render single field from with custom componentType', () => {
     const formFields = [{
       component: 'custom-component',

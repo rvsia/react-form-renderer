@@ -83,14 +83,19 @@ renderSingleField.propTypes = {
   component: PropTypes.string.isRequired,
 };
 
+const prepareValidator = (validator) => ((typeof validator === 'function') ? validator : validatorMapper(validator.type)({ ...validator }));
+
 const prepareFieldProps = field => ({
   ...field,
   dataType: undefined,
   validate: field.validate
-    ? [ ...field.validate.map(({ type, ...options }) => validatorMapper(type)(options)),
+    ? [
+      ...field.validate.map((validator) => prepareValidator(validator)),
       field.dataType && dataTypeValidator(field.dataType)(),
     ]
-    : [ field.dataType && dataTypeValidator(field.dataType)() ],
+    : [
+      field.dataType && dataTypeValidator(field.dataType)(),
+    ],
 });
 
 const renderForm = (fields, formOptions) => fields.map(field => (Array.isArray(field)

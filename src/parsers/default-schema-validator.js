@@ -6,11 +6,11 @@ const componentBlackList = [ components.FIELD_ARRAY, components.FIXED_LIST, 'tab
 
 const checkFieldsArray = (obj, objectKey) => {
   if (!obj.hasOwnProperty('fields')) {
-    throw new DefaultSchemaError(`Component of type ${objectKey} must contain "Fields" property of type array, received undefined!`);
+    throw new DefaultSchemaError(`Component of type ${objectKey} must contain "fields" property of type array, received undefined!`);
   }
 
   if (!Array.isArray(obj.fields)) {
-    throw new DefaultSchemaError(`Component of type ${objectKey} must contain "Fields" property of type array, received type: ${typeof obj.fields}!`);
+    throw new DefaultSchemaError(`Component of type ${objectKey} must contain "fields" property of type array, received type: ${typeof obj.fields}!`);
   }
 };
 
@@ -53,26 +53,28 @@ const checkValidators = (validate, fieldName) => {
   }
 
   validate.forEach((validator, index) => {
-    if (Array.isArray(validator) || typeof validator !== 'object') {
+    if (Array.isArray(validator) || (typeof validator !== 'object' && typeof validator !== 'function')) {
       throw new DefaultSchemaError(`
         Error occured in field definition with name: "${fieldName}".
-        Field validator at index: ${index} must be an object, ${Array.isArray(validator) ? 'array' : typeof validator} received!
+        Field validator at index: ${index} must be an object or a function, ${Array.isArray(validator) ? 'array' : typeof validator} received!
       `);
     }
 
-    if (!validator.hasOwnProperty('type')) {
-      throw new DefaultSchemaError(`
+    if (typeof validator !== 'function'){
+      if (!validator.hasOwnProperty('type')) {
+        throw new DefaultSchemaError(`
         Error occured in field definition with name: "${fieldName}".
         Field validator at index: ${index} does not have "type" property! Properties received: [${Object.keys(validator)}].
       `);
-    }
+      }
 
-    if (!Object.values(validators).includes(validator.type)) {
-      throw new DefaultSchemaError(`
+      if (!Object.values(validators).includes(validator.type)) {
+        throw new DefaultSchemaError(`
         Error occured in field definition with name: "${fieldName}".
         Field validator at index: ${index} does not have correct "type" property!
         Received "${validator.type}", expected one of: [${Object.values(validators)}].
       `);
+      }
     }
   });
 };
