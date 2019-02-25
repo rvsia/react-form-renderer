@@ -260,16 +260,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             }
             formOptions={
               Object {
+                "batch": [Function],
+                "blur": [Function],
                 "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
                 "getState": [Function],
                 "handleSubmit": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
+                "pauseValidation": [Function],
                 "pristine": true,
                 "push": [Function],
+                "registerField": [Function],
                 "renderForm": [Function],
                 "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
                 "submit": [Function],
+                "subscribe": [Function],
                 "valid": true,
               }
             }
@@ -323,16 +335,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               }
               formOptions={
                 Object {
+                  "batch": [Function],
+                  "blur": [Function],
                   "change": [Function],
+                  "focus": [Function],
+                  "getFieldState": [Function],
+                  "getRegisteredFields": [Function],
                   "getState": [Function],
                   "handleSubmit": [Function],
+                  "initialize": [Function],
+                  "isValidationPaused": [Function],
                   "onCancel": undefined,
                   "onSubmit": [MockFunction],
+                  "pauseValidation": [Function],
                   "pristine": true,
                   "push": [Function],
+                  "registerField": [Function],
                   "renderForm": [Function],
                   "reset": [Function],
+                  "resumeValidation": [Function],
+                  "setConfig": [Function],
                   "submit": [Function],
+                  "subscribe": [Function],
                   "valid": true,
                 }
               }
@@ -410,16 +434,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             }
             formOptions={
               Object {
+                "batch": [Function],
+                "blur": [Function],
                 "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
                 "getState": [Function],
                 "handleSubmit": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
+                "pauseValidation": [Function],
                 "pristine": true,
                 "push": [Function],
+                "registerField": [Function],
                 "renderForm": [Function],
                 "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
                 "submit": [Function],
+                "subscribe": [Function],
                 "valid": true,
               }
             }
@@ -492,16 +528,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               }
               formOptions={
                 Object {
+                  "batch": [Function],
+                  "blur": [Function],
                   "change": [Function],
+                  "focus": [Function],
+                  "getFieldState": [Function],
+                  "getRegisteredFields": [Function],
                   "getState": [Function],
                   "handleSubmit": [Function],
+                  "initialize": [Function],
+                  "isValidationPaused": [Function],
                   "onCancel": undefined,
                   "onSubmit": [MockFunction],
+                  "pauseValidation": [Function],
                   "pristine": true,
                   "push": [Function],
+                  "registerField": [Function],
                   "renderForm": [Function],
                   "reset": [Function],
+                  "resumeValidation": [Function],
+                  "setConfig": [Function],
                   "submit": [Function],
+                  "subscribe": [Function],
                   "valid": true,
                 }
               }
@@ -580,16 +628,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             }
             formOptions={
               Object {
+                "batch": [Function],
+                "blur": [Function],
                 "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
                 "getState": [Function],
                 "handleSubmit": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
+                "pauseValidation": [Function],
                 "pristine": true,
                 "push": [Function],
+                "registerField": [Function],
                 "renderForm": [Function],
                 "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
                 "submit": [Function],
+                "subscribe": [Function],
                 "valid": true,
               }
             }
@@ -663,16 +723,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               }
               formOptions={
                 Object {
+                  "batch": [Function],
+                  "blur": [Function],
                   "change": [Function],
+                  "focus": [Function],
+                  "getFieldState": [Function],
+                  "getRegisteredFields": [Function],
                   "getState": [Function],
                   "handleSubmit": [Function],
+                  "initialize": [Function],
+                  "isValidationPaused": [Function],
                   "onCancel": undefined,
                   "onSubmit": [MockFunction],
+                  "pauseValidation": [Function],
                   "pristine": true,
                   "push": [Function],
+                  "registerField": [Function],
                   "renderForm": [Function],
                   "reset": [Function],
+                  "resumeValidation": [Function],
+                  "setConfig": [Function],
                   "submit": [Function],
+                  "subscribe": [Function],
                   "valid": true,
                 }
               }
@@ -696,16 +768,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             default="I'm a hidden string."
             formOptions={
               Object {
+                "batch": [Function],
+                "blur": [Function],
                 "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
                 "getState": [Function],
                 "handleSubmit": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
+                "pauseValidation": [Function],
                 "pristine": true,
                 "push": [Function],
+                "registerField": [Function],
                 "renderForm": [Function],
                 "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
                 "submit": [Function],
+                "subscribe": [Function],
                 "valid": true,
               }
             }
@@ -725,16 +809,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               default="I'm a hidden string."
               formOptions={
                 Object {
+                  "batch": [Function],
+                  "blur": [Function],
                   "change": [Function],
+                  "focus": [Function],
+                  "getFieldState": [Function],
+                  "getRegisteredFields": [Function],
                   "getState": [Function],
                   "handleSubmit": [Function],
+                  "initialize": [Function],
+                  "isValidationPaused": [Function],
                   "onCancel": undefined,
                   "onSubmit": [MockFunction],
+                  "pauseValidation": [Function],
                   "pristine": true,
                   "push": [Function],
+                  "registerField": [Function],
                   "renderForm": [Function],
                   "reset": [Function],
+                  "resumeValidation": [Function],
+                  "setConfig": [Function],
                   "submit": [Function],
+                  "subscribe": [Function],
                   "valid": true,
                 }
               }
@@ -750,16 +846,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                 default="I'm a hidden string."
                 formOptions={
                   Object {
+                    "batch": [Function],
+                    "blur": [Function],
                     "change": [Function],
+                    "focus": [Function],
+                    "getFieldState": [Function],
+                    "getRegisteredFields": [Function],
                     "getState": [Function],
                     "handleSubmit": [Function],
+                    "initialize": [Function],
+                    "isValidationPaused": [Function],
                     "onCancel": undefined,
                     "onSubmit": [MockFunction],
+                    "pauseValidation": [Function],
                     "pristine": true,
                     "push": [Function],
+                    "registerField": [Function],
                     "renderForm": [Function],
                     "reset": [Function],
+                    "resumeValidation": [Function],
+                    "setConfig": [Function],
                     "submit": [Function],
+                    "subscribe": [Function],
                     "valid": true,
                   }
                 }
@@ -807,16 +915,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                   default="I'm a hidden string."
                   formOptions={
                     Object {
+                      "batch": [Function],
+                      "blur": [Function],
                       "change": [Function],
+                      "focus": [Function],
+                      "getFieldState": [Function],
+                      "getRegisteredFields": [Function],
                       "getState": [Function],
                       "handleSubmit": [Function],
+                      "initialize": [Function],
+                      "isValidationPaused": [Function],
                       "onCancel": undefined,
                       "onSubmit": [MockFunction],
+                      "pauseValidation": [Function],
                       "pristine": true,
                       "push": [Function],
+                      "registerField": [Function],
                       "renderForm": [Function],
                       "reset": [Function],
+                      "resumeValidation": [Function],
+                      "setConfig": [Function],
                       "submit": [Function],
+                      "subscribe": [Function],
                       "valid": true,
                     }
                   }
@@ -869,16 +989,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             default="I am disabled."
             formOptions={
               Object {
+                "batch": [Function],
+                "blur": [Function],
                 "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
                 "getState": [Function],
                 "handleSubmit": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
+                "pauseValidation": [Function],
                 "pristine": true,
                 "push": [Function],
+                "registerField": [Function],
                 "renderForm": [Function],
                 "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
                 "submit": [Function],
+                "subscribe": [Function],
                 "valid": true,
               }
             }
@@ -899,16 +1031,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               default="I am disabled."
               formOptions={
                 Object {
+                  "batch": [Function],
+                  "blur": [Function],
                   "change": [Function],
+                  "focus": [Function],
+                  "getFieldState": [Function],
+                  "getRegisteredFields": [Function],
                   "getState": [Function],
                   "handleSubmit": [Function],
+                  "initialize": [Function],
+                  "isValidationPaused": [Function],
                   "onCancel": undefined,
                   "onSubmit": [MockFunction],
+                  "pauseValidation": [Function],
                   "pristine": true,
                   "push": [Function],
+                  "registerField": [Function],
                   "renderForm": [Function],
                   "reset": [Function],
+                  "resumeValidation": [Function],
+                  "setConfig": [Function],
                   "submit": [Function],
+                  "subscribe": [Function],
                   "valid": true,
                 }
               }
@@ -925,16 +1069,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                 default="I am disabled."
                 formOptions={
                   Object {
+                    "batch": [Function],
+                    "blur": [Function],
                     "change": [Function],
+                    "focus": [Function],
+                    "getFieldState": [Function],
+                    "getRegisteredFields": [Function],
                     "getState": [Function],
                     "handleSubmit": [Function],
+                    "initialize": [Function],
+                    "isValidationPaused": [Function],
                     "onCancel": undefined,
                     "onSubmit": [MockFunction],
+                    "pauseValidation": [Function],
                     "pristine": true,
                     "push": [Function],
+                    "registerField": [Function],
                     "renderForm": [Function],
                     "reset": [Function],
+                    "resumeValidation": [Function],
+                    "setConfig": [Function],
                     "submit": [Function],
+                    "subscribe": [Function],
                     "valid": true,
                   }
                 }
@@ -983,16 +1139,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                   default="I am disabled."
                   formOptions={
                     Object {
+                      "batch": [Function],
+                      "blur": [Function],
                       "change": [Function],
+                      "focus": [Function],
+                      "getFieldState": [Function],
+                      "getRegisteredFields": [Function],
                       "getState": [Function],
                       "handleSubmit": [Function],
+                      "initialize": [Function],
+                      "isValidationPaused": [Function],
                       "onCancel": undefined,
                       "onSubmit": [MockFunction],
+                      "pauseValidation": [Function],
                       "pristine": true,
                       "push": [Function],
+                      "registerField": [Function],
                       "renderForm": [Function],
                       "reset": [Function],
+                      "resumeValidation": [Function],
+                      "setConfig": [Function],
                       "submit": [Function],
+                      "subscribe": [Function],
                       "valid": true,
                     }
                   }
@@ -1046,16 +1214,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             default="I am read-only."
             formOptions={
               Object {
+                "batch": [Function],
+                "blur": [Function],
                 "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
                 "getState": [Function],
                 "handleSubmit": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
+                "pauseValidation": [Function],
                 "pristine": true,
                 "push": [Function],
+                "registerField": [Function],
                 "renderForm": [Function],
                 "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
                 "submit": [Function],
+                "subscribe": [Function],
                 "valid": true,
               }
             }
@@ -1076,16 +1256,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               default="I am read-only."
               formOptions={
                 Object {
+                  "batch": [Function],
+                  "blur": [Function],
                   "change": [Function],
+                  "focus": [Function],
+                  "getFieldState": [Function],
+                  "getRegisteredFields": [Function],
                   "getState": [Function],
                   "handleSubmit": [Function],
+                  "initialize": [Function],
+                  "isValidationPaused": [Function],
                   "onCancel": undefined,
                   "onSubmit": [MockFunction],
+                  "pauseValidation": [Function],
                   "pristine": true,
                   "push": [Function],
+                  "registerField": [Function],
                   "renderForm": [Function],
                   "reset": [Function],
+                  "resumeValidation": [Function],
+                  "setConfig": [Function],
                   "submit": [Function],
+                  "subscribe": [Function],
                   "valid": true,
                 }
               }
@@ -1102,16 +1294,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                 default="I am read-only."
                 formOptions={
                   Object {
+                    "batch": [Function],
+                    "blur": [Function],
                     "change": [Function],
+                    "focus": [Function],
+                    "getFieldState": [Function],
+                    "getRegisteredFields": [Function],
                     "getState": [Function],
                     "handleSubmit": [Function],
+                    "initialize": [Function],
+                    "isValidationPaused": [Function],
                     "onCancel": undefined,
                     "onSubmit": [MockFunction],
+                    "pauseValidation": [Function],
                     "pristine": true,
                     "push": [Function],
+                    "registerField": [Function],
                     "renderForm": [Function],
                     "reset": [Function],
+                    "resumeValidation": [Function],
+                    "setConfig": [Function],
                     "submit": [Function],
+                    "subscribe": [Function],
                     "valid": true,
                   }
                 }
@@ -1160,16 +1364,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                   default="I am read-only."
                   formOptions={
                     Object {
+                      "batch": [Function],
+                      "blur": [Function],
                       "change": [Function],
+                      "focus": [Function],
+                      "getFieldState": [Function],
+                      "getRegisteredFields": [Function],
                       "getState": [Function],
                       "handleSubmit": [Function],
+                      "initialize": [Function],
+                      "isValidationPaused": [Function],
                       "onCancel": undefined,
                       "onSubmit": [MockFunction],
+                      "pauseValidation": [Function],
                       "pristine": true,
                       "push": [Function],
+                      "registerField": [Function],
                       "renderForm": [Function],
                       "reset": [Function],
+                      "resumeValidation": [Function],
+                      "setConfig": [Function],
                       "submit": [Function],
+                      "subscribe": [Function],
                       "valid": true,
                     }
                   }
@@ -1223,16 +1439,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             default="I am yellow"
             formOptions={
               Object {
+                "batch": [Function],
+                "blur": [Function],
                 "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
                 "getState": [Function],
                 "handleSubmit": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
+                "pauseValidation": [Function],
                 "pristine": true,
                 "push": [Function],
+                "registerField": [Function],
                 "renderForm": [Function],
                 "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
                 "submit": [Function],
+                "subscribe": [Function],
                 "valid": true,
               }
             }
@@ -1253,16 +1481,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               default="I am yellow"
               formOptions={
                 Object {
+                  "batch": [Function],
+                  "blur": [Function],
                   "change": [Function],
+                  "focus": [Function],
+                  "getFieldState": [Function],
+                  "getRegisteredFields": [Function],
                   "getState": [Function],
                   "handleSubmit": [Function],
+                  "initialize": [Function],
+                  "isValidationPaused": [Function],
                   "onCancel": undefined,
                   "onSubmit": [MockFunction],
+                  "pauseValidation": [Function],
                   "pristine": true,
                   "push": [Function],
+                  "registerField": [Function],
                   "renderForm": [Function],
                   "reset": [Function],
+                  "resumeValidation": [Function],
+                  "setConfig": [Function],
                   "submit": [Function],
+                  "subscribe": [Function],
                   "valid": true,
                 }
               }
@@ -1279,16 +1519,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                 default="I am yellow"
                 formOptions={
                   Object {
+                    "batch": [Function],
+                    "blur": [Function],
                     "change": [Function],
+                    "focus": [Function],
+                    "getFieldState": [Function],
+                    "getRegisteredFields": [Function],
                     "getState": [Function],
                     "handleSubmit": [Function],
+                    "initialize": [Function],
+                    "isValidationPaused": [Function],
                     "onCancel": undefined,
                     "onSubmit": [MockFunction],
+                    "pauseValidation": [Function],
                     "pristine": true,
                     "push": [Function],
+                    "registerField": [Function],
                     "renderForm": [Function],
                     "reset": [Function],
+                    "resumeValidation": [Function],
+                    "setConfig": [Function],
                     "submit": [Function],
+                    "subscribe": [Function],
                     "valid": true,
                   }
                 }
@@ -1337,16 +1589,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                   default="I am yellow"
                   formOptions={
                     Object {
+                      "batch": [Function],
+                      "blur": [Function],
                       "change": [Function],
+                      "focus": [Function],
+                      "getFieldState": [Function],
+                      "getRegisteredFields": [Function],
                       "getState": [Function],
                       "handleSubmit": [Function],
+                      "initialize": [Function],
+                      "isValidationPaused": [Function],
                       "onCancel": undefined,
                       "onSubmit": [MockFunction],
+                      "pauseValidation": [Function],
                       "pristine": true,
                       "push": [Function],
+                      "registerField": [Function],
                       "renderForm": [Function],
                       "reset": [Function],
+                      "resumeValidation": [Function],
+                      "setConfig": [Function],
                       "submit": [Function],
+                      "subscribe": [Function],
                       "valid": true,
                     }
                   }
@@ -1399,16 +1663,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
             componentType="select-field"
             formOptions={
               Object {
+                "batch": [Function],
+                "blur": [Function],
                 "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
                 "getState": [Function],
                 "handleSubmit": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
                 "onCancel": undefined,
                 "onSubmit": [MockFunction],
+                "pauseValidation": [Function],
                 "pristine": true,
                 "push": [Function],
+                "registerField": [Function],
                 "renderForm": [Function],
                 "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
                 "submit": [Function],
+                "subscribe": [Function],
                 "valid": true,
               }
             }
@@ -1444,16 +1720,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
               component={[Function]}
               formOptions={
                 Object {
+                  "batch": [Function],
+                  "blur": [Function],
                   "change": [Function],
+                  "focus": [Function],
+                  "getFieldState": [Function],
+                  "getRegisteredFields": [Function],
                   "getState": [Function],
                   "handleSubmit": [Function],
+                  "initialize": [Function],
+                  "isValidationPaused": [Function],
                   "onCancel": undefined,
                   "onSubmit": [MockFunction],
+                  "pauseValidation": [Function],
                   "pristine": true,
                   "push": [Function],
+                  "registerField": [Function],
                   "renderForm": [Function],
                   "reset": [Function],
+                  "resumeValidation": [Function],
+                  "setConfig": [Function],
                   "submit": [Function],
+                  "subscribe": [Function],
                   "valid": true,
                 }
               }
@@ -1485,16 +1773,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                 component={[Function]}
                 formOptions={
                   Object {
+                    "batch": [Function],
+                    "blur": [Function],
                     "change": [Function],
+                    "focus": [Function],
+                    "getFieldState": [Function],
+                    "getRegisteredFields": [Function],
                     "getState": [Function],
                     "handleSubmit": [Function],
+                    "initialize": [Function],
+                    "isValidationPaused": [Function],
                     "onCancel": undefined,
                     "onSubmit": [MockFunction],
+                    "pauseValidation": [Function],
                     "pristine": true,
                     "push": [Function],
+                    "registerField": [Function],
                     "renderForm": [Function],
                     "reset": [Function],
+                    "resumeValidation": [Function],
+                    "setConfig": [Function],
                     "submit": [Function],
+                    "subscribe": [Function],
                     "valid": true,
                   }
                 }
@@ -1558,16 +1858,28 @@ exports[`<FormRenderer /> should render form from schema 1`] = `
                   autoFocus={false}
                   formOptions={
                     Object {
+                      "batch": [Function],
+                      "blur": [Function],
                       "change": [Function],
+                      "focus": [Function],
+                      "getFieldState": [Function],
+                      "getRegisteredFields": [Function],
                       "getState": [Function],
                       "handleSubmit": [Function],
+                      "initialize": [Function],
+                      "isValidationPaused": [Function],
                       "onCancel": undefined,
                       "onSubmit": [MockFunction],
+                      "pauseValidation": [Function],
                       "pristine": true,
                       "push": [Function],
+                      "registerField": [Function],
                       "renderForm": [Function],
                       "reset": [Function],
+                      "resumeValidation": [Function],
+                      "setConfig": [Function],
                       "submit": [Function],
+                      "subscribe": [Function],
                       "valid": true,
                     }
                   }
