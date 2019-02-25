@@ -13,39 +13,39 @@ describe('Default schema validator', () => {
     };
   });
   it('should fail if input is not a object', () => {
-    expect(() => defaultSchemaValidator([])).toThrow();
+    expect(() => defaultSchemaValidator([])).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail if input object does not have fields key', () => {
-    expect(() => defaultSchemaValidator({})).toThrow();
+    expect(() => defaultSchemaValidator({})).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail if input object does fields key that is not array', () => {
-    expect(() => defaultSchemaValidator({ fields: {}})).toThrow();
+    expect(() => defaultSchemaValidator({ fields: {}})).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail if field item does not have component property', () => {
-    expect(() => defaultSchemaValidator({ fields: [{}]})).toThrow();
+    expect(() => defaultSchemaValidator({ fields: [{}]})).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail if field item does not have name property', () => {
     expect(() => defaultSchemaValidator({ fields: [{
       component: 'foo',
-    }]}, formFieldsMapper)).toThrow();
+    }]}, formFieldsMapper)).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail if field component property is not in form fields mapper.', () => {
     expect(() => defaultSchemaValidator({ fields: [{
       component: 'blarghs',
       name: 'foo',
-    }]}, formFieldsMapper)).toThrow();
+    }]}, formFieldsMapper)).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail if field component from form fields mapper is not a valid React component.', () => {
     expect(() => defaultSchemaValidator({ fields: [{
       component: 'invalidComponent',
       name: 'foo',
-    }]}, formFieldsMapper)).toThrow();
+    }]}, formFieldsMapper)).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail if field condition is not correct type.', () => {
@@ -53,7 +53,7 @@ describe('Default schema validator', () => {
       component: 'foo',
       name: 'foo',
       condition: '',
-    }]}, formFieldsMapper)).toThrow();
+    }]}, formFieldsMapper)).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail if field condition is missing when key.', () => {
@@ -61,7 +61,7 @@ describe('Default schema validator', () => {
       component: 'foo',
       name: 'foo',
       condition: {},
-    }]}, formFieldsMapper)).toThrow();
+    }]}, formFieldsMapper)).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail if field condition is missing is key.', () => {
@@ -69,7 +69,7 @@ describe('Default schema validator', () => {
       component: 'foo',
       name: 'foo',
       condition: { when: 'Foo' },
-    }]}, formFieldsMapper)).toThrow();
+    }]}, formFieldsMapper)).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail if field condition when property is not correct type.', () => {
@@ -77,7 +77,7 @@ describe('Default schema validator', () => {
       component: 'foo',
       name: 'foo',
       condition: { when: 123, is: 456 },
-    }]}, formFieldsMapper)).toThrow();
+    }]}, formFieldsMapper)).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail if field validate is not an array.', () => {
@@ -85,33 +85,44 @@ describe('Default schema validator', () => {
       component: 'foo',
       name: 'foo',
       validate: {},
-    }]}, formFieldsMapper)).toThrow();
+    }]}, formFieldsMapper)).toThrowErrorMatchingSnapshot();
   });
 
-  it('should fail if field validate item is not an object.', () => {
+  it('should not fail if field validate item is a function.', () => {
+    const functionValidator = (value) => 'cosi';
+    expect(() => defaultSchemaValidator({ fields: [{
+      component: 'foo',
+      name: 'foo',
+      validate: [
+        functionValidator,
+      ],
+    }]}, formFieldsMapper)).not.toThrow();
+  });
+
+  it('should fail if field validate item is not an object or a function.', () => {
     expect(() => defaultSchemaValidator({ fields: [{
       component: 'foo',
       name: 'foo',
       validate: [ '' ],
-    }]}, formFieldsMapper)).toThrow();
+    }]}, formFieldsMapper)).toThrowErrorMatchingSnapshot();
   });
 
-  it('should fail if field validate item does not have type property.', () => {
+  it('should fail if field validate item is an object and does not have type property.', () => {
     expect(() => defaultSchemaValidator({ fields: [{
       component: 'foo',
       name: 'foo',
       validate: [{}],
-    }]}, formFieldsMapper)).toThrow();
+    }]}, formFieldsMapper)).toThrowErrorMatchingSnapshot();
   });
 
-  it('should fail if field validate item validator type does not exist.', () => {
+  it('should fail if field validate item is an object and validator type does not exist.', () => {
     expect(() => defaultSchemaValidator({ fields: [{
       component: 'foo',
       name: 'foo',
       validate: [{
         type: 'magic',
       }],
-    }]}, formFieldsMapper)).toThrow();
+    }]}, formFieldsMapper)).toThrowErrorMatchingSnapshot();
   });
 
   it('should pass validation', () => {
