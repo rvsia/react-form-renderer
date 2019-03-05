@@ -36,7 +36,7 @@ exports[`renderForm function #condition should render condition field only if th
         is="fuzz"
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -85,7 +85,7 @@ exports[`renderForm function #condition should render condition field only if th
               }
             }
           />
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -128,7 +128,7 @@ exports[`renderForm function #condition should render condition field only if th
         is="fuzz"
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -211,7 +211,7 @@ exports[`renderForm function #condition should render condition field only if th
               </customComponent>
             </FieldWrapper>
           </Field>
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -256,7 +256,7 @@ exports[`renderForm function #condition should render condition field only if th
         notMatch={true}
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -339,7 +339,7 @@ exports[`renderForm function #condition should render condition field only if th
               </customComponent>
             </FieldWrapper>
           </Field>
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -384,7 +384,7 @@ exports[`renderForm function #condition should render condition field only if th
         notMatch={true}
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -467,7 +467,7 @@ exports[`renderForm function #condition should render condition field only if th
               </customComponent>
             </FieldWrapper>
           </Field>
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -510,7 +510,7 @@ exports[`renderForm function #condition should render condition field only if th
         isEmpty={true}
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -593,7 +593,7 @@ exports[`renderForm function #condition should render condition field only if th
               </customComponent>
             </FieldWrapper>
           </Field>
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -636,7 +636,7 @@ exports[`renderForm function #condition should render condition field only if th
         isEmpty={true}
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -719,7 +719,7 @@ exports[`renderForm function #condition should render condition field only if th
               </customComponent>
             </FieldWrapper>
           </Field>
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -762,7 +762,7 @@ exports[`renderForm function #condition should render condition field only if th
         isNotEmpty={true}
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -811,7 +811,7 @@ exports[`renderForm function #condition should render condition field only if th
               }
             }
           />
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -854,7 +854,7 @@ exports[`renderForm function #condition should render condition field only if th
         isNotEmpty={true}
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -937,7 +937,7 @@ exports[`renderForm function #condition should render condition field only if th
               </customComponent>
             </FieldWrapper>
           </Field>
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -980,7 +980,7 @@ exports[`renderForm function #condition should render condition field only if th
         pattern={/fuzz/}
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -1029,7 +1029,7 @@ exports[`renderForm function #condition should render condition field only if th
               }
             }
           />
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -1072,7 +1072,7 @@ exports[`renderForm function #condition should render condition field only if th
         pattern={/fuzz/}
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -1155,7 +1155,7 @@ exports[`renderForm function #condition should render condition field only if th
               </customComponent>
             </FieldWrapper>
           </Field>
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -1200,7 +1200,7 @@ exports[`renderForm function #condition should render condition field only if th
         pattern={/fuzz/}
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -1283,7 +1283,7 @@ exports[`renderForm function #condition should render condition field only if th
               </customComponent>
             </FieldWrapper>
           </Field>
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -1328,7 +1328,7 @@ exports[`renderForm function #condition should render condition field only if th
         pattern={/fuzz/}
         when="bar"
       >
-        <_class
+        <ReactFinalForm(Field)
           name="bar"
           subscription={
             Object {
@@ -1411,7 +1411,7 @@ exports[`renderForm function #condition should render condition field only if th
               </customComponent>
             </FieldWrapper>
           </Field>
-        </_class>
+        </ReactFinalForm(Field)>
       </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -1465,7 +1465,7 @@ exports[`renderForm function should render array field 1`] = `
           ]
         }
       >
-        <_class
+        <ReactFinalForm(Field)
           FieldProvider={[Function]}
           arrayValidator={[Function]}
           component={[Function]}
@@ -1552,6 +1552,7 @@ exports[`renderForm function should render array field 1`] = `
                   "error": undefined,
                   "initial": undefined,
                   "invalid": false,
+                  "modified": false,
                   "pristine": true,
                   "submitError": undefined,
                   "submitFailed": false,
@@ -1591,6 +1592,7 @@ exports[`renderForm function should render array field 1`] = `
                     "error": undefined,
                     "initial": undefined,
                     "invalid": false,
+                    "modified": false,
                     "pristine": true,
                     "submitError": undefined,
                     "submitFailed": false,
@@ -1632,6 +1634,7 @@ exports[`renderForm function should render array field 1`] = `
                       "error": undefined,
                       "initial": undefined,
                       "invalid": false,
+                      "modified": false,
                       "pristine": true,
                       "submitError": undefined,
                       "submitFailed": false,
@@ -1645,7 +1648,7 @@ exports[`renderForm function should render array field 1`] = `
                   renderForm={[Function]}
                   validate={Array []}
                 >
-                  <_class
+                  <ReactFinalForm(ReactFinalFormFieldArray(4.8.1)(2.0.1))
                     key="foo"
                     name="foo"
                     validate={[Function]}
@@ -1717,12 +1720,12 @@ exports[`renderForm function should render array field 1`] = `
                         </div>
                       </Col>
                     </ReactFinalFormFieldArray(4.8.1)(2.0.1)>
-                  </_class>
+                  </ReactFinalForm(ReactFinalFormFieldArray(4.8.1)(2.0.1))>
                 </DynamicArray>
               </renderArrayField>
             </Component>
           </Field>
-        </_class>
+        </ReactFinalForm(Field)>
       </FieldWrapper>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -1780,7 +1783,7 @@ exports[`renderForm function should render single field form with custom compone
           name="foo"
           validate={[Function]}
         >
-          <_class
+          <ReactFinalForm(Field)
             name="foo"
             render={[Function]}
             validate={[Function]}
@@ -1827,7 +1830,7 @@ exports[`renderForm function should render single field form with custom compone
                 Custom component
               </div>
             </Field>
-          </_class>
+          </ReactFinalForm(Field)>
         </customComponent>
       </FieldWrapper>
     </FormConditionWrapper>
@@ -1875,7 +1878,7 @@ exports[`renderForm function should render single field from defined componentTy
           ]
         }
       >
-        <_class
+        <ReactFinalForm(Field)
           FieldProvider={[Function]}
           component={[Function]}
           formOptions={
@@ -1955,6 +1958,7 @@ exports[`renderForm function should render single field from defined componentTy
                   "error": undefined,
                   "initial": undefined,
                   "invalid": false,
+                  "modified": false,
                   "pristine": true,
                   "submitError": undefined,
                   "submitFailed": false,
@@ -1990,6 +1994,7 @@ exports[`renderForm function should render single field from defined componentTy
                     "error": undefined,
                     "initial": undefined,
                     "invalid": false,
+                    "modified": false,
                     "pristine": true,
                     "submitError": undefined,
                     "submitFailed": false,
@@ -2005,7 +2010,7 @@ exports[`renderForm function should render single field from defined componentTy
               </div>
             </Component>
           </Field>
-        </_class>
+        </ReactFinalForm(Field)>
       </FieldWrapper>
     </FormConditionWrapper>
   </ReactFinalForm>
