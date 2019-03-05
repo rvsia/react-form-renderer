@@ -1,5 +1,1423 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renderForm function #condition should render condition field only if the condition is met 1`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "is": "fuzz",
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        is="fuzz"
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          />
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
+exports[`renderForm function #condition should render condition field only if the condition is met 2`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "is": "fuzz",
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        is="fuzz"
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          >
+            <FieldWrapper
+              component={[Function]}
+              componentType="custom-component"
+              formOptions={
+                Object {
+                  "renderForm": [Function],
+                }
+              }
+              name="foo"
+              validate={
+                Array [
+                  undefined,
+                ]
+              }
+            >
+              <customComponent
+                FieldProvider={[Function]}
+                formOptions={
+                  Object {
+                    "renderForm": [Function],
+                  }
+                }
+                name="foo"
+                validate={[Function]}
+              >
+                <div
+                  name="foo"
+                  validate={[Function]}
+                >
+                  Custom component
+                </div>
+              </customComponent>
+            </FieldWrapper>
+          </Field>
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
+exports[`renderForm function #condition should render condition field only if the condition is not met 1`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "is": "fuzz",
+          "notMatch": true,
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        is="fuzz"
+        notMatch={true}
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          >
+            <FieldWrapper
+              component={[Function]}
+              componentType="custom-component"
+              formOptions={
+                Object {
+                  "renderForm": [Function],
+                }
+              }
+              name="foo"
+              validate={
+                Array [
+                  undefined,
+                ]
+              }
+            >
+              <customComponent
+                FieldProvider={[Function]}
+                formOptions={
+                  Object {
+                    "renderForm": [Function],
+                  }
+                }
+                name="foo"
+                validate={[Function]}
+              >
+                <div
+                  name="foo"
+                  validate={[Function]}
+                >
+                  Custom component
+                </div>
+              </customComponent>
+            </FieldWrapper>
+          </Field>
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
+exports[`renderForm function #condition should render condition field only if the condition is not met 2`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "is": "fuzz",
+          "notMatch": true,
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        is="fuzz"
+        notMatch={true}
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          >
+            <FieldWrapper
+              component={[Function]}
+              componentType="custom-component"
+              formOptions={
+                Object {
+                  "renderForm": [Function],
+                }
+              }
+              name="foo"
+              validate={
+                Array [
+                  undefined,
+                ]
+              }
+            >
+              <customComponent
+                FieldProvider={[Function]}
+                formOptions={
+                  Object {
+                    "renderForm": [Function],
+                  }
+                }
+                name="foo"
+                validate={[Function]}
+              >
+                <div
+                  name="foo"
+                  validate={[Function]}
+                >
+                  Custom component
+                </div>
+              </customComponent>
+            </FieldWrapper>
+          </Field>
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
+exports[`renderForm function #condition should render condition field only if the isEmpty condition is met 1`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "isEmpty": true,
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        isEmpty={true}
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          >
+            <FieldWrapper
+              component={[Function]}
+              componentType="custom-component"
+              formOptions={
+                Object {
+                  "renderForm": [Function],
+                }
+              }
+              name="foo"
+              validate={
+                Array [
+                  undefined,
+                ]
+              }
+            >
+              <customComponent
+                FieldProvider={[Function]}
+                formOptions={
+                  Object {
+                    "renderForm": [Function],
+                  }
+                }
+                name="foo"
+                validate={[Function]}
+              >
+                <div
+                  name="foo"
+                  validate={[Function]}
+                >
+                  Custom component
+                </div>
+              </customComponent>
+            </FieldWrapper>
+          </Field>
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
+exports[`renderForm function #condition should render condition field only if the isEmpty condition is met 2`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "isEmpty": true,
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        isEmpty={true}
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          >
+            <FieldWrapper
+              component={[Function]}
+              componentType="custom-component"
+              formOptions={
+                Object {
+                  "renderForm": [Function],
+                }
+              }
+              name="foo"
+              validate={
+                Array [
+                  undefined,
+                ]
+              }
+            >
+              <customComponent
+                FieldProvider={[Function]}
+                formOptions={
+                  Object {
+                    "renderForm": [Function],
+                  }
+                }
+                name="foo"
+                validate={[Function]}
+              >
+                <div
+                  name="foo"
+                  validate={[Function]}
+                >
+                  Custom component
+                </div>
+              </customComponent>
+            </FieldWrapper>
+          </Field>
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
+exports[`renderForm function #condition should render condition field only if the isNotEmpty condition is met 1`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "isNotEmpty": true,
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        isNotEmpty={true}
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          />
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
+exports[`renderForm function #condition should render condition field only if the isNotEmpty condition is met 2`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "isNotEmpty": true,
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        isNotEmpty={true}
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          >
+            <FieldWrapper
+              component={[Function]}
+              componentType="custom-component"
+              formOptions={
+                Object {
+                  "renderForm": [Function],
+                }
+              }
+              name="foo"
+              validate={
+                Array [
+                  undefined,
+                ]
+              }
+            >
+              <customComponent
+                FieldProvider={[Function]}
+                formOptions={
+                  Object {
+                    "renderForm": [Function],
+                  }
+                }
+                name="foo"
+                validate={[Function]}
+              >
+                <div
+                  name="foo"
+                  validate={[Function]}
+                >
+                  Custom component
+                </div>
+              </customComponent>
+            </FieldWrapper>
+          </Field>
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
+exports[`renderForm function #condition should render condition field only if the pattern condition is met 1`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "pattern": /fuzz/,
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        pattern={/fuzz/}
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          />
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
+exports[`renderForm function #condition should render condition field only if the pattern condition is met 2`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "pattern": /fuzz/,
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        pattern={/fuzz/}
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          >
+            <FieldWrapper
+              component={[Function]}
+              componentType="custom-component"
+              formOptions={
+                Object {
+                  "renderForm": [Function],
+                }
+              }
+              name="foo"
+              validate={
+                Array [
+                  undefined,
+                ]
+              }
+            >
+              <customComponent
+                FieldProvider={[Function]}
+                formOptions={
+                  Object {
+                    "renderForm": [Function],
+                  }
+                }
+                name="foo"
+                validate={[Function]}
+              >
+                <div
+                  name="foo"
+                  validate={[Function]}
+                >
+                  Custom component
+                </div>
+              </customComponent>
+            </FieldWrapper>
+          </Field>
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
+exports[`renderForm function #condition should render condition field only if the pattern condition is not met 1`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "notMatch": true,
+          "pattern": /fuzz/,
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        notMatch={true}
+        pattern={/fuzz/}
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          >
+            <FieldWrapper
+              component={[Function]}
+              componentType="custom-component"
+              formOptions={
+                Object {
+                  "renderForm": [Function],
+                }
+              }
+              name="foo"
+              validate={
+                Array [
+                  undefined,
+                ]
+              }
+            >
+              <customComponent
+                FieldProvider={[Function]}
+                formOptions={
+                  Object {
+                    "renderForm": [Function],
+                  }
+                }
+                name="foo"
+                validate={[Function]}
+              >
+                <div
+                  name="foo"
+                  validate={[Function]}
+                >
+                  Custom component
+                </div>
+              </customComponent>
+            </FieldWrapper>
+          </Field>
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
+exports[`renderForm function #condition should render condition field only if the pattern condition is not met 2`] = `
+<ContextWrapper
+  formFieldsMapper={
+    Object {
+      "custom-component": [Function],
+    }
+  }
+>
+  <ReactFinalForm
+    mutators={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "shift": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+        "update": [Function],
+      }
+    }
+    onSubmit={[MockFunction]}
+  >
+    <FormConditionWrapper
+      condition={
+        Object {
+          "notMatch": true,
+          "pattern": /fuzz/,
+          "when": "bar",
+        }
+      }
+    >
+      <Condition
+        notMatch={true}
+        pattern={/fuzz/}
+        when="bar"
+      >
+        <_class
+          name="bar"
+          subscription={
+            Object {
+              "value": true,
+            }
+          }
+        >
+          <Field
+            format={[Function]}
+            name="bar"
+            parse={[Function]}
+            reactFinalForm={
+              Object {
+                "batch": [Function],
+                "blur": [Function],
+                "change": [Function],
+                "focus": [Function],
+                "getFieldState": [Function],
+                "getRegisteredFields": [Function],
+                "getState": [Function],
+                "initialize": [Function],
+                "isValidationPaused": [Function],
+                "mutators": Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "shift": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                  "update": [Function],
+                },
+                "pauseValidation": [Function],
+                "registerField": [Function],
+                "reset": [Function],
+                "resumeValidation": [Function],
+                "setConfig": [Function],
+                "submit": [Function],
+                "subscribe": [Function],
+              }
+            }
+            subscription={
+              Object {
+                "value": true,
+              }
+            }
+          >
+            <FieldWrapper
+              component={[Function]}
+              componentType="custom-component"
+              formOptions={
+                Object {
+                  "renderForm": [Function],
+                }
+              }
+              name="foo"
+              validate={
+                Array [
+                  undefined,
+                ]
+              }
+            >
+              <customComponent
+                FieldProvider={[Function]}
+                formOptions={
+                  Object {
+                    "renderForm": [Function],
+                  }
+                }
+                name="foo"
+                validate={[Function]}
+              >
+                <div
+                  name="foo"
+                  validate={[Function]}
+                >
+                  Custom component
+                </div>
+              </customComponent>
+            </FieldWrapper>
+          </Field>
+        </_class>
+      </Condition>
+    </FormConditionWrapper>
+  </ReactFinalForm>
+</ContextWrapper>
+`;
+
 exports[`renderForm function should render array field 1`] = `
 <ContextWrapper
   layoutMapper={
@@ -306,224 +1724,6 @@ exports[`renderForm function should render array field 1`] = `
           </Field>
         </_class>
       </FieldWrapper>
-    </FormConditionWrapper>
-  </ReactFinalForm>
-</ContextWrapper>
-`;
-
-exports[`renderForm function should render condition field only if the condition is met 1`] = `
-<ContextWrapper
-  formFieldsMapper={
-    Object {
-      "custom-component": [Function],
-    }
-  }
->
-  <ReactFinalForm
-    mutators={
-      Object {
-        "insert": [Function],
-        "move": [Function],
-        "pop": [Function],
-        "push": [Function],
-        "remove": [Function],
-        "shift": [Function],
-        "swap": [Function],
-        "unshift": [Function],
-        "update": [Function],
-      }
-    }
-    onSubmit={[MockFunction]}
-  >
-    <FormConditionWrapper
-      condition={
-        Object {
-          "is": "fuzz",
-          "when": "bar",
-        }
-      }
-    >
-      <Condition
-        is="fuzz"
-        when="bar"
-      >
-        <_class
-          name="bar"
-          subscription={
-            Object {
-              "value": true,
-            }
-          }
-        >
-          <Field
-            format={[Function]}
-            name="bar"
-            parse={[Function]}
-            reactFinalForm={
-              Object {
-                "batch": [Function],
-                "blur": [Function],
-                "change": [Function],
-                "focus": [Function],
-                "getFieldState": [Function],
-                "getRegisteredFields": [Function],
-                "getState": [Function],
-                "initialize": [Function],
-                "isValidationPaused": [Function],
-                "mutators": Object {
-                  "insert": [Function],
-                  "move": [Function],
-                  "pop": [Function],
-                  "push": [Function],
-                  "remove": [Function],
-                  "shift": [Function],
-                  "swap": [Function],
-                  "unshift": [Function],
-                  "update": [Function],
-                },
-                "pauseValidation": [Function],
-                "registerField": [Function],
-                "reset": [Function],
-                "resumeValidation": [Function],
-                "setConfig": [Function],
-                "submit": [Function],
-                "subscribe": [Function],
-              }
-            }
-            subscription={
-              Object {
-                "value": true,
-              }
-            }
-          />
-        </_class>
-      </Condition>
-    </FormConditionWrapper>
-  </ReactFinalForm>
-</ContextWrapper>
-`;
-
-exports[`renderForm function should render condition field only if the condition is met 2`] = `
-<ContextWrapper
-  formFieldsMapper={
-    Object {
-      "custom-component": [Function],
-    }
-  }
->
-  <ReactFinalForm
-    mutators={
-      Object {
-        "insert": [Function],
-        "move": [Function],
-        "pop": [Function],
-        "push": [Function],
-        "remove": [Function],
-        "shift": [Function],
-        "swap": [Function],
-        "unshift": [Function],
-        "update": [Function],
-      }
-    }
-    onSubmit={[MockFunction]}
-  >
-    <FormConditionWrapper
-      condition={
-        Object {
-          "is": "fuzz",
-          "when": "bar",
-        }
-      }
-    >
-      <Condition
-        is="fuzz"
-        when="bar"
-      >
-        <_class
-          name="bar"
-          subscription={
-            Object {
-              "value": true,
-            }
-          }
-        >
-          <Field
-            format={[Function]}
-            name="bar"
-            parse={[Function]}
-            reactFinalForm={
-              Object {
-                "batch": [Function],
-                "blur": [Function],
-                "change": [Function],
-                "focus": [Function],
-                "getFieldState": [Function],
-                "getRegisteredFields": [Function],
-                "getState": [Function],
-                "initialize": [Function],
-                "isValidationPaused": [Function],
-                "mutators": Object {
-                  "insert": [Function],
-                  "move": [Function],
-                  "pop": [Function],
-                  "push": [Function],
-                  "remove": [Function],
-                  "shift": [Function],
-                  "swap": [Function],
-                  "unshift": [Function],
-                  "update": [Function],
-                },
-                "pauseValidation": [Function],
-                "registerField": [Function],
-                "reset": [Function],
-                "resumeValidation": [Function],
-                "setConfig": [Function],
-                "submit": [Function],
-                "subscribe": [Function],
-              }
-            }
-            subscription={
-              Object {
-                "value": true,
-              }
-            }
-          >
-            <FieldWrapper
-              component={[Function]}
-              componentType="custom-component"
-              formOptions={
-                Object {
-                  "renderForm": [Function],
-                }
-              }
-              name="foo"
-              validate={
-                Array [
-                  undefined,
-                ]
-              }
-            >
-              <customComponent
-                FieldProvider={[Function]}
-                formOptions={
-                  Object {
-                    "renderForm": [Function],
-                  }
-                }
-                name="foo"
-                validate={[Function]}
-              >
-                <div
-                  name="foo"
-                  validate={[Function]}
-                >
-                  Custom component
-                </div>
-              </customComponent>
-            </FieldWrapper>
-          </Field>
-        </_class>
-      </Condition>
     </FormConditionWrapper>
   </ReactFinalForm>
 </ContextWrapper>

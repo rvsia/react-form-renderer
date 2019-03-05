@@ -36,10 +36,25 @@ const checkCondition = (condition, fieldName) => {
     `);
   }
 
-  if (!condition.hasOwnProperty('is')) {
+  if (!condition.hasOwnProperty('is') && !condition.hasOwnProperty('isEmpty')
+  && !condition.hasOwnProperty('isNotEmpty') && !condition.hasOwnProperty('pattern')) {
     throw new DefaultSchemaError(`
       Error occured in field definition with name: "${fieldName}".
-      Field condition must have "is" property! Properties received: [${Object.keys(condition)}].
+      Field condition must have one of "is", "isEmpty", "isNotEmpty", "pattern" property! Properties received: [${Object.keys(condition)}].
+    `);
+  }
+
+  if (condition.hasOwnProperty('notMatch') && !condition.hasOwnProperty('pattern') && !condition.hasOwnProperty('is')) {
+    throw new DefaultSchemaError(`
+      Error occured in field definition with name: "${fieldName}".
+      Field condition must have "pattern" or "is" property when "notMatch" is set! Properties received: [${Object.keys(condition)}].
+    `);
+  }
+
+  if (condition.hasOwnProperty('pattern') && !(condition.pattern instanceof RegExp)) {
+    throw new DefaultSchemaError(`
+      Error occured in field definition with name: "${fieldName}".
+      Field condition must have "pattern" of instance "RegExp"! Instance received: [${condition.pattern.constructor.name}].
     `);
   }
 };
