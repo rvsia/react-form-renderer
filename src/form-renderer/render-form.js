@@ -6,12 +6,32 @@ import validatorMapper from '../validators/validator-mapper';
 import RendererContext from './renderer-context';
 import { shouldWrapInField, composeValidators } from './helpers';
 import { components } from '../constants';
+import { isEmpty as lodashIsEmpty } from 'lodash';
 
 const assignSpecialType = componentType => [ components.CHECKBOX, components.RADIO ].includes(componentType) ? componentType : undefined;
 const shouldAssignFormOptions = componentType => [ components.FIELD_ARRAY, components.FIXED_LIST ].includes(componentType);
 
-const Condition = ({ when, is, children }) => {
-  const shouldRender = value => (Array.isArray(is) ? !!is.find(item => item === value) : value === is);
+const isEmptyValue = (value) => typeof value === 'number' || value === true ? false : lodashIsEmpty(value);
+
+const Condition = ({ when, is, isNotEmpty, isEmpty, children, pattern, notMatch }) => {
+  const shouldRender = value => {
+    if (isNotEmpty){
+      return !isEmptyValue(value);
+    }
+
+    if (isEmpty){
+      return isEmptyValue(value);
+    }
+
+    if (pattern) {
+      return notMatch ? !pattern.test(value) : pattern.test(value);
+    }
+
+    const isMatched = Array.isArray(is) ? !!is.includes(value) : value === is;
+
+    return notMatch ? !isMatched : isMatched;
+  };
+
   return (
     <Field name={ when } subscription={{ value: true }}>
       { ({ input: { value }}) => (shouldRender(value) ? children : null) }

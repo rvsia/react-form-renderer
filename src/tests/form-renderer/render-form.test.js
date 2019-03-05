@@ -211,27 +211,148 @@ describe('renderForm function', () => {
     expect(form.instance().state.state.errors.foo).toBeTruthy();
   });
 
-  it('should render condition field only if the condition is met', () => {
-    const formFields = [{
-      component: 'custom-component',
-      name: 'foo',
-      condition: {
-        when: 'bar',
-        is: 'fuzz',
-      },
-    }];
+  describe('#condition', ()=> {
+    it('should render condition field only if the condition is met', () => {
+      const formFields = [{
+        component: 'custom-component',
+        name: 'foo',
+        condition: {
+          when: 'bar',
+          is: 'fuzz',
+        },
+      }];
+      const wrapper = mount(
+        <ContextWrapper formFieldsMapper={{
+          'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
+        }}>
+          { renderForm(formFields, { renderForm }) }
+        </ContextWrapper>
+      );
+      expect(toJson(wrapper)).toMatchSnapshot();
 
-    const wrapper = mount(
-      <ContextWrapper formFieldsMapper={{
-        'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
-      }}>
-        { renderForm(formFields, { renderForm }) }
-      </ContextWrapper>
-    );
-    expect(toJson(wrapper)).toMatchSnapshot();
+      wrapper.find(Form).instance().form.change('bar', 'fuzz');
+      wrapper.update();
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
 
-    wrapper.find(Form).instance().form.change('bar', 'fuzz');
-    wrapper.update();
-    expect(toJson(wrapper)).toMatchSnapshot();
+    it('should render condition field only if the condition is not met', () => {
+      const formFields = [{
+        component: 'custom-component',
+        name: 'foo',
+        condition: {
+          when: 'bar',
+          is: 'fuzz',
+          notMatch: true,
+        },
+      }];
+
+      const wrapper = mount(
+        <ContextWrapper formFieldsMapper={{
+          'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
+        }}>
+          { renderForm(formFields, { renderForm }) }
+        </ContextWrapper>
+      );
+      expect(toJson(wrapper)).toMatchSnapshot();
+
+      wrapper.find(Form).instance().form.change('bar', 'kar');
+      wrapper.update();
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('should render condition field only if the isNotEmpty condition is met', () => {
+      const formFields = [{
+        component: 'custom-component',
+        name: 'foo',
+        condition: {
+          when: 'bar',
+          isNotEmpty: true,
+        },
+      }];
+
+      const wrapper = mount(
+        <ContextWrapper formFieldsMapper={{
+          'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
+        }}>
+          { renderForm(formFields, { renderForm }) }
+        </ContextWrapper>
+      );
+      expect(toJson(wrapper)).toMatchSnapshot();
+
+      wrapper.find(Form).instance().form.change('bar', 'fuzz');
+      wrapper.update();
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('should render condition field only if the isEmpty condition is met', () => {
+      const formFields = [{
+        component: 'custom-component',
+        name: 'foo',
+        condition: {
+          when: 'bar',
+          isEmpty: true,
+        },
+      }];
+
+      const wrapper = mount(
+        <ContextWrapper formFieldsMapper={{
+          'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
+        }}>
+          { renderForm(formFields, { renderForm }) }
+        </ContextWrapper>
+      );
+      expect(toJson(wrapper)).toMatchSnapshot();
+
+      wrapper.find(Form).instance().form.change('bar', '');
+      wrapper.update();
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('should render condition field only if the pattern condition is met', () => {
+      const formFields = [{
+        component: 'custom-component',
+        name: 'foo',
+        condition: {
+          when: 'bar',
+          pattern: /fuzz/,
+        },
+      }];
+      const wrapper = mount(
+        <ContextWrapper formFieldsMapper={{
+          'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
+        }}>
+          { renderForm(formFields, { renderForm }) }
+        </ContextWrapper>
+      );
+      expect(toJson(wrapper)).toMatchSnapshot();
+
+      wrapper.find(Form).instance().form.change('bar', 'foo fuzz foo');
+      wrapper.update();
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('should render condition field only if the pattern condition is not met', () => {
+      const formFields = [{
+        component: 'custom-component',
+        name: 'foo',
+        condition: {
+          when: 'bar',
+          pattern: /fuzz/,
+          notMatch: true,
+        },
+      }];
+      const wrapper = mount(
+        <ContextWrapper formFieldsMapper={{
+          'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
+        }}>
+          { renderForm(formFields, { renderForm }) }
+        </ContextWrapper>
+      );
+      expect(toJson(wrapper)).toMatchSnapshot();
+
+      wrapper.find(Form).instance().form.change('bar', 'foo fuuzz foo');
+      wrapper.update();
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
   });
 });

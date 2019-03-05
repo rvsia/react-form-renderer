@@ -10,10 +10,17 @@ exports[`Default schema validator should fail if field component property is not
         "
 `;
 
+exports[`Default schema validator should fail if field condition have notMatch property and have not is/pattern. 1`] = `
+"
+      Error occured in field definition with name: \\"foo\\".
+      Field condition must have \\"pattern\\" or \\"is\\" property when \\"notMatch\\" is set! Properties received: [when,isEmpty,notMatch].
+    "
+`;
+
 exports[`Default schema validator should fail if field condition is missing is key. 1`] = `
 "
       Error occured in field definition with name: \\"foo\\".
-      Field condition must have \\"is\\" property! Properties received: [when].
+      Field condition must have one of \\"is\\", \\"isEmpty\\", \\"isNotEmpty\\", \\"pattern\\" property! Properties received: [when].
     "
 `;
 
@@ -28,6 +35,13 @@ exports[`Default schema validator should fail if field condition is not correct 
 "
       Error occured in field definition with name: \\"foo\\".
       Field condition must be an object, received string!
+    "
+`;
+
+exports[`Default schema validator should fail if field condition pattern property is not correct type. 1`] = `
+"
+      Error occured in field definition with name: \\"foo\\".
+      Field condition must have \\"pattern\\" of instance \\"RegExp\\"! Instance received: [Number].
     "
 `;
 
