@@ -1422,12 +1422,16 @@ exports[`renderForm function should render array field 1`] = `
 <ContextWrapper
   layoutMapper={
     Object {
+      "ArrayFieldWrapper": [Function],
       "Button": [Function],
       "ButtonGroup": [Function],
       "Col": [Function],
+      "Description": [Function],
       "FormGroup": [Function],
+      "FormWrapper": [Function],
       "HelpBlock": [Function],
       "Icon": [Function],
+      "Title": [Function],
     }
   }
 >
@@ -1465,7 +1469,7 @@ exports[`renderForm function should render array field 1`] = `
           ]
         }
       >
-        <ReactFinalForm(Field)
+        <FieldProvider
           FieldProvider={[Function]}
           arrayValidator={[Function]}
           component={[Function]}
@@ -1478,7 +1482,7 @@ exports[`renderForm function should render array field 1`] = `
           }
           name="foo"
         >
-          <Field
+          <ReactFinalForm(Field)
             FieldProvider={[Function]}
             arrayValidator={[Function]}
             component={[Function]}
@@ -1489,44 +1493,12 @@ exports[`renderForm function should render array field 1`] = `
                 "renderForm": [Function],
               }
             }
-            format={[Function]}
             name="foo"
-            parse={[Function]}
-            reactFinalForm={
-              Object {
-                "batch": [Function],
-                "blur": [Function],
-                "change": [Function],
-                "focus": [Function],
-                "getFieldState": [Function],
-                "getRegisteredFields": [Function],
-                "getState": [Function],
-                "initialize": [Function],
-                "isValidationPaused": [Function],
-                "mutators": Object {
-                  "insert": [Function],
-                  "move": [Function],
-                  "pop": [Function],
-                  "push": [Function],
-                  "remove": [Function],
-                  "shift": [Function],
-                  "swap": [Function],
-                  "unshift": [Function],
-                  "update": [Function],
-                },
-                "pauseValidation": [Function],
-                "registerField": [Function],
-                "reset": [Function],
-                "resumeValidation": [Function],
-                "setConfig": [Function],
-                "submit": [Function],
-                "subscribe": [Function],
-              }
-            }
           >
-            <Component
+            <Field
               FieldProvider={[Function]}
               arrayValidator={[Function]}
+              component={[Function]}
               fields={Array []}
               formOptions={
                 Object {
@@ -1534,37 +1506,42 @@ exports[`renderForm function should render array field 1`] = `
                   "renderForm": [Function],
                 }
               }
-              input={
+              format={[Function]}
+              name="foo"
+              parse={[Function]}
+              reactFinalForm={
                 Object {
-                  "name": "foo",
-                  "onBlur": [Function],
-                  "onChange": [Function],
-                  "onFocus": [Function],
-                  "value": "",
-                }
-              }
-              meta={
-                Object {
-                  "active": false,
-                  "data": Object {},
-                  "dirty": false,
-                  "dirtySinceLastSubmit": false,
-                  "error": undefined,
-                  "initial": undefined,
-                  "invalid": false,
-                  "modified": false,
-                  "pristine": true,
-                  "submitError": undefined,
-                  "submitFailed": false,
-                  "submitSucceeded": false,
-                  "submitting": false,
-                  "touched": false,
-                  "valid": true,
-                  "visited": false,
+                  "batch": [Function],
+                  "blur": [Function],
+                  "change": [Function],
+                  "focus": [Function],
+                  "getFieldState": [Function],
+                  "getRegisteredFields": [Function],
+                  "getState": [Function],
+                  "initialize": [Function],
+                  "isValidationPaused": [Function],
+                  "mutators": Object {
+                    "insert": [Function],
+                    "move": [Function],
+                    "pop": [Function],
+                    "push": [Function],
+                    "remove": [Function],
+                    "shift": [Function],
+                    "swap": [Function],
+                    "unshift": [Function],
+                    "update": [Function],
+                  },
+                  "pauseValidation": [Function],
+                  "registerField": [Function],
+                  "reset": [Function],
+                  "resumeValidation": [Function],
+                  "setConfig": [Function],
+                  "submit": [Function],
+                  "subscribe": [Function],
                 }
               }
             >
-              <renderArrayField
+              <Component
                 FieldProvider={[Function]}
                 arrayValidator={[Function]}
                 fields={Array []}
@@ -1603,12 +1580,10 @@ exports[`renderForm function should render array field 1`] = `
                     "visited": false,
                   }
                 }
-                validate={Array []}
               >
-                <DynamicArray
+                <renderArrayField
                   FieldProvider={[Function]}
                   arrayValidator={[Function]}
-                  fieldKey="foo"
                   fields={Array []}
                   formOptions={
                     Object {
@@ -1645,87 +1620,130 @@ exports[`renderForm function should render array field 1`] = `
                       "visited": false,
                     }
                   }
-                  renderForm={[Function]}
                   validate={Array []}
                 >
-                  <ReactFinalForm(ReactFinalFormFieldArray(4.8.1)(2.0.1))
-                    key="foo"
-                    name="foo"
-                    validate={[Function]}
-                  >
-                    <ReactFinalFormFieldArray(4.8.1)(2.0.1)
-                      name="foo"
-                      reactFinalForm={
-                        Object {
-                          "batch": [Function],
-                          "blur": [Function],
-                          "change": [Function],
-                          "focus": [Function],
-                          "getFieldState": [Function],
-                          "getRegisteredFields": [Function],
-                          "getState": [Function],
-                          "initialize": [Function],
-                          "isValidationPaused": [Function],
-                          "mutators": Object {
-                            "insert": [Function],
-                            "move": [Function],
-                            "pop": [Function],
-                            "push": [Function],
-                            "remove": [Function],
-                            "shift": [Function],
-                            "swap": [Function],
-                            "unshift": [Function],
-                            "update": [Function],
-                          },
-                          "pauseValidation": [Function],
-                          "registerField": [Function],
-                          "reset": [Function],
-                          "resumeValidation": [Function],
-                          "setConfig": [Function],
-                          "submit": [Function],
-                          "subscribe": [Function],
-                        }
+                  <DynamicArray
+                    FieldProvider={[Function]}
+                    arrayValidator={[Function]}
+                    fieldKey="foo"
+                    fields={Array []}
+                    formOptions={
+                      Object {
+                        "hasFixedItems": false,
+                        "renderForm": [Function],
                       }
+                    }
+                    input={
+                      Object {
+                        "name": "foo",
+                        "onBlur": [Function],
+                        "onChange": [Function],
+                        "onFocus": [Function],
+                        "value": "",
+                      }
+                    }
+                    meta={
+                      Object {
+                        "active": false,
+                        "data": Object {},
+                        "dirty": false,
+                        "dirtySinceLastSubmit": false,
+                        "error": undefined,
+                        "initial": undefined,
+                        "invalid": false,
+                        "modified": false,
+                        "pristine": true,
+                        "submitError": undefined,
+                        "submitFailed": false,
+                        "submitSucceeded": false,
+                        "submitting": false,
+                        "touched": false,
+                        "valid": true,
+                        "visited": false,
+                      }
+                    }
+                    renderForm={[Function]}
+                    validate={Array []}
+                  >
+                    <ReactFinalForm(ReactFinalFormFieldArray(4.8.1)(2.0.1))
+                      key="foo"
+                      name="foo"
                       validate={[Function]}
                     >
-                      <Col
-                        xs={11}
+                      <ReactFinalFormFieldArray(4.8.1)(2.0.1)
+                        name="foo"
+                        reactFinalForm={
+                          Object {
+                            "batch": [Function],
+                            "blur": [Function],
+                            "change": [Function],
+                            "focus": [Function],
+                            "getFieldState": [Function],
+                            "getRegisteredFields": [Function],
+                            "getState": [Function],
+                            "initialize": [Function],
+                            "isValidationPaused": [Function],
+                            "mutators": Object {
+                              "insert": [Function],
+                              "move": [Function],
+                              "pop": [Function],
+                              "push": [Function],
+                              "remove": [Function],
+                              "shift": [Function],
+                              "swap": [Function],
+                              "unshift": [Function],
+                              "update": [Function],
+                            },
+                            "pauseValidation": [Function],
+                            "registerField": [Function],
+                            "reset": [Function],
+                            "resumeValidation": [Function],
+                            "setConfig": [Function],
+                            "submit": [Function],
+                            "subscribe": [Function],
+                          }
+                        }
+                        validate={[Function]}
                       >
-                        <div />
-                      </Col>
-                      <Col
-                        className="final-form-array-add-container"
-                        xs={1}
-                      >
-                        <div>
-                          <FormGroup>
-                            <div>
-                              <ButtonGroup
-                                className="pull-right"
-                              >
-                                <div>
-                                  <Button
-                                    onClick={[Function]}
-                                    type="button"
-                                  >
-                                    <button
+                        <Component
+                          xs={11}
+                        >
+                          <div />
+                        </Component>
+                        <Component
+                          className="final-form-array-add-container"
+                          xs={1}
+                        >
+                          <div>
+                            <Component>
+                              <div>
+                                <Component
+                                  className="pull-right"
+                                >
+                                  <div>
+                                    <Component
                                       onClick={[Function]}
                                       type="button"
-                                    />
-                                  </Button>
-                                </div>
-                              </ButtonGroup>
-                            </div>
-                          </FormGroup>
-                        </div>
-                      </Col>
-                    </ReactFinalFormFieldArray(4.8.1)(2.0.1)>
-                  </ReactFinalForm(ReactFinalFormFieldArray(4.8.1)(2.0.1))>
-                </DynamicArray>
-              </renderArrayField>
-            </Component>
-          </Field>
-        </ReactFinalForm(Field)>
+                                    >
+                                      <button
+                                        onClick={[Function]}
+                                        type="button"
+                                      />
+                                    </Component>
+                                  </div>
+                                </Component>
+                              </div>
+                            </Component>
+                          </div>
+                        </Component>
+                      </ReactFinalFormFieldArray(4.8.1)(2.0.1)>
+                    </ReactFinalForm(ReactFinalFormFieldArray(4.8.1)(2.0.1))>
+                  </DynamicArray>
+                </renderArrayField>
+              </Component>
+            </Field>
+          </ReactFinalForm(Field)>
+        </FieldProvider>
       </FieldWrapper>
     </FormConditionWrapper>
   </ReactFinalForm>
@@ -1783,54 +1801,60 @@ exports[`renderForm function should render single field form with custom compone
           name="foo"
           validate={[Function]}
         >
-          <ReactFinalForm(Field)
+          <FieldProvider
             name="foo"
             render={[Function]}
             validate={[Function]}
           >
-            <Field
-              format={[Function]}
+            <ReactFinalForm(Field)
               name="foo"
-              parse={[Function]}
-              reactFinalForm={
-                Object {
-                  "batch": [Function],
-                  "blur": [Function],
-                  "change": [Function],
-                  "focus": [Function],
-                  "getFieldState": [Function],
-                  "getRegisteredFields": [Function],
-                  "getState": [Function],
-                  "initialize": [Function],
-                  "isValidationPaused": [Function],
-                  "mutators": Object {
-                    "insert": [Function],
-                    "move": [Function],
-                    "pop": [Function],
-                    "push": [Function],
-                    "remove": [Function],
-                    "shift": [Function],
-                    "swap": [Function],
-                    "unshift": [Function],
-                    "update": [Function],
-                  },
-                  "pauseValidation": [Function],
-                  "registerField": [Function],
-                  "reset": [Function],
-                  "resumeValidation": [Function],
-                  "setConfig": [Function],
-                  "submit": [Function],
-                  "subscribe": [Function],
-                }
-              }
               render={[Function]}
               validate={[Function]}
             >
-              <div>
-                Custom component
-              </div>
-            </Field>
-          </ReactFinalForm(Field)>
+              <Field
+                format={[Function]}
+                name="foo"
+                parse={[Function]}
+                reactFinalForm={
+                  Object {
+                    "batch": [Function],
+                    "blur": [Function],
+                    "change": [Function],
+                    "focus": [Function],
+                    "getFieldState": [Function],
+                    "getRegisteredFields": [Function],
+                    "getState": [Function],
+                    "initialize": [Function],
+                    "isValidationPaused": [Function],
+                    "mutators": Object {
+                      "insert": [Function],
+                      "move": [Function],
+                      "pop": [Function],
+                      "push": [Function],
+                      "remove": [Function],
+                      "shift": [Function],
+                      "swap": [Function],
+                      "unshift": [Function],
+                      "update": [Function],
+                    },
+                    "pauseValidation": [Function],
+                    "registerField": [Function],
+                    "reset": [Function],
+                    "resumeValidation": [Function],
+                    "setConfig": [Function],
+                    "submit": [Function],
+                    "subscribe": [Function],
+                  }
+                }
+                render={[Function]}
+                validate={[Function]}
+              >
+                <div>
+                  Custom component
+                </div>
+              </Field>
+            </ReactFinalForm(Field)>
+          </FieldProvider>
         </customComponent>
       </FieldWrapper>
     </FormConditionWrapper>
@@ -1878,7 +1902,7 @@ exports[`renderForm function should render single field from defined componentTy
           ]
         }
       >
-        <ReactFinalForm(Field)
+        <FieldProvider
           FieldProvider={[Function]}
           component={[Function]}
           formOptions={
@@ -1889,7 +1913,7 @@ exports[`renderForm function should render single field from defined componentTy
           name="foo"
           validate={[Function]}
         >
-          <Field
+          <ReactFinalForm(Field)
             FieldProvider={[Function]}
             component={[Function]}
             formOptions={
@@ -1897,80 +1921,55 @@ exports[`renderForm function should render single field from defined componentTy
                 "renderForm": [Function],
               }
             }
-            format={[Function]}
             name="foo"
-            parse={[Function]}
-            reactFinalForm={
-              Object {
-                "batch": [Function],
-                "blur": [Function],
-                "change": [Function],
-                "focus": [Function],
-                "getFieldState": [Function],
-                "getRegisteredFields": [Function],
-                "getState": [Function],
-                "initialize": [Function],
-                "isValidationPaused": [Function],
-                "mutators": Object {
-                  "insert": [Function],
-                  "move": [Function],
-                  "pop": [Function],
-                  "push": [Function],
-                  "remove": [Function],
-                  "shift": [Function],
-                  "swap": [Function],
-                  "unshift": [Function],
-                  "update": [Function],
-                },
-                "pauseValidation": [Function],
-                "registerField": [Function],
-                "reset": [Function],
-                "resumeValidation": [Function],
-                "setConfig": [Function],
-                "submit": [Function],
-                "subscribe": [Function],
-              }
-            }
             validate={[Function]}
           >
-            <Component
+            <Field
               FieldProvider={[Function]}
+              component={[Function]}
               formOptions={
                 Object {
                   "renderForm": [Function],
                 }
               }
-              input={
+              format={[Function]}
+              name="foo"
+              parse={[Function]}
+              reactFinalForm={
                 Object {
-                  "name": "foo",
-                  "onBlur": [Function],
-                  "onChange": [Function],
-                  "onFocus": [Function],
-                  "value": "",
+                  "batch": [Function],
+                  "blur": [Function],
+                  "change": [Function],
+                  "focus": [Function],
+                  "getFieldState": [Function],
+                  "getRegisteredFields": [Function],
+                  "getState": [Function],
+                  "initialize": [Function],
+                  "isValidationPaused": [Function],
+                  "mutators": Object {
+                    "insert": [Function],
+                    "move": [Function],
+                    "pop": [Function],
+                    "push": [Function],
+                    "remove": [Function],
+                    "shift": [Function],
+                    "swap": [Function],
+                    "unshift": [Function],
+                    "update": [Function],
+                  },
+                  "pauseValidation": [Function],
+                  "registerField": [Function],
+                  "reset": [Function],
+                  "resumeValidation": [Function],
+                  "setConfig": [Function],
+                  "submit": [Function],
+                  "subscribe": [Function],
                 }
               }
-              meta={
-                Object {
-                  "active": false,
-                  "data": Object {},
-                  "dirty": false,
-                  "dirtySinceLastSubmit": false,
-                  "error": undefined,
-                  "initial": undefined,
-                  "invalid": false,
-                  "modified": false,
-                  "pristine": true,
-                  "submitError": undefined,
-                  "submitFailed": false,
-                  "submitSucceeded": false,
-                  "submitting": false,
-                  "touched": false,
-                  "valid": true,
-                  "visited": false,
-                }
-              }
+              validate={[Function]}
             >
-              <div
+              <Component
+                FieldProvider={[Function]}
                 formOptions={
                   Object {
                     "renderForm": [Function],
@@ -2006,11 +2005,48 @@ exports[`renderForm function should render single field from defined componentTy
                   }
                 }
               >
-                TextField
-              </div>
-            </Component>
-          </Field>
-        </ReactFinalForm(Field)>
+                <div
+                  formOptions={
+                    Object {
+                      "renderForm": [Function],
+                    }
+                  }
+                  input={
+                    Object {
+                      "name": "foo",
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "onFocus": [Function],
+                      "value": "",
+                    }
+                  }
+                  meta={
+                    Object {
+                      "active": false,
+                      "data": Object {},
+                      "dirty": false,
+                      "dirtySinceLastSubmit": false,
+                      "error": undefined,
+                      "initial": undefined,
+                      "invalid": false,
+                      "modified": false,
+                      "pristine": true,
+                      "submitError": undefined,
+                      "submitFailed": false,
+                      "submitSucceeded": false,
+                      "submitting": false,
+                      "touched": false,
+                      "valid": true,
+                      "visited": false,
+                    }
+                  }
+                >
+                  TextField
+                </div>
+              </Component>
+            </Field>
+          </ReactFinalForm(Field)>
+        </FieldProvider>
       </FieldWrapper>
     </FormConditionWrapper>
   </ReactFinalForm>

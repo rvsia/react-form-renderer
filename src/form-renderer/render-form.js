@@ -40,6 +40,19 @@ const Condition = ({ when, is, isNotEmpty, isEmpty, children, pattern, notMatch 
   );
 };
 
+class FieldProvider extends React.Component{
+  componentWillUnmount(){
+    if ((this.props.formOptions.clearOnUnmount || this.props.clearOnUnmount) && this.props.clearOnUnmount !== false) {
+      this.props.formOptions.change(this.props.name, undefined);
+    }
+  }
+
+  render(){
+    const { clearOnUnmount, ...props } = this.props;
+    return <Field { ...props } />;
+  }
+}
+
 const FormConditionWrapper = ({ condition, children }) => (condition ? (
   <Condition { ...condition }>
     { children }
@@ -49,7 +62,7 @@ const FormConditionWrapper = ({ condition, children }) => (condition ? (
 const FieldWrapper = ({ componentType, validate, component, formOptions, assignFieldProvider, ...rest }) => {
   const componentProps = {
     type: assignSpecialType(componentType),
-    FieldProvider: Field,
+    FieldProvider,
     ...rest,
     formOptions,
     component,
@@ -78,8 +91,8 @@ const FieldWrapper = ({ componentType, validate, component, formOptions, assignF
 
   const Component = component;
   return shouldWrapInField(componentType)
-    ? <Field { ...componentProps } />
-    : <Component formOptions={ formOptions } validate={ composeValidators(validate) } { ...rest } FieldProvider={ Field } />;
+    ? <FieldProvider { ...componentProps } />
+    : <Component formOptions={ formOptions } validate={ composeValidators(validate) } { ...rest } FieldProvider={ FieldProvider } />;
 };
 
 const renderSingleField = ({ component, condition, ...rest }, formOptions) => (

@@ -4,6 +4,7 @@ exports[`<FormControls /> should render with description 1`] = `
 <ContextWrapper>
   <FormRenderer
     buttonsLabels={Object {}}
+    clearOnUnmount={false}
     disableSubmit={Array []}
     formFieldsMapper={Object {}}
     formType="pf3"
@@ -123,6 +124,7 @@ exports[`<FormControls /> should render with title 1`] = `
 <ContextWrapper>
   <FormRenderer
     buttonsLabels={Object {}}
+    clearOnUnmount={false}
     disableSubmit={Array []}
     formFieldsMapper={Object {}}
     formType="pf3"
@@ -242,6 +244,7 @@ exports[`<FormControls /> should render with title and description 1`] = `
 <ContextWrapper>
   <FormRenderer
     buttonsLabels={Object {}}
+    clearOnUnmount={false}
     disableSubmit={Array []}
     formFieldsMapper={Object {}}
     formType="pf3"
@@ -367,6 +370,7 @@ exports[`<FormControls /> should render without title and description 1`] = `
 <ContextWrapper>
   <FormRenderer
     buttonsLabels={Object {}}
+    clearOnUnmount={false}
     disableSubmit={Array []}
     formFieldsMapper={Object {}}
     formType="pf3"
