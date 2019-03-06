@@ -5,7 +5,8 @@ import { Form } from 'react-final-form';
 import arrayMutators from 'final-form-arrays';
 import renderForm from '../../form-renderer/render-form';
 import RendererContext, { configureContext } from '../../form-renderer/renderer-context';
-import { components, validators } from '../../constants';
+import { components, validators, layoutComponents } from '../../constants';
+import FormRenderer from '../../form-renderer';
 
 describe('renderForm function', () => {
   let layoutMapper;
@@ -22,12 +23,16 @@ describe('renderForm function', () => {
 
   beforeEach(() => {
     layoutMapper = {
-      Col: ({ children }) => <div>{ children }</div>,
-      FormGroup: ({ children }) => <div>{ children }</div>,
-      ButtonGroup: ({ children }) => <div>{ children }</div>,
-      HelpBlock: ({ children }) => <div>{ children }</div>,
-      Button: ({ label, bsStyle, ...rest }) => <button { ...rest }>{ label }</button>,
-      Icon: ({ type, name }) => <div>Icon: { name }</div>,
+      [layoutComponents.FORM_WRAPPER]: ({ children }) => <div>{ children }</div>,
+      [layoutComponents.BUTTON]: ({ label, ...rest }) =>  <button { ...rest }>{ label }</button>,
+      [layoutComponents.COL]: ({ children }) => <div>{ children }</div>,
+      [layoutComponents.FORM_GROUP]: ({ children }) => <div>{ children }</div>,
+      [layoutComponents.BUTTON_GROUP]: ({ children }) => <div>{ children }</div>,
+      [layoutComponents.ICON]: props => <div>Icon</div>,
+      [layoutComponents.ARRAY_FIELD_WRAPPER]: ({ children }) => <div>{ children }</div>,
+      [layoutComponents.HELP_BLOCK]: ({ children }) => <div>{ children }</div>,
+      [layoutComponents.TITLE]: ({ children }) => <div>{ children }</div>,
+      [layoutComponents.DESCRIPTION]: ({ children }) => <div>{ children }</div>,
     };
   });
 
@@ -353,6 +358,190 @@ describe('renderForm function', () => {
       wrapper.find(Form).instance().form.change('bar', 'foo fuuzz foo');
       wrapper.update();
       expect(toJson(wrapper)).toMatchSnapshot();
+    });
+  });
+
+  describe('#clearOnUmount', () => {
+    const formFields = (clearOnUnmount = undefined, component = 'custom-component') => ({
+      fields: [{
+        component,
+        name: 'foo',
+      }, {
+        component,
+        name: 'foocon',
+        label: 'Label 1',
+        key: 1,
+        clearOnUnmount,
+        condition: {
+          when: 'foo',
+          is: 'bar',
+        },
+      }, {
+        component,
+        name: 'foocon',
+        label: 'Label 2',
+        key: 2,
+        clearOnUnmount,
+        condition: {
+          when: 'foo',
+          is: 'barrr',
+        },
+      }],
+    });
+
+    const TextField = ({ input, meta, label, formOptions, helperText, isRequired, dataType, isDisabled, isReadOnly, ...rest }) => (
+      <div>
+        <label>{ label }</label>
+        <input { ...input } { ...rest } />
+        { meta.error && <div><span>{ meta.error }</span></div> }
+      </div>
+    );
+
+    it('should clear values after unmount when set on fields', () => {
+      const wrapper = mount(
+        <FormRenderer
+          layoutMapper={ layoutMapper }
+          formFieldsMapper={{
+            'custom-component': ({ FieldProvider, ...props }) => <FieldProvider
+              { ...props }
+              component={ TextField }
+            />,
+          }}
+          schema={ formFields(true) }
+          onSubmit={ jest.fn() }
+        />
+      );
+
+      wrapper.find('input').first().simulate('change', { target: { value: 'bar' }});
+      wrapper.update();
+      wrapper.find('input').last().simulate('change', { target: { value: 'foovalue' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toEqual('foovalue');
+      wrapper.find('input').first().simulate('change', { target: { value: 'barrr' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toBe(undefined);
+    });
+
+    it('should clear values after unmount when set on form', () => {
+      const wrapper = mount(
+        <FormRenderer
+          layoutMapper={ layoutMapper }
+          formFieldsMapper={{
+            'custom-component': ({ FieldProvider, ...props }) => <FieldProvider
+              { ...props }
+              component={ TextField }
+            />,
+          }}
+          schema={ formFields() }
+          onSubmit={ jest.fn() }
+          clearOnUnmount
+        />
+      );
+
+      wrapper.find('input').first().simulate('change', { target: { value: 'bar' }});
+      wrapper.update();
+      wrapper.find('input').last().simulate('change', { target: { value: 'foovalue' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toEqual('foovalue');
+      wrapper.find('input').first().simulate('change', { target: { value: 'barrr' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toBe(undefined);
+    });
+
+    it('should not clear values after unmount when not set', () => {
+      const wrapper = mount(
+        <FormRenderer
+          layoutMapper={ layoutMapper }
+          formFieldsMapper={{
+            'custom-component': ({ FieldProvider, ...props }) => <FieldProvider
+              { ...props }
+              component={ TextField }
+            />,
+          }}
+          schema={ formFields() }
+          onSubmit={ jest.fn() }
+        />
+      );
+
+      wrapper.find('input').first().simulate('change', { target: { value: 'bar' }});
+      wrapper.update();
+      wrapper.find('input').last().simulate('change', { target: { value: 'foovalue' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toEqual('foovalue');
+      wrapper.find('input').first().simulate('change', { target: { value: 'barrr' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toEqual('foovalue');
+    });
+
+    it('should not clear values after unmount when set in form and not in fields', () => {
+      const wrapper = mount(
+        <FormRenderer
+          layoutMapper={ layoutMapper }
+          formFieldsMapper={{
+            'custom-component': ({ FieldProvider, ...props }) => <FieldProvider
+              { ...props }
+              component={ TextField }
+            />,
+          }}
+          schema={ formFields(false) }
+          onSubmit={ jest.fn() }
+          clearOnUnmount
+        />
+      );
+
+      wrapper.find('input').first().simulate('change', { target: { value: 'bar' }});
+      wrapper.update();
+      wrapper.find('input').last().simulate('change', { target: { value: 'foovalue' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toEqual('foovalue');
+      wrapper.find('input').first().simulate('change', { target: { value: 'barrr' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toEqual('foovalue');
+    });
+
+    it('should not clear values after unmount (default component)', () => {
+      const wrapper = mount(
+        <FormRenderer
+          layoutMapper={ layoutMapper }
+          formFieldsMapper={{
+            [components.TEXT_FIELD]: TextField,
+          }}
+          schema={ formFields(undefined, components.TEXT_FIELD) }
+          onSubmit={ jest.fn() }
+        />
+      );
+
+      wrapper.find('input').first().simulate('change', { target: { value: 'bar' }});
+      wrapper.update();
+      wrapper.find('input').last().simulate('change', { target: { value: 'foovalue' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toEqual('foovalue');
+      wrapper.find('input').first().simulate('change', { target: { value: 'barrr' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toEqual('foovalue');
+    });
+
+    it('should clear values after unmount (default component)', () => {
+      const wrapper = mount(
+        <FormRenderer
+          layoutMapper={ layoutMapper }
+          formFieldsMapper={{
+            [components.TEXT_FIELD]: TextField,
+          }}
+          schema={ formFields(undefined, components.TEXT_FIELD) }
+          onSubmit={ jest.fn() }
+          clearOnUnmount
+        />
+      );
+
+      wrapper.find('input').first().simulate('change', { target: { value: 'bar' }});
+      wrapper.update();
+      wrapper.find('input').last().simulate('change', { target: { value: 'foovalue' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toEqual('foovalue');
+      wrapper.find('input').first().simulate('change', { target: { value: 'barrr' }});
+      wrapper.update();
+      expect(wrapper.find(Form).instance().form.getState().values.foocon).toEqual(undefined);
     });
   });
 });
