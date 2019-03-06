@@ -7,6 +7,7 @@ import RendererContext from './renderer-context';
 import { shouldWrapInField, composeValidators } from './helpers';
 import { components } from '../constants';
 import { isEmpty as lodashIsEmpty } from 'lodash';
+import { memoize } from '../validators/helpers';
 
 const assignSpecialType = componentType => [ components.CHECKBOX, components.RADIO ].includes(componentType) ? componentType : undefined;
 const shouldAssignFormOptions = componentType => [ components.FIELD_ARRAY, components.FIXED_LIST ].includes(componentType);
@@ -103,7 +104,9 @@ renderSingleField.propTypes = {
   component: PropTypes.string.isRequired,
 };
 
-const prepareValidator = (validator) => ((typeof validator === 'function') ? validator : validatorMapper(validator.type)({ ...validator }));
+const prepareValidator = (validator) => ((typeof validator === 'function')
+  ? memoize(validator)
+  : validatorMapper(validator.type)({ ...validator }));
 
 const prepareFieldProps = field => ({
   ...field,
