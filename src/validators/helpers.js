@@ -6,9 +6,14 @@ export const TO_STRING = {}.toString;
 
 const isObject = obj => typeof obj === 'object' && TO_STRING.call(obj) === '[object Object]' && obj !== null;
 
-const stringify = options => {
+const stringify = args => {
   let arr = [];
   let value;
+  let options = args;
+  if (typeof options === 'number') {
+    options = options.toString();
+  }
+
   for (let k in options) {
     if (HAS_PROP.call(options, k)) {
       value = options[k];
