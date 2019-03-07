@@ -53,6 +53,19 @@ class FieldProvider extends React.Component{
   }
 }
 
+FieldProvider.propTypes = {
+  formOptions: PropTypes.shape({
+    clearOnUnmount: PropTypes.bool,
+    change: PropTypes.func,
+  }),
+  name: PropTypes.string,
+  clearOnUnmount: PropTypes.bool,
+};
+
+FieldProvider.defaultProps = {
+  formOptions: {},
+};
+
 const FormConditionWrapper = ({ condition, children }) => (condition ? (
   <Condition { ...condition }>
     { children }

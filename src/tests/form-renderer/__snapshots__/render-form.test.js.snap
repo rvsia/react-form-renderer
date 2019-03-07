@@ -1802,16 +1802,19 @@ exports[`renderForm function should render single field form with custom compone
           validate={[Function]}
         >
           <FieldProvider
+            formOptions={Object {}}
             name="foo"
             render={[Function]}
             validate={[Function]}
           >
             <ReactFinalForm(Field)
+              formOptions={Object {}}
               name="foo"
               render={[Function]}
               validate={[Function]}
             >
               <Field
+                formOptions={Object {}}
                 format={[Function]}
                 name="foo"
                 parse={[Function]}
