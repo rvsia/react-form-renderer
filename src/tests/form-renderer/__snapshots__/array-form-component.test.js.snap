@@ -209,7 +209,6 @@ exports[`renderForm function should render array field correctly 1`] = `
                 <ReactFinalForm(Field)
                   FieldProvider={[Function]}
                   arrayValidator={[Function]}
-                  component={[Function]}
                   fields={
                     Array [
                       Object {
@@ -257,11 +256,11 @@ exports[`renderForm function should render array field correctly 1`] = `
                   }
                   hasFixedItems={false}
                   name="foo"
+                  render={[Function]}
                 >
                   <Field
                     FieldProvider={[Function]}
                     arrayValidator={[Function]}
-                    component={[Function]}
                     fields={
                       Array [
                         Object {
@@ -342,6 +341,7 @@ exports[`renderForm function should render array field correctly 1`] = `
                         "subscribe": [Function],
                       }
                     }
+                    render={[Function]}
                   >
                     <Component
                       FieldProvider={[Function]}
@@ -1011,7 +1011,6 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                     }
                   }
                   arrayValidator={[Function]}
-                  component={[Function]}
                   description="description"
                   fields={
                     Array [
@@ -1060,6 +1059,7 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                   }
                   hasFixedItems={true}
                   name="foo"
+                  render={[Function]}
                   title="Title"
                 >
                   <Field
@@ -1073,7 +1073,6 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                       }
                     }
                     arrayValidator={[Function]}
-                    component={[Function]}
                     description="description"
                     fields={
                       Array [
@@ -1155,6 +1154,7 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                         "subscribe": [Function],
                       }
                     }
+                    render={[Function]}
                     title="Title"
                   >
                     <Component
@@ -1541,7 +1541,6 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                               >
                                 <ReactFinalForm(Field)
                                   FieldProvider={[Function]}
-                                  component={[Function]}
                                   formOptions={
                                     Object {
                                       "batch": [Function],
@@ -1580,11 +1579,11 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                                   }
                                   label="foo"
                                   name="nested component"
+                                  render={[Function]}
                                   validate={[Function]}
                                 >
                                   <Field
                                     FieldProvider={[Function]}
-                                    component={[Function]}
                                     formOptions={
                                       Object {
                                         "batch": [Function],
@@ -1656,6 +1655,7 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                                         "subscribe": [Function],
                                       }
                                     }
+                                    render={[Function]}
                                     validate={[Function]}
                                   >
                                     <Component
@@ -1832,7 +1832,6 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                               >
                                 <ReactFinalForm(Field)
                                   FieldProvider={[Function]}
-                                  component={[Function]}
                                   fields={Array []}
                                   formOptions={
                                     Object {
@@ -1871,11 +1870,11 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                                     }
                                   }
                                   name="foo"
+                                  render={[Function]}
                                   validate={[Function]}
                                 >
                                   <Field
                                     FieldProvider={[Function]}
-                                    component={[Function]}
                                     fields={Array []}
                                     formOptions={
                                       Object {
@@ -1947,6 +1946,7 @@ exports[`renderForm function should render fixed array field correctly 1`] = `
                                         "subscribe": [Function],
                                       }
                                     }
+                                    render={[Function]}
                                     validate={[Function]}
                                   >
                                     <Component
