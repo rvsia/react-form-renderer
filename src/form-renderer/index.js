@@ -54,25 +54,39 @@ const FormRenderer = ({
   }
 
   return (
-    <RendererContext.Provider value={ configureContext({
-      layoutMapper,
-      formFieldsMapper,
-    }) }>
-      <Form
-        onSubmit={ onSubmit }
-        mutators={{ ...arrayMutators }}
-        initialValues={{
-          ...inputSchema.defaultValues,
-          ...initialValues,
-        }}
-        subscription={{ pristine: true, submitting: true, valid: true }}
-        render={ ({ handleSubmit, pristine, valid, form: { reset, mutators, change, getState, submit, ...form }}) => (
+    <Form
+      onSubmit={ onSubmit }
+      mutators={{ ...arrayMutators }}
+      initialValues={{
+        ...inputSchema.defaultValues,
+        ...initialValues,
+      }}
+      subscription={{ pristine: true, submitting: true, valid: true }}
+      render={ ({ handleSubmit, pristine, valid, form: { reset, mutators, getState, submit, ...form }}) => (
+        <RendererContext.Provider value={ configureContext({
+          layoutMapper,
+          formFieldsMapper,
+          formOptions: {
+            pristine,
+            onSubmit,
+            onCancel,
+            getState,
+            valid,
+            submit,
+            handleSubmit,
+            reset,
+            clearOnUnmount,
+            renderForm,
+            ...mutators,
+            ...form,
+          },
+        }) }>
           <RendererContext.Consumer>
             { ({ layoutMapper: { FormWrapper }}) => (
               <FormWrapper>
                 { inputSchema.schema.title && renderTitle(inputSchema.schema.title) }
                 { inputSchema.schema.description && renderDescription(inputSchema.schema.description) }
-                { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine, onSubmit, onCancel, getState, valid, submit, handleSubmit, reset, clearOnUnmount, ...form }) }
+                { renderForm(inputSchema.schema.fields) }
                 { showFormControls && renderControls({
                   buttonOrder,
                   buttonClassName,
@@ -91,9 +105,9 @@ const FormRenderer = ({
               </FormWrapper>
             ) }
           </RendererContext.Consumer>
-        ) }
-      />
-    </RendererContext.Provider>
+        </RendererContext.Provider>
+      ) }
+    />
   );};
 
 export default FormRenderer;

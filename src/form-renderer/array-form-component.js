@@ -4,18 +4,16 @@ import { FieldArray } from 'react-final-form-arrays';
 import RendererContext from './renderer-context';
 
 const ArrayItem = ({
-  renderForm,
   fields,
   fieldKey,
   fieldIndex,
   name,
-  remove,
 }) => (
   <RendererContext.Consumer>
-    { ({ layoutMapper: { Col, Button, ButtonGroup, Icon, ArrayFieldWrapper }}) => (
+    { ({ formOptions, layoutMapper: { Col, Button, ButtonGroup, Icon, ArrayFieldWrapper }}) => (
       <ArrayFieldWrapper>
         <Col xs={ 11 } className="final-form-array-item">
-          { renderForm(fields.map((field) => {
+          { formOptions.renderForm(fields.map((field) => {
             const itemName = field.name
               ? field.name.substring(field.name.lastIndexOf('.') + 1)
               : `${fieldKey}[${fieldIndex}]`;
@@ -25,7 +23,7 @@ const ArrayItem = ({
         </Col>
         <Col xs={ 1 } className="final-form-group-controls">
           <ButtonGroup className="pull-right">
-            <Button type="button" bsStyle="danger" onClick={ () => remove(fieldIndex) }><Icon name="close" /></Button>
+            <Button type="button" bsStyle="danger" onClick={ () => formOptions.remove(fieldIndex) }><Icon name="close" /></Button>
           </ButtonGroup>
         </Col>
       </ArrayFieldWrapper>
@@ -34,7 +32,6 @@ const ArrayItem = ({
 );
 
 ArrayItem.propTypes = {
-  renderForm: PropTypes.func.isRequired,
   fieldKey: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   fieldIndex: PropTypes.number.isRequired,
@@ -47,7 +44,6 @@ const DynamicArray = ({
   arrayValidator,
   title,
   description,
-  renderForm,
   fields,
   itemDefault,
 }) => (
@@ -65,7 +61,6 @@ const DynamicArray = ({
                 name={ name }
                 fieldKey={ fieldKey }
                 fieldIndex={ index }
-                renderForm={ renderForm }
                 remove={ remove }
               />)) }
             <Col xs={ 11 }>{ (dirty || submitFailed) && error && typeof error === 'string' && <HelpBlock>{ error }</HelpBlock> }</Col>
@@ -90,20 +85,19 @@ DynamicArray.propTypes = {
   arrayValidator: PropTypes.func,
   title: PropTypes.string,
   description: PropTypes.string,
-  renderForm: PropTypes.func.isRequired,
   fields: PropTypes.arrayOf(PropTypes.object),
   itemDefault: PropTypes.any,
 };
 
-const FixedArrayField = ({ title, description, fields, renderForm, additionalItems }) => {
+const FixedArrayField = ({ title, description, fields, additionalItems }) => {
   return (
     <RendererContext.Consumer>
-      { ({ layoutMapper: { Col }}) => (
+      { ({ formOptions, layoutMapper: { Col }}) => (
         <Fragment>
           { title && <Col xs={ 12 }><h3>{ title }</h3></Col> }
           { description && <Col xs={ 12 }><p>{ description }</p></Col> }
-          { renderForm(fields) }
-          { renderForm([ additionalItems ]) }
+          { formOptions.renderForm(fields) }
+          { formOptions.renderForm([ additionalItems ]) }
         </Fragment>
       ) }
     </RendererContext.Consumer>
@@ -113,7 +107,6 @@ const FixedArrayField = ({ title, description, fields, renderForm, additionalIte
 FixedArrayField.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  renderForm: PropTypes.func.isRequired,
   fields: PropTypes.arrayOf(PropTypes.object).isRequired,
   additionalItems: PropTypes.object.isRequired,
 };
@@ -121,12 +114,11 @@ FixedArrayField.propTypes = {
 const renderArrayField = props => {
   const { fieldKey, arrayValidator, ...rest } = props;
   return (
-    props.formOptions.hasFixedItems ? <FixedArrayField { ...props } renderForm={ props.formOptions.renderForm } /> : (
+    props.hasFixedItems ? <FixedArrayField { ...props } /> : (
       <DynamicArray
         fieldKey={ rest.input.name }
         { ...rest }
         arrayValidator={ arrayValidator }
-        renderForm={ props.formOptions.renderForm }
       />
     )
   );

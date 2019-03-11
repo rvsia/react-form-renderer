@@ -6,34 +6,25 @@ import arrayMutators from 'final-form-arrays';
 import renderForm from '../../form-renderer/render-form';
 import RendererContext, { configureContext } from '../../form-renderer/renderer-context';
 import { components } from '../../constants';
+import FormRenderer from '../../form-renderer';
+import layoutMapper from '../../../demo/layout-mapper';
 
 describe('renderForm function', () => {
-  let layoutMapper;
   let formFieldsMapper;
 
-  const ContextWrapper = ({ children, initialValues = {}, ...props }) => (
-    <RendererContext.Provider value={ configureContext({
-      formFieldsMapper,
-      layoutMapper,
-    }) }>
-      <Form onSubmit={ jest.fn() } mutators={{ ...arrayMutators }} initialValues={ initialValues }>
-        { () =>  children }
-      </Form>
-    </RendererContext.Provider>
+  const ContextWrapper = ({ initialValues = {}, ...rest }) => (
+    <FormRenderer
+      formFieldsMapper={ formFieldsMapper }
+      layoutMapper={ layoutMapper }
+      initialValues={ initialValues }
+      onSubmit={ jest.fn() }
+      { ...rest }
+    />
   );
 
   beforeEach(() => {
     formFieldsMapper = {
       [components.TEXT_FIELD]: () => <div className="nested-item">Text field</div>,
-    };
-    layoutMapper = {
-      Col: ({ children }) => <div>{ children }</div>,
-      FormGroup: ({ children }) => <div>{ children }</div>,
-      ButtonGroup: ({ children }) => <div>{ children }</div>,
-      HelpBlock: ({ children }) => <div>{ children }</div>,
-      Button: ({ label, bsStyle, ...rest }) => <button { ...rest }>{ label }</button>,
-      Icon: ({ type, name }) => <div>Icon: { name }</div>,
-      ArrayFieldWrapper: ({ children }) => <div>{ children }</div>,
     };
   });
 
@@ -50,9 +41,7 @@ describe('renderForm function', () => {
     }];
 
     const wrapper = mount(
-      <ContextWrapper>
-        { renderForm(formFields, { renderForm }) }
-      </ContextWrapper>
+      <ContextWrapper schema={{ fields: formFields }}/>
     );
 
     expect(toJson(wrapper)).toMatchSnapshot();
@@ -71,15 +60,13 @@ describe('renderForm function', () => {
     }];
 
     const wrapper = mount(
-      <ContextWrapper>
-        { renderForm(formFields, { renderForm }) }
-      </ContextWrapper>
+      <ContextWrapper schema={{ fields: formFields }} />
     );
 
-    expect(wrapper.find(Form).instance().state.state.values.foo).toBeUndefined();
-    wrapper.find('button').simulate('click');
+    expect(wrapper.find(Form).instance().form.getState().values.foo).toBeUndefined();
+    wrapper.find('button').first().simulate('click');
     wrapper.update();
-    expect(wrapper.find(Form).instance().state.state.values.foo).toHaveLength(1);
+    expect(wrapper.find(Form).instance().form.getState().values.foo).toHaveLength(1);
   });
 
   it('should remove nested field to form', () => {
@@ -95,16 +82,12 @@ describe('renderForm function', () => {
     }];
 
     const wrapper = mount(
-      <ContextWrapper initialValues={{
-        foo: [ 'first value' ],
-      }}>
-        { renderForm(formFields, { renderForm }) }
-      </ContextWrapper>
+      <ContextWrapper initialValues={{ foo: [ 'first value' ]}} schema={{ fields: formFields }}/>
     );
-    expect(wrapper.find(Form).instance().state.state.values.foo).toHaveLength(1);
+    expect(wrapper.find(Form).instance().form.getState().values.foo).toHaveLength(1);
     wrapper.find('button').first().simulate('click');
     wrapper.update();
-    expect(wrapper.find(Form).instance().state.state.values.foo).toHaveLength(0);
+    expect(wrapper.find(Form).instance().form.getState().values.foo).toBeUndefined();
   });
 
   it('should render fixed array field correctly', () => {
@@ -128,9 +111,7 @@ describe('renderForm function', () => {
     }];
 
     const wrapper = mount(
-      <ContextWrapper>
-        { renderForm(formFields, { renderForm }) }
-      </ContextWrapper>
+      <ContextWrapper schema={{ fields: formFields }}/>
     );
 
     expect(toJson(wrapper)).toMatchSnapshot();
@@ -151,13 +132,7 @@ describe('renderForm function', () => {
     }];
 
     const wrapper = mount(
-      <ContextWrapper initialValues={{
-        foo: [{
-          name: 'bar',
-        }],
-      }}>
-        { renderForm(formFields, { renderForm }) }
-      </ContextWrapper>
+      <ContextWrapper initialValues={{ foo: [{ name: 'bar'  }]}} schema={{ fields: formFields }}/>
     );
     expect(wrapper.find({ name: 'foo[0]nested-component' })).toBeTruthy();
   });
@@ -177,13 +152,7 @@ describe('renderForm function', () => {
     }];
 
     const wrapper = mount(
-      <ContextWrapper initialValues={{
-        foo: [{
-          name: 'bar',
-        }],
-      }}>
-        { renderForm(formFields, { renderForm }) }
-      </ContextWrapper>
+      <ContextWrapper initialValues={{ foo: [{ name: 'bar'  }]  }} schema={{ fields: formFields }}/>
     );
     expect(wrapper.find({ name: 'foo[0]nested-component' })).toBeTruthy();
   });

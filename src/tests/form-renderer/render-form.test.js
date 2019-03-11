@@ -14,6 +14,10 @@ describe('renderForm function', () => {
   const ContextWrapper = ({ children, ...props }) => (
     <RendererContext.Provider value={ configureContext({
       ...props,
+      formOptions: {
+        renderForm,
+        ...props.formOptions,
+      }
     }) }>
       <Form onSubmit={ jest.fn() } mutators={{ ...arrayMutators }}>
         { () =>  children }
@@ -45,7 +49,7 @@ describe('renderForm function', () => {
       <ContextWrapper formFieldsMapper={{
         [components.TEXT_FIELD]: ({ FieldProvider, dataType, ...props }) => <div { ...props }>TextField</div>,
       }}>
-        { renderForm(formFields, { renderForm }) }
+        { renderForm(formFields) }
       </ContextWrapper>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
@@ -61,7 +65,7 @@ describe('renderForm function', () => {
       <ContextWrapper formFieldsMapper={{
         [components.TEXT_FIELD]: ({ FieldProvider, dataType, ...props }) => <div { ...props }>TextField</div>,
       }}>
-        { renderForm(formFields, { renderForm }) }
+        { renderForm(formFields) }
       </ContextWrapper>
     );
     const form = wrapper.find(Form);
@@ -83,7 +87,7 @@ describe('renderForm function', () => {
       <ContextWrapper formFieldsMapper={{
         [components.TEXT_FIELD]: ({ FieldProvider, dataType, ...props }) => <div { ...props }>TextField</div>,
       }}>
-        { renderForm(formFields, { renderForm }) }
+        { renderForm(formFields) }
       </ContextWrapper>
     );
     const form = wrapper.find(Form);
@@ -104,7 +108,7 @@ describe('renderForm function', () => {
       <ContextWrapper formFieldsMapper={{
         [components.TEXT_FIELD]: ({ FieldProvider, dataType, ...props }) => <div { ...props }>TextField</div>,
       }}>
-        { renderForm(formFields, { renderForm }) }
+        { renderForm(formFields) }
       </ContextWrapper>
     );
     const form = wrapper.find(Form);
@@ -125,7 +129,7 @@ describe('renderForm function', () => {
       <ContextWrapper formFieldsMapper={{
         [components.TEXT_FIELD]: ({ FieldProvider, dataType, ...props }) => <div { ...props }>TextField</div>,
       }}>
-        { renderForm(formFields, { renderForm }) }
+        { renderForm(formFields) }
       </ContextWrapper>
     );
     const form = wrapper.find(Form);
@@ -141,7 +145,7 @@ describe('renderForm function', () => {
       <ContextWrapper formFieldsMapper={{
         'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
       }}>
-        { renderForm(formFields, { renderForm }) }
+        { renderForm(formFields) }
       </ContextWrapper>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
@@ -160,7 +164,7 @@ describe('renderForm function', () => {
           <FieldProvider { ...props } render={ () => <div>Custom component</div> } />
         ),
       }}>
-        { renderForm(formFields, { renderForm }) }
+        { renderForm(formFields) }
       </ContextWrapper>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
@@ -176,7 +180,7 @@ describe('renderForm function', () => {
 
     const wrapper = mount(
       <ContextWrapper layoutMapper={ layoutMapper }>
-        { renderForm(formFields, { renderForm }) }
+        { renderForm(formFields) }
       </ContextWrapper>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
@@ -207,7 +211,7 @@ describe('renderForm function', () => {
           [components.TEXT_FIELD]: ({ FieldProvider, dataType, ...props }) => <div { ...props }>TextField</div>,
         }}
       >
-        { renderForm(formFields, { renderForm }) }
+        { renderForm(formFields) }
       </ContextWrapper>
     );
 
@@ -230,7 +234,7 @@ describe('renderForm function', () => {
         <ContextWrapper formFieldsMapper={{
           'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
         }}>
-          { renderForm(formFields, { renderForm }) }
+          { renderForm(formFields) }
         </ContextWrapper>
       );
       expect(toJson(wrapper)).toMatchSnapshot();
@@ -255,7 +259,7 @@ describe('renderForm function', () => {
         <ContextWrapper formFieldsMapper={{
           'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
         }}>
-          { renderForm(formFields, { renderForm }) }
+          { renderForm(formFields) }
         </ContextWrapper>
       );
       expect(toJson(wrapper)).toMatchSnapshot();
@@ -279,7 +283,7 @@ describe('renderForm function', () => {
         <ContextWrapper formFieldsMapper={{
           'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
         }}>
-          { renderForm(formFields, { renderForm }) }
+          { renderForm(formFields) }
         </ContextWrapper>
       );
       expect(toJson(wrapper)).toMatchSnapshot();
@@ -303,7 +307,7 @@ describe('renderForm function', () => {
         <ContextWrapper formFieldsMapper={{
           'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
         }}>
-          { renderForm(formFields, { renderForm }) }
+          { renderForm(formFields) }
         </ContextWrapper>
       );
       expect(toJson(wrapper)).toMatchSnapshot();
@@ -326,7 +330,7 @@ describe('renderForm function', () => {
         <ContextWrapper formFieldsMapper={{
           'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
         }}>
-          { renderForm(formFields, { renderForm }) }
+          { renderForm(formFields) }
         </ContextWrapper>
       );
       expect(toJson(wrapper)).toMatchSnapshot();
@@ -350,7 +354,7 @@ describe('renderForm function', () => {
         <ContextWrapper formFieldsMapper={{
           'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => <div { ...props }>Custom component</div>,
         }}>
-          { renderForm(formFields, { renderForm }) }
+          { renderForm(formFields) }
         </ContextWrapper>
       );
       expect(toJson(wrapper)).toMatchSnapshot();
