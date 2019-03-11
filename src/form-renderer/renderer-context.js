@@ -9,6 +9,7 @@ export default ComponentType;
 export const configureContext = ({
   layoutMapper,
   formFieldsMapper,
+  formOptions,
 }) => ({
   layoutMapper,
   formFieldsMapper: {
@@ -16,4 +17,5 @@ export const configureContext = ({
     [components.FIXED_LIST]: props => <FieldArray { ...props } fieldKey={ props.key } />,
     ...formFieldsMapper,
   },
+  formOptions,
 });

@@ -1476,10 +1476,10 @@ exports[`renderForm function should render array field 1`] = `
           fields={Array []}
           formOptions={
             Object {
-              "hasFixedItems": false,
               "renderForm": [Function],
             }
           }
+          hasFixedItems={false}
           name="foo"
         >
           <ReactFinalForm(Field)
@@ -1489,10 +1489,10 @@ exports[`renderForm function should render array field 1`] = `
             fields={Array []}
             formOptions={
               Object {
-                "hasFixedItems": false,
                 "renderForm": [Function],
               }
             }
+            hasFixedItems={false}
             name="foo"
           >
             <Field
@@ -1502,11 +1502,11 @@ exports[`renderForm function should render array field 1`] = `
               fields={Array []}
               formOptions={
                 Object {
-                  "hasFixedItems": false,
                   "renderForm": [Function],
                 }
               }
               format={[Function]}
+              hasFixedItems={false}
               name="foo"
               parse={[Function]}
               reactFinalForm={
@@ -1547,10 +1547,10 @@ exports[`renderForm function should render array field 1`] = `
                 fields={Array []}
                 formOptions={
                   Object {
-                    "hasFixedItems": false,
                     "renderForm": [Function],
                   }
                 }
+                hasFixedItems={false}
                 input={
                   Object {
                     "name": "foo",
@@ -1587,10 +1587,10 @@ exports[`renderForm function should render array field 1`] = `
                   fields={Array []}
                   formOptions={
                     Object {
-                      "hasFixedItems": false,
                       "renderForm": [Function],
                     }
                   }
+                  hasFixedItems={false}
                   input={
                     Object {
                       "name": "foo",
@@ -1629,10 +1629,10 @@ exports[`renderForm function should render array field 1`] = `
                     fields={Array []}
                     formOptions={
                       Object {
-                        "hasFixedItems": false,
                         "renderForm": [Function],
                       }
                     }
+                    hasFixedItems={false}
                     input={
                       Object {
                         "name": "foo",
@@ -1662,7 +1662,6 @@ exports[`renderForm function should render array field 1`] = `
                         "visited": false,
                       }
                     }
-                    renderForm={[Function]}
                     validate={Array []}
                   >
                     <ReactFinalForm(ReactFinalFormFieldArray(4.8.1)(2.0.1))
@@ -1793,6 +1792,7 @@ exports[`renderForm function should render single field form with custom compone
       >
         <customComponent
           FieldProvider={[Function]}
+          assignFieldProvider={true}
           formOptions={
             Object {
               "renderForm": [Function],
@@ -1802,18 +1802,21 @@ exports[`renderForm function should render single field form with custom compone
           validate={[Function]}
         >
           <FieldProvider
+            assignFieldProvider={true}
             formOptions={Object {}}
             name="foo"
             render={[Function]}
             validate={[Function]}
           >
             <ReactFinalForm(Field)
+              assignFieldProvider={true}
               formOptions={Object {}}
               name="foo"
               render={[Function]}
               validate={[Function]}
             >
               <Field
+                assignFieldProvider={true}
                 formOptions={Object {}}
                 format={[Function]}
                 name="foo"
