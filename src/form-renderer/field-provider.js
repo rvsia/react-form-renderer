@@ -10,8 +10,9 @@ class FieldProvider extends Component{
   }
 
   render(){
-    const { clearOnUnmount, ...props } = this.props;
-    return <Field { ...props } />;
+    const { clearOnUnmount, component, ...props } = this.props;
+    const Component = component;
+    return <Field { ...props } render={ ({ initialValue, ...rest }) => <Component { ...rest } /> } />;
   }
 }
 
@@ -22,6 +23,7 @@ FieldProvider.propTypes = {
   }),
   name: PropTypes.string,
   clearOnUnmount: PropTypes.bool,
+  component: PropTypes.any,
 };
 
 FieldProvider.defaultProps = {

@@ -9,6 +9,7 @@ const output = {
       name: 'text_box_1',
       label: 'Text Box',
       title: 'Text Box',
+      initialValue: 'Pepik',
       component: components.TEXT_FIELD,
     },
     {

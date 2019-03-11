@@ -155,13 +155,12 @@ describe('renderForm function', () => {
     const formFields = [{
       component: 'custom-component',
       name: 'foo',
-      assignFieldProvider: true,
     }];
 
     const wrapper = mount(
       <ContextWrapper formFieldsMapper={{
         'custom-component': ({ FieldProvider, dataType, formOptions, ...props }) => (
-          <FieldProvider { ...props } render={ () => <div>Custom component</div> } />
+          <FieldProvider { ...props } component={ () => <div>Custom component</div> } />
         ),
       }}>
         { renderForm(formFields) }
