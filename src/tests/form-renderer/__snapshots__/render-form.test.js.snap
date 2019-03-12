@@ -1485,6 +1485,7 @@ exports[`renderForm function should render array field 1`] = `
           <ReactFinalForm(Field)
             FieldProvider={[Function]}
             arrayValidator={[Function]}
+            component={[Function]}
             fields={Array []}
             formOptions={
               Object {
@@ -1493,11 +1494,11 @@ exports[`renderForm function should render array field 1`] = `
             }
             hasFixedItems={false}
             name="foo"
-            render={[Function]}
           >
             <Field
               FieldProvider={[Function]}
               arrayValidator={[Function]}
+              component={[Function]}
               fields={Array []}
               formOptions={
                 Object {
@@ -1539,7 +1540,6 @@ exports[`renderForm function should render array field 1`] = `
                   "subscribe": [Function],
                 }
               }
-              render={[Function]}
             >
               <Component
                 FieldProvider={[Function]}
@@ -1775,6 +1775,7 @@ exports[`renderForm function should render single field form with custom compone
   >
     <FormConditionWrapper>
       <FieldWrapper
+        assignFieldProvider={true}
         component={[Function]}
         componentType="custom-component"
         formOptions={
@@ -1791,6 +1792,7 @@ exports[`renderForm function should render single field form with custom compone
       >
         <customComponent
           FieldProvider={[Function]}
+          assignFieldProvider={true}
           formOptions={
             Object {
               "renderForm": [Function],
@@ -1800,18 +1802,21 @@ exports[`renderForm function should render single field form with custom compone
           validate={[Function]}
         >
           <FieldProvider
-            component={[Function]}
+            assignFieldProvider={true}
             formOptions={Object {}}
             name="foo"
+            render={[Function]}
             validate={[Function]}
           >
             <ReactFinalForm(Field)
+              assignFieldProvider={true}
               formOptions={Object {}}
               name="foo"
               render={[Function]}
               validate={[Function]}
             >
               <Field
+                assignFieldProvider={true}
                 formOptions={Object {}}
                 format={[Function]}
                 name="foo"
@@ -1850,42 +1855,9 @@ exports[`renderForm function should render single field form with custom compone
                 render={[Function]}
                 validate={[Function]}
               >
-                <component
-                  formOptions={Object {}}
-                  input={
-                    Object {
-                      "name": "foo",
-                      "onBlur": [Function],
-                      "onChange": [Function],
-                      "onFocus": [Function],
-                      "value": "",
-                    }
-                  }
-                  meta={
-                    Object {
-                      "active": false,
-                      "data": Object {},
-                      "dirty": false,
-                      "dirtySinceLastSubmit": false,
-                      "error": undefined,
-                      "initial": undefined,
-                      "invalid": false,
-                      "modified": false,
-                      "pristine": true,
-                      "submitError": undefined,
-                      "submitFailed": false,
-                      "submitSucceeded": false,
-                      "submitting": false,
-                      "touched": false,
-                      "valid": true,
-                      "visited": false,
-                    }
-                  }
-                >
-                  <div>
-                    Custom component
-                  </div>
-                </component>
+                <div>
+                  Custom component
+                </div>
               </Field>
             </ReactFinalForm(Field)>
           </FieldProvider>
@@ -1949,17 +1921,18 @@ exports[`renderForm function should render single field from defined componentTy
         >
           <ReactFinalForm(Field)
             FieldProvider={[Function]}
+            component={[Function]}
             formOptions={
               Object {
                 "renderForm": [Function],
               }
             }
             name="foo"
-            render={[Function]}
             validate={[Function]}
           >
             <Field
               FieldProvider={[Function]}
+              component={[Function]}
               formOptions={
                 Object {
                   "renderForm": [Function],
@@ -1999,7 +1972,6 @@ exports[`renderForm function should render single field from defined componentTy
                   "subscribe": [Function],
                 }
               }
-              render={[Function]}
               validate={[Function]}
             >
               <Component
